@@ -1,0 +1,790 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		464C14F892DD1E3F01638549 /* Pods_Master_Ielts_SpeakingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95B9703EA20721F97A238C3 /* Pods_Master_Ielts_SpeakingTests.framework */; };
+		96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EE21FDAF39500DC9A94 /* AppDelegate.swift */; };
+		96003EE51FDAF39500DC9A94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EE41FDAF39500DC9A94 /* ViewController.swift */; };
+		96003EE81FDAF39500DC9A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96003EE61FDAF39500DC9A94 /* Main.storyboard */; };
+		96003EEA1FDAF39500DC9A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96003EE91FDAF39500DC9A94 /* Assets.xcassets */; };
+		96003EED1FDAF39500DC9A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96003EEB1FDAF39500DC9A94 /* LaunchScreen.storyboard */; };
+		96003EF81FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EF71FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift */; };
+		96003F031FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */; };
+		96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */; };
+		96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */; };
+		964120D41FDB417F00CAA91C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D31FDB417F00CAA91C /* Category.swift */; };
+		D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */; };
+		E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96003EF41FDAF39500DC9A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96003ED71FDAF39400DC9A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96003EDE1FDAF39400DC9A94;
+			remoteInfo = "Master Ielts Speaking";
+		};
+		96003EFF1FDAF39500DC9A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96003ED71FDAF39400DC9A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96003EDE1FDAF39400DC9A94;
+			remoteInfo = "Master Ielts Speaking";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0545DA6FBA4E2029B6FCEC90 /* Pods-Master Ielts SpeakingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingTests/Pods-Master Ielts SpeakingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6133A8E35ABAF6FB79888ABF /* Pods-Master Ielts SpeakingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingTests/Pods-Master Ielts SpeakingTests.release.xcconfig"; sourceTree = "<group>"; };
+		619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master_Ielts_Speaking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		659021A0C2067D31B37DCA41 /* Pods-Master Ielts SpeakingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master_Ielts_SpeakingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96003EDF1FDAF39500DC9A94 /* Master Ielts Speaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master Ielts Speaking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96003EE21FDAF39500DC9A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96003EE41FDAF39500DC9A94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96003EE71FDAF39500DC9A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96003EE91FDAF39500DC9A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96003EEC1FDAF39500DC9A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96003EEE1FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96003EF31FDAF39500DC9A94 /* Master Ielts SpeakingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Master Ielts SpeakingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96003EF71FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master_Ielts_SpeakingTests.swift; sourceTree = "<group>"; };
+		96003EF91FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96003EFE1FDAF39500DC9A94 /* Master Ielts SpeakingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Master Ielts SpeakingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master_Ielts_SpeakingUITests.swift; sourceTree = "<group>"; };
+		96003F041FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		964120D31FDB417F00CAA91C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.release.xcconfig"; sourceTree = "<group>"; };
+		CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.debug.xcconfig"; sourceTree = "<group>"; };
+		D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D95B9703EA20721F97A238C3 /* Pods_Master_Ielts_SpeakingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master_Ielts_SpeakingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96003EDC1FDAF39400DC9A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EF01FDAF39500DC9A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464C14F892DD1E3F01638549 /* Pods_Master_Ielts_SpeakingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EFB1FDAF39500DC9A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AE156AD438DF22B5D3314AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */,
+				BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */,
+				0545DA6FBA4E2029B6FCEC90 /* Pods-Master Ielts SpeakingTests.debug.xcconfig */,
+				6133A8E35ABAF6FB79888ABF /* Pods-Master Ielts SpeakingTests.release.xcconfig */,
+				659021A0C2067D31B37DCA41 /* Pods-Master Ielts SpeakingUITests.debug.xcconfig */,
+				D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90071551010A73A16B867E91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */,
+				D95B9703EA20721F97A238C3 /* Pods_Master_Ielts_SpeakingTests.framework */,
+				8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96003ED61FDAF39400DC9A94 = {
+			isa = PBXGroup;
+			children = (
+				96003EE11FDAF39500DC9A94 /* Master Ielts Speaking */,
+				96003EF61FDAF39500DC9A94 /* Master Ielts SpeakingTests */,
+				96003F011FDAF39500DC9A94 /* Master Ielts SpeakingUITests */,
+				96003EE01FDAF39500DC9A94 /* Products */,
+				6AE156AD438DF22B5D3314AE /* Pods */,
+				90071551010A73A16B867E91 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96003EE01FDAF39500DC9A94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96003EDF1FDAF39500DC9A94 /* Master Ielts Speaking.app */,
+				96003EF31FDAF39500DC9A94 /* Master Ielts SpeakingTests.xctest */,
+				96003EFE1FDAF39500DC9A94 /* Master Ielts SpeakingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96003EE11FDAF39500DC9A94 /* Master Ielts Speaking */ = {
+			isa = PBXGroup;
+			children = (
+				964120D21FDB416500CAA91C /* Model */,
+				96003EE21FDAF39500DC9A94 /* AppDelegate.swift */,
+				96003EE41FDAF39500DC9A94 /* ViewController.swift */,
+				96003EE61FDAF39500DC9A94 /* Main.storyboard */,
+				96003EE91FDAF39500DC9A94 /* Assets.xcassets */,
+				96003EEB1FDAF39500DC9A94 /* LaunchScreen.storyboard */,
+				96003EEE1FDAF39500DC9A94 /* Info.plist */,
+				96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */,
+				96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */,
+			);
+			path = "Master Ielts Speaking";
+			sourceTree = "<group>";
+		};
+		96003EF61FDAF39500DC9A94 /* Master Ielts SpeakingTests */ = {
+			isa = PBXGroup;
+			children = (
+				96003EF71FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift */,
+				96003EF91FDAF39500DC9A94 /* Info.plist */,
+			);
+			path = "Master Ielts SpeakingTests";
+			sourceTree = "<group>";
+		};
+		96003F011FDAF39500DC9A94 /* Master Ielts SpeakingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */,
+				96003F041FDAF39500DC9A94 /* Info.plist */,
+			);
+			path = "Master Ielts SpeakingUITests";
+			sourceTree = "<group>";
+		};
+		964120D21FDB416500CAA91C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				964120D31FDB417F00CAA91C /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96003EDE1FDAF39400DC9A94 /* Master Ielts Speaking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96003F071FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts Speaking" */;
+			buildPhases = (
+				F87588A1886B9D387523A5C2 /* [CP] Check Pods Manifest.lock */,
+				96003EDB1FDAF39400DC9A94 /* Sources */,
+				96003EDC1FDAF39400DC9A94 /* Frameworks */,
+				96003EDD1FDAF39400DC9A94 /* Resources */,
+				20DF65DD13C523B1DD60528D /* [CP] Embed Pods Frameworks */,
+				D2D4D79535411F3B8BCE853B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Master Ielts Speaking";
+			productName = "Master Ielts Speaking";
+			productReference = 96003EDF1FDAF39500DC9A94 /* Master Ielts Speaking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96003EF21FDAF39500DC9A94 /* Master Ielts SpeakingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96003F0A1FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts SpeakingTests" */;
+			buildPhases = (
+				F0EE622F9FF4A2FE762EF52D /* [CP] Check Pods Manifest.lock */,
+				96003EEF1FDAF39500DC9A94 /* Sources */,
+				96003EF01FDAF39500DC9A94 /* Frameworks */,
+				96003EF11FDAF39500DC9A94 /* Resources */,
+				0BD0E2FAE7BCDAC401F99732 /* [CP] Embed Pods Frameworks */,
+				6FED84E477616E399396F158 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96003EF51FDAF39500DC9A94 /* PBXTargetDependency */,
+			);
+			name = "Master Ielts SpeakingTests";
+			productName = "Master Ielts SpeakingTests";
+			productReference = 96003EF31FDAF39500DC9A94 /* Master Ielts SpeakingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96003EFD1FDAF39500DC9A94 /* Master Ielts SpeakingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96003F0D1FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts SpeakingUITests" */;
+			buildPhases = (
+				2431AAAA0EDAA8ACE6ACEFA5 /* [CP] Check Pods Manifest.lock */,
+				96003EFA1FDAF39500DC9A94 /* Sources */,
+				96003EFB1FDAF39500DC9A94 /* Frameworks */,
+				96003EFC1FDAF39500DC9A94 /* Resources */,
+				7735905567D2BC1652685EC2 /* [CP] Embed Pods Frameworks */,
+				482C1B7CCCE6B4E23D16B021 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96003F001FDAF39500DC9A94 /* PBXTargetDependency */,
+			);
+			name = "Master Ielts SpeakingUITests";
+			productName = "Master Ielts SpeakingUITests";
+			productReference = 96003EFE1FDAF39500DC9A94 /* Master Ielts SpeakingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96003ED71FDAF39400DC9A94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "seyedamirhossein hashemi";
+				TargetAttributes = {
+					96003EDE1FDAF39400DC9A94 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					96003EF21FDAF39500DC9A94 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 96003EDE1FDAF39400DC9A94;
+					};
+					96003EFD1FDAF39500DC9A94 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 96003EDE1FDAF39400DC9A94;
+					};
+				};
+			};
+			buildConfigurationList = 96003EDA1FDAF39400DC9A94 /* Build configuration list for PBXProject "Master Ielts Speaking" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96003ED61FDAF39400DC9A94;
+			productRefGroup = 96003EE01FDAF39500DC9A94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96003EDE1FDAF39400DC9A94 /* Master Ielts Speaking */,
+				96003EF21FDAF39500DC9A94 /* Master Ielts SpeakingTests */,
+				96003EFD1FDAF39500DC9A94 /* Master Ielts SpeakingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96003EDD1FDAF39400DC9A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96003EED1FDAF39500DC9A94 /* LaunchScreen.storyboard in Resources */,
+				96003EEA1FDAF39500DC9A94 /* Assets.xcassets in Resources */,
+				96003EE81FDAF39500DC9A94 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EF11FDAF39500DC9A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EFC1FDAF39500DC9A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BD0E2FAE7BCDAC401F99732 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts SpeakingTests/Pods-Master Ielts SpeakingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20DF65DD13C523B1DD60528D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2431AAAA0EDAA8ACE6ACEFA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Master Ielts SpeakingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		482C1B7CCCE6B4E23D16B021 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FED84E477616E399396F158 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts SpeakingTests/Pods-Master Ielts SpeakingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7735905567D2BC1652685EC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2D4D79535411F3B8BCE853B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0EE622F9FF4A2FE762EF52D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Master Ielts SpeakingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F87588A1886B9D387523A5C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Master Ielts Speaking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96003EDB1FDAF39400DC9A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96003EE51FDAF39500DC9A94 /* ViewController.swift in Sources */,
+				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
+				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
+				96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */,
+				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EEF1FDAF39500DC9A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96003EF81FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96003EFA1FDAF39500DC9A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96003F031FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96003EF51FDAF39500DC9A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96003EDE1FDAF39400DC9A94 /* Master Ielts Speaking */;
+			targetProxy = 96003EF41FDAF39500DC9A94 /* PBXContainerItemProxy */;
+		};
+		96003F001FDAF39500DC9A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96003EDE1FDAF39400DC9A94 /* Master Ielts Speaking */;
+			targetProxy = 96003EFF1FDAF39500DC9A94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96003EE61FDAF39500DC9A94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96003EE71FDAF39500DC9A94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96003EEB1FDAF39500DC9A94 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96003EEC1FDAF39500DC9A94 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96003F051FDAF39500DC9A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96003F061FDAF39500DC9A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96003F081FDAF39500DC9A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts Speaking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-Speaking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96003F091FDAF39500DC9A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts Speaking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-Speaking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		96003F0B1FDAF39500DC9A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0545DA6FBA4E2029B6FCEC90 /* Pods-Master Ielts SpeakingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts SpeakingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-SpeakingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Master Ielts Speaking.app/Master Ielts Speaking";
+			};
+			name = Debug;
+		};
+		96003F0C1FDAF39500DC9A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6133A8E35ABAF6FB79888ABF /* Pods-Master Ielts SpeakingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts SpeakingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-SpeakingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Master Ielts Speaking.app/Master Ielts Speaking";
+			};
+			name = Release;
+		};
+		96003F0E1FDAF39500DC9A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 659021A0C2067D31B37DCA41 /* Pods-Master Ielts SpeakingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts SpeakingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-SpeakingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Master Ielts Speaking";
+			};
+			name = Debug;
+		};
+		96003F0F1FDAF39500DC9A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68MJJA856T;
+				INFOPLIST_FILE = "Master Ielts SpeakingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MasterIeltsSpeaking.Master-Ielts-SpeakingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Master Ielts Speaking";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96003EDA1FDAF39400DC9A94 /* Build configuration list for PBXProject "Master Ielts Speaking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96003F051FDAF39500DC9A94 /* Debug */,
+				96003F061FDAF39500DC9A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96003F071FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts Speaking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96003F081FDAF39500DC9A94 /* Debug */,
+				96003F091FDAF39500DC9A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96003F0A1FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts SpeakingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96003F0B1FDAF39500DC9A94 /* Debug */,
+				96003F0C1FDAF39500DC9A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96003F0D1FDAF39500DC9A94 /* Build configuration list for PBXNativeTarget "Master Ielts SpeakingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96003F0E1FDAF39500DC9A94 /* Debug */,
+				96003F0F1FDAF39500DC9A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96003ED71FDAF39400DC9A94 /* Project object */;
+}
