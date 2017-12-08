@@ -30,7 +30,7 @@
                                             <rect key="frame" x="16" y="11" width="343" height="89"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQd-iG-hC7">
-                                                    <rect key="frame" x="8" y="8" width="79" height="73"/>
+                                                    <rect key="frame" x="8" y="8" width="78" height="73"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQX-MR-5u0">
@@ -53,6 +53,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundCustomView" destination="fgl-9c-b3q" id="6xK-TR-9Kt"/>
+                                    <outlet property="categoryImage" destination="WQd-iG-hC7" id="YMg-xv-uZW"/>
+                                    <outlet property="categoryName" destination="qQX-MR-5u0" id="WL5-TD-Rza"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
