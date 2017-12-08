@@ -18,6 +18,7 @@
 		96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */; };
 		96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */; };
 		964120D41FDB417F00CAA91C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D31FDB417F00CAA91C /* Category.swift */; };
+		964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D71FDB465B00CAA91C /* DatabaseManager.swift */; };
 		D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */; };
 		E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		964120D31FDB417F00CAA91C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		964120D71FDB465B00CAA91C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.release.xcconfig"; sourceTree = "<group>"; };
 		CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.debug.xcconfig"; sourceTree = "<group>"; };
 		D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		96003EE11FDAF39500DC9A94 /* Master Ielts Speaking */ = {
 			isa = PBXGroup;
 			children = (
+				964120D61FDB464000CAA91C /* Utils */,
 				964120D21FDB416500CAA91C /* Model */,
 				96003EE21FDAF39500DC9A94 /* AppDelegate.swift */,
 				96003EE41FDAF39500DC9A94 /* ViewController.swift */,
@@ -180,6 +183,14 @@
 				964120D31FDB417F00CAA91C /* Category.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		964120D61FDB464000CAA91C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				964120D71FDB465B00CAA91C /* DatabaseManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +490,7 @@
 			files = (
 				96003EE51FDAF39500DC9A94 /* ViewController.swift in Sources */,
 				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
+				964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
 				96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,

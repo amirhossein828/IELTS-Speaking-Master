@@ -44,8 +44,14 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CategoryTableViewCell
-
+        let arrayOfCategoryname = ["Friends","Education","Environment"]
+        let image1 = UIImage(named: "Friends")
+        let image2 = UIImage(named: "education")
+        let image3 = UIImage(named: "envir")
+        let arrayOfImages = [image1,image2,image3]
         // Configure the cell...
+        cell.categoryName.text = arrayOfCategoryname[indexPath.row]
+        cell.categoryImage.image = arrayOfImages[indexPath.row]
 
         return cell
     }
