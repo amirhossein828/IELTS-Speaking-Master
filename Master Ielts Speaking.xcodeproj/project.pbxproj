@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		464C14F892DD1E3F01638549 /* Pods_Master_Ielts_SpeakingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95B9703EA20721F97A238C3 /* Pods_Master_Ielts_SpeakingTests.framework */; };
 		96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EE21FDAF39500DC9A94 /* AppDelegate.swift */; };
-		96003EE51FDAF39500DC9A94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EE41FDAF39500DC9A94 /* ViewController.swift */; };
+		96003EE51FDAF39500DC9A94 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EE41FDAF39500DC9A94 /* CategoryViewController.swift */; };
 		96003EE81FDAF39500DC9A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96003EE61FDAF39500DC9A94 /* Main.storyboard */; };
 		96003EEA1FDAF39500DC9A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96003EE91FDAF39500DC9A94 /* Assets.xcassets */; };
 		96003EED1FDAF39500DC9A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96003EEB1FDAF39500DC9A94 /* LaunchScreen.storyboard */; };
 		96003EF81FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EF71FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift */; };
 		96003F031FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */; };
-		96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */; };
 		96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */; };
 		964120D41FDB417F00CAA91C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D31FDB417F00CAA91C /* Category.swift */; };
 		964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D71FDB465B00CAA91C /* DatabaseManager.swift */; };
@@ -48,7 +47,7 @@
 		8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Master_Ielts_SpeakingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96003EDF1FDAF39500DC9A94 /* Master Ielts Speaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Master Ielts Speaking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96003EE21FDAF39500DC9A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96003EE41FDAF39500DC9A94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96003EE41FDAF39500DC9A94 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		96003EE71FDAF39500DC9A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96003EE91FDAF39500DC9A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96003EEC1FDAF39500DC9A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +58,6 @@
 		96003EFE1FDAF39500DC9A94 /* Master Ielts SpeakingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Master Ielts SpeakingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master_Ielts_SpeakingUITests.swift; sourceTree = "<group>"; };
 		96003F041FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		964120D31FDB417F00CAA91C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		964120D71FDB465B00CAA91C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -148,12 +146,11 @@
 				964120D61FDB464000CAA91C /* Utils */,
 				964120D21FDB416500CAA91C /* Model */,
 				96003EE21FDAF39500DC9A94 /* AppDelegate.swift */,
-				96003EE41FDAF39500DC9A94 /* ViewController.swift */,
+				96003EE41FDAF39500DC9A94 /* CategoryViewController.swift */,
 				96003EE61FDAF39500DC9A94 /* Main.storyboard */,
 				96003EE91FDAF39500DC9A94 /* Assets.xcassets */,
 				96003EEB1FDAF39500DC9A94 /* LaunchScreen.storyboard */,
 				96003EEE1FDAF39500DC9A94 /* Info.plist */,
-				96003F101FDB377B00DC9A94 /* CategoryTableViewController.swift */,
 				96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */,
 			);
 			path = "Master Ielts Speaking";
@@ -488,11 +485,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96003EE51FDAF39500DC9A94 /* ViewController.swift in Sources */,
+				96003EE51FDAF39500DC9A94 /* CategoryViewController.swift in Sources */,
 				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
 				964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
-				96003F111FDB377B00DC9A94 /* CategoryTableViewController.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

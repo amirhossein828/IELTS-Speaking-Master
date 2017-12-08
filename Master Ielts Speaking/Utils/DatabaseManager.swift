@@ -20,7 +20,6 @@ public func saveData<T:Object>(_ object: T) {
 
 // MARK: - Read Data
 public func readData<T:Object>(_ model: T.Type, predicate: String?, completion: (_ responseData:Results<T>) -> Void) {
-    
     let realm = try! Realm()
     let result: Results<T>
     if let predicateString = predicate {
