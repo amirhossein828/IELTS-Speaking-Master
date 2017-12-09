@@ -78,12 +78,16 @@
                                             <constraint firstAttribute="height" constant="77" id="aan-ia-F9o"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="ic_add_circle_3x"/>
+                                        <connections>
+                                            <segue destination="LPz-C4-45c" kind="presentation" id="n6C-wl-rKu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ik0-xI-B5t" secondAttribute="trailing" id="1X9-KU-QUL"/>
                                     <constraint firstItem="Ik0-xI-B5t" firstAttribute="top" secondItem="x5u-oh-QlV" secondAttribute="top" id="1v2-h8-Hkv"/>
+                                    <constraint firstItem="UHt-LF-9Vs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x5u-oh-QlV" secondAttribute="leading" constant="20" symbolic="YES" id="58r-0l-04Z"/>
                                     <constraint firstAttribute="bottom" secondItem="UHt-LF-9Vs" secondAttribute="bottom" constant="62" id="B4h-9M-yJF"/>
                                     <constraint firstAttribute="bottom" secondItem="Ik0-xI-B5t" secondAttribute="bottom" id="CaO-Ys-xME"/>
                                     <constraint firstItem="Ik0-xI-B5t" firstAttribute="leading" secondItem="x5u-oh-QlV" secondAttribute="leading" id="Vgf-EI-jVh"/>
@@ -101,10 +105,68 @@
                         <viewLayoutGuide key="safeArea" id="llU-Bp-Ywk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ik0-xI-B5t" id="nvX-e6-WDW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Kn-o3-1Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696.79999999999995" y="240.62968515742131"/>
+        </scene>
+        <!--Add Category View Controller-->
+        <scene sceneID="YaK-BU-PhY">
+            <objects>
+                <viewController id="LPz-C4-45c" customClass="AddCategoryViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGx-HS-88N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNP-Fa-NAB">
+                                <rect key="frame" x="102" y="112" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPI-3A-2RT">
+                                <rect key="frame" x="79" y="269" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="uJn-lZ-KaR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxA-sW-Kos">
+                                <rect key="frame" x="176" y="500" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="LPz-C4-45c" eventType="touchUpInside" id="dV3-87-Hpu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iG-MF-dCH">
+                                <rect key="frame" x="22" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="LPz-C4-45c" eventType="touchUpInside" id="iei-cD-L76"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NPI-3A-2RT" firstAttribute="leading" secondItem="oU1-Za-qpZ" secondAttribute="leading" constant="79" id="2ya-bc-ZAL"/>
+                            <constraint firstItem="oU1-Za-qpZ" firstAttribute="bottom" secondItem="NPI-3A-2RT" secondAttribute="bottom" constant="270" id="ZeX-Lt-A6k"/>
+                            <constraint firstItem="oU1-Za-qpZ" firstAttribute="trailing" secondItem="NPI-3A-2RT" secondAttribute="trailing" constant="56" id="sj5-bV-LwT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oU1-Za-qpZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="categoryImage" destination="NPI-3A-2RT" id="WNu-rX-omW"/>
+                        <outlet property="categorynameField" destination="GNP-Fa-NAB" id="D3T-8e-1md"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGt-Xv-6oA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408.8" y="243.32833583208398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="elp-d2-DeO">
