@@ -88,6 +88,10 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "goDetail", sender: self)
+    }
 
 
 }

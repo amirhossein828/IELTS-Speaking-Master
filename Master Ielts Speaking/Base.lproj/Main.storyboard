@@ -107,7 +107,7 @@
                     <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT"/>
                     <connections>
                         <outlet property="tableView" destination="Ik0-xI-B5t" id="nvX-e6-WDW"/>
-                        <segue destination="pF2-rI-0q0" kind="show" id="own-8m-FVA"/>
+                        <segue destination="pF2-rI-0q0" kind="show" identifier="goDetail" id="own-8m-FVA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Kn-o3-1Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
