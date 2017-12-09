@@ -20,6 +20,7 @@
 		964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D71FDB465B00CAA91C /* DatabaseManager.swift */; };
 		964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D91FDB6D2C00CAA91C /* MyNavigationController.swift */; };
 		964120DC1FDB788600CAA91C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */; };
+		964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */; };
 		D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */; };
 		E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		964120D71FDB465B00CAA91C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		964120D91FDB6D2C00CAA91C /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.release.xcconfig"; sourceTree = "<group>"; };
 		CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.debug.xcconfig"; sourceTree = "<group>"; };
 		D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */,
 				964120D91FDB6D2C00CAA91C /* MyNavigationController.swift */,
 				964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */,
+				964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */,
 			);
 			path = "Master Ielts Speaking";
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
 				964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */,
 				964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */,
+				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
 				964120DC1FDB788600CAA91C /* AddCategoryViewController.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
