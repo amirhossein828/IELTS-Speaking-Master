@@ -126,19 +126,81 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UZC-mI-rWd">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="179" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HgQ-yW-7e8">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HgQ-yW-7e8" customClass="EachCategoryCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plV-nR-jml">
+                                                    <rect key="frame" x="20" y="20" width="139" height="260"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Base" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Mn-neI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="123"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="123" id="3Qm-mq-Hrw"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-9R-XUl">
+                                                            <rect key="frame" x="8" y="131" width="123" height="155"/>
+                                                            <subviews>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cab-4x-Gtn">
+                                                                    <rect key="frame" x="0.0" y="16" width="123" height="102"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="102" id="cxU-O9-YMC"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-Fo-j6C">
+                                                                    <rect key="frame" x="0.0" y="118" width="123" height="11"/>
+                                                                    <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="cab-4x-Gtn" secondAttribute="bottom" id="IRt-ay-o2a"/>
+                                                                <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="cab-4x-Gtn" secondAttribute="bottom" id="ThV-de-Iww"/>
+                                                                <constraint firstItem="cab-4x-Gtn" firstAttribute="top" secondItem="9U8-9R-XUl" secondAttribute="top" constant="16" id="Yyy-BN-pV2"/>
+                                                                <constraint firstItem="cab-4x-Gtn" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="ZYj-ZE-nOY"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Toq-Fo-j6C" secondAttribute="trailing" id="aKr-2w-aFe"/>
+                                                                <constraint firstAttribute="height" constant="155" id="bT3-6N-wbe"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Toq-Fo-j6C" secondAttribute="bottom" constant="26" id="bpJ-dW-UaM"/>
+                                                                <constraint firstAttribute="trailing" secondItem="cab-4x-Gtn" secondAttribute="trailing" id="hBM-d2-Xam"/>
+                                                                <constraint firstItem="Toq-Fo-j6C" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="qnw-jx-0Ff"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="9U8-9R-XUl" secondAttribute="trailing" constant="8" id="9VK-u9-66f"/>
+                                                        <constraint firstItem="Eg9-Mn-neI" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="JWn-79-WhH"/>
+                                                        <constraint firstItem="Eg9-Mn-neI" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" id="UZC-96-8lN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Eg9-Mn-neI" secondAttribute="trailing" id="gI7-8o-H2f"/>
+                                                        <constraint firstItem="9U8-9R-XUl" firstAttribute="centerX" secondItem="plV-nR-jml" secondAttribute="centerX" id="rbj-Li-mJu"/>
+                                                        <constraint firstItem="9U8-9R-XUl" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="8" id="uJ7-Nw-h0g"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="plV-nR-jml" secondAttribute="bottom" constant="12" id="8Kg-o4-R2O"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="plV-nR-jml" secondAttribute="trailing" constant="12" id="B6g-F2-ORI"/>
+                                            <constraint firstItem="plV-nR-jml" firstAttribute="leading" secondItem="HgQ-yW-7e8" secondAttribute="leadingMargin" constant="12" id="KVs-UF-m5f"/>
+                                            <constraint firstItem="plV-nR-jml" firstAttribute="top" secondItem="HgQ-yW-7e8" secondAttribute="topMargin" constant="12" id="diE-8N-IfG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="backgroundViewForText" destination="9U8-9R-XUl" id="Nkv-LB-33j"/>
+                                            <outlet property="imageView" destination="plV-nR-jml" id="R3p-Qj-JyX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -160,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6N-yc-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="241"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="240.62968515742131"/>
         </scene>
         <!--Add Category View Controller-->
         <scene sceneID="YaK-BU-PhY">
