@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    var arrayOfWords = [String]() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let path = Bundle.main.path(forResource: "Friends", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let json = try JSON(data : data)
+                for count in 0..<2 {
+                let word = json[count]["word"].string
+                    self.arrayOfWords.append(word!)
+                }
+                
+            } catch {
+                // handle error
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +46,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EachCategoryCollectionViewCell
-        
+        cell.wordField.text = self.arrayOfWords[indexPath.row]
         return cell
     }
     

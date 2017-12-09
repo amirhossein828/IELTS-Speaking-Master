@@ -22,6 +22,7 @@
 		964120DC1FDB788600CAA91C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */; };
 		964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */; };
 		964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */; };
+		964120E21FDB952900CAA91C /* Friends.json in Resources */ = {isa = PBXBuildFile; fileRef = 964120E11FDB952900CAA91C /* Friends.json */; };
 		D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */; };
 		E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		964120E11FDB952900CAA91C /* Friends.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Friends.json; sourceTree = "<group>"; };
 		BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.release.xcconfig"; sourceTree = "<group>"; };
 		CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.debug.xcconfig"; sourceTree = "<group>"; };
 		D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				964120DB1FDB788600CAA91C /* AddCategoryViewController.swift */,
 				964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */,
 				964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */,
+				964120E11FDB952900CAA91C /* Friends.json */,
 			);
 			path = "Master Ielts Speaking";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96003EED1FDAF39500DC9A94 /* LaunchScreen.storyboard in Resources */,
+				964120E21FDB952900CAA91C /* Friends.json in Resources */,
 				96003EEA1FDAF39500DC9A94 /* Assets.xcassets in Resources */,
 				96003EE81FDAF39500DC9A94 /* Main.storyboard in Resources */,
 			);
@@ -365,11 +369,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
