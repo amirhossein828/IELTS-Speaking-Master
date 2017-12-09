@@ -7,16 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var arrayOfCategories : Results<Category>?
+    let nameOfCategoriesArray = ["Environment","Friends"]
+    let nameOfImagesInAssets = ["envir","Friends"]
     
     
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        savePhtosInDatabase()
+       
+        // read data
+        readData(Category.self, predicate: nil) { (response : Results<Category>) in
+            print(response)
+            self.arrayOfCategories = response
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // read data
+        readData(Category.self, predicate: nil) { (response : Results<Category>) in
+            print(response)
+            self.arrayOfCategories = response
+        }
+        self.tableView.reloadData()
+    }
+    
+    func savePhtosInDatabase() {
         // create all category
-        // save the in Realm
-        
+        for count in 0..<2 {
+            let category = Category()
+            category.categoryId = String(count)
+            category.categoryName = self.nameOfCategoriesArray[count]
+            category.categoryImage = self.nameOfImagesInAssets[count]
+            // save the in Realm
+            saveData(category)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +63,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return self.arrayOfCategories?.count ?? 0
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,14 +73,18 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CategoryTableViewCell
-        let arrayOfCategoryname = ["Friends","Education","Environment"]
-        let image1 = UIImage(named: "Friends")
-        let image2 = UIImage(named: "education")
-        let image3 = UIImage(named: "envir")
-        let arrayOfImages = [image1,image2,image3]
-        // Configure the cell...
-        cell.categoryName.text = arrayOfCategoryname[indexPath.row]
-        cell.categoryImage.image = arrayOfImages[indexPath.row]
+
+        cell.categoryName.text = self.arrayOfCategories?[indexPath.row].categoryName ?? ""
+        if let image = UIImage(named: (self.arrayOfCategories?[indexPath.row].categoryImage) ?? "") {
+            cell.categoryImage.image = image
+        }else if let imageFromUser = UIImage(data: (self.arrayOfCategories?[indexPath.row].categoryImageData)! as Data) {
+            cell.categoryImage.image = imageFromUser
+        } else {
+            cell.categoryImage.image = #imageLiteral(resourceName: "Base")
+        }
+
+        
+        
         
         return cell
     }
