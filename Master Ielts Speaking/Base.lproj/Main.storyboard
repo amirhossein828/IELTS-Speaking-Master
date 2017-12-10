@@ -342,15 +342,15 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Base" translatesAutoresizingMaskIntoConstraints="NO" id="FFr-Dc-ukU">
-                                                            <rect key="frame" x="8" y="8" width="135" height="133"/>
+                                                            <rect key="frame" x="11" y="11" width="129" height="133"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="top" secondItem="hXN-bZ-gCJ" secondAttribute="topMargin" id="708-SM-L5N"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="FFr-Dc-ukU" secondAttribute="bottom" id="KVf-pq-B2B"/>
-                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="leading" secondItem="hXN-bZ-gCJ" secondAttribute="leadingMargin" id="rzJ-ZK-75v"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="FFr-Dc-ukU" secondAttribute="trailing" id="uE1-P7-gwJ"/>
+                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="top" secondItem="hXN-bZ-gCJ" secondAttribute="topMargin" constant="3" id="4f6-HC-sOh"/>
+                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="bottom" secondItem="hXN-bZ-gCJ" secondAttribute="bottomMargin" constant="3" id="fsT-q3-zcO"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="FFr-Dc-ukU" secondAttribute="trailing" constant="3" id="hIu-vy-TBc"/>
+                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="leading" secondItem="hXN-bZ-gCJ" secondAttribute="leadingMargin" constant="3" id="hn8-53-hbB"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="imageView" destination="FFr-Dc-ukU" id="okk-Xg-ocj"/>
