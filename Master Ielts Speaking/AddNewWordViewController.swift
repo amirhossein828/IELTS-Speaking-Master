@@ -9,18 +9,20 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import RealmSwift
 
 // It will avoid reloading photos during scrolling
 var imageCacheNew = NSCache<AnyObject, UIImage>()
 
 class AddNewWordViewController: UIViewController {
-    // Outkets
+    // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var newWord: UITextView!
     // properties
     var arrayOfPhotos : [JSON]? = nil
+    var arrayOfDefString = [String]()
     var newVocab : Word? = nil
     
     override func viewDidLoad() {
@@ -37,7 +39,24 @@ class AddNewWordViewController: UIViewController {
         // give the nameofWord property to it
         newVocab?.wordName = self.newWord.text
         // Get difinitions and examples of the newWord from Web Service
-        
+        WordsApiService.getDefinitionOfWords(word: (newVocab?.wordName)!) { (response) in
+            // create array of string (the definition of word)
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let arrayOfDefObjects = json["definitions"].array
+                for object in arrayOfDefObjects! {
+//                    self.arrayOfDefString.append(object["definition"].string!)
+                    self.newVocab?.definitions.append(object["definition"].string!)
+                    
+                }
+//                print("##############")
+//                print(self.newVocab?.definitions)
+            case .failure(let error):
+                print(error)
+            }
+        }
         // search for photos related to the new word
         FlickrService.getPhotos(searchKey: (newVocab?.wordName)!) { (response) in
             switch response.result {
@@ -60,10 +79,27 @@ class AddNewWordViewController: UIViewController {
     }
 
     @IBAction func nextButton(_ sender: UIButton) {
-        // allocate the image chosen by user to the newWord
+        // save in database
+        saveData(newVocab!)
         
+        let detailViewController = self.childViewControllers[0] as! DetailViewController
+        detailViewController.newVocabulary = self.newVocab
+        detailViewController.wordLabel.text = detailViewController.newVocabulary?.wordName
+        
+        // set the definition for collection view
+//        print("!!!!!!!!!!!!!!!")
+//        print(self.newVocab?.definitions)
+//        detailViewController.definitionOfWordArray = List<String>()
+//        detailViewController.definitionOfWordArray?.append(self.newVocab?.definitions)
+//        detailViewController.collectionView.reloadData()
         // go to detail page
-        UIView.transition(from: self.mainView, to: self.containerView, duration: 1.2, options: [.transitionFlipFromLeft,.showHideTransitionViews], completion: nil)
+        UIView.transition(from: self.mainView, to: self.containerView, duration: 1.2, options: [.transitionFlipFromLeft,.showHideTransitionViews]){
+            (succed) in
+            if succed {
+                detailViewController.collectionView.reloadData()
+            }
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

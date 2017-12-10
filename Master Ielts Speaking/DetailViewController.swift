@@ -7,34 +7,61 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var wordLabel: UILabel!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var definitionOfWordArray : List<String>? = nil
+    var newVocabulary : Word? = nil
+    
+    lazy var vc : AddNewWordViewController = {
+        return self.parent as! AddNewWordViewController
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
+
 
     @IBAction func backButton(_ sender: UIButton) {
-        let vc = self.parent as? AddNewWordViewController
-        
-        vc?.dismissThePage()
+        vc.dismissThePage()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension DetailViewController :
+UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.newVocabulary?.definitions.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfDef", for: indexPath) as! DefinitionCollectionViewCell
+        if let arrayOfDefenition = self.newVocabulary?.definitions {
+        cell.definitionFieldCell.text = arrayOfDefenition[indexPath.row]
+        }
+        cell.backgroundColor = UIColor.blue
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
+    }
+    
+    
+    
+    
 
 }
