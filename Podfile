@@ -8,6 +8,7 @@ target 'Master Ielts Speaking' do
   # Pods for Master Ielts Speaking
   pod 'RealmSwift'
    pod 'SwiftyJSON'
+   pod 'Alamofire'
 
   target 'Master Ielts SpeakingTests' do
     inherit! :search_paths

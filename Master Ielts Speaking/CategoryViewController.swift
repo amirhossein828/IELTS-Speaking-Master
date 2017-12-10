@@ -15,11 +15,13 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     let nameOfImagesInAssets = ["envir","Friends"]
     
     
+    @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         savePhtosInDatabase()
+        
        
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
