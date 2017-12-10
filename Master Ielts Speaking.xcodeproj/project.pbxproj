@@ -23,6 +23,11 @@
 		964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */; };
 		964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */; };
 		964120E21FDB952900CAA91C /* Friends.json in Resources */ = {isa = PBXBuildFile; fileRef = 964120E11FDB952900CAA91C /* Friends.json */; };
+		96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */; };
+		96FF73AC1FDBC5F000AA17E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */; };
+		96FF73AE1FDC994600AA17E2 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73AD1FDC994600AA17E2 /* Word.swift */; };
+		96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73B01FDC9FF700AA17E2 /* FlikerService.swift */; };
+		96FF73B31FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73B21FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift */; };
 		D85233D560781295CA24E5DC /* Pods_Master_Ielts_Speaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619320B9CF891B551352385E /* Pods_Master_Ielts_Speaking.framework */; };
 		E4E6D132B4B5B795811404AA /* Pods_Master_Ielts_SpeakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25B119A89F6B9F47B5B9E7 /* Pods_Master_Ielts_SpeakingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +76,11 @@
 		964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		964120E11FDB952900CAA91C /* Friends.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Friends.json; sourceTree = "<group>"; };
+		96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWordViewController.swift; sourceTree = "<group>"; };
+		96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		96FF73AD1FDC994600AA17E2 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		96FF73B01FDC9FF700AA17E2 /* FlikerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlikerService.swift; sourceTree = "<group>"; };
+		96FF73B21FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDC60E02C93E0DF448E24906 /* Pods-Master Ielts Speaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.release.xcconfig"; sourceTree = "<group>"; };
 		CAA5B691B4115DD5055290CF /* Pods-Master Ielts Speaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts Speaking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking.debug.xcconfig"; sourceTree = "<group>"; };
 		D779BACC7E25D255480EC944 /* Pods-Master Ielts SpeakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Master Ielts SpeakingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Master Ielts SpeakingUITests/Pods-Master Ielts SpeakingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		96003EE11FDAF39500DC9A94 /* Master Ielts Speaking */ = {
 			isa = PBXGroup;
 			children = (
+				96FF73AF1FDC9C1000AA17E2 /* API */,
 				964120D61FDB464000CAA91C /* Utils */,
 				964120D21FDB416500CAA91C /* Model */,
 				96003EE21FDAF39500DC9A94 /* AppDelegate.swift */,
@@ -167,6 +178,9 @@
 				964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */,
 				964120DF1FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift */,
 				964120E11FDB952900CAA91C /* Friends.json */,
+				96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */,
+				96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */,
+				96FF73B21FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "Master Ielts Speaking";
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				964120D31FDB417F00CAA91C /* Category.swift */,
+				96FF73AD1FDC994600AA17E2 /* Word.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +218,14 @@
 				964120D71FDB465B00CAA91C /* DatabaseManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		96FF73AF1FDC9C1000AA17E2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				96FF73B01FDC9FF700AA17E2 /* FlikerService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,12 +390,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Master Ielts Speaking/Pods-Master Ielts Speaking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -503,15 +528,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FF73AC1FDBC5F000AA17E2 /* DetailViewController.swift in Sources */,
 				96003EE51FDAF39500DC9A94 /* CategoryViewController.swift in Sources */,
 				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
 				964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */,
 				964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */,
+				96FF73AE1FDC994600AA17E2 /* Word.swift in Sources */,
 				964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */,
 				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
 				964120DC1FDB788600CAA91C /* AddCategoryViewController.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
+				96FF73B31FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift in Sources */,
+				96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */,
+				96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

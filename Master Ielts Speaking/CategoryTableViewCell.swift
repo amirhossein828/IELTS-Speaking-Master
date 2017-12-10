@@ -18,7 +18,12 @@ class CategoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundCustomView.layer.cornerRadius = 17
+        self.backgroundCustomView.layer.shadowColor = UIColor.black.cgColor
+        self.backgroundCustomView.layer.shadowRadius = 10
+        self.backgroundCustomView.layer.shadowOffset = CGSize.zero
+        self.backgroundCustomView.layer.opacity = 1
+            self.backgroundCustomView.layer.cornerRadius = 17
+        self.categoryImage.layer.cornerRadius = 50
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
