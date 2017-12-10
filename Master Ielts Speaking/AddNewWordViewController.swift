@@ -7,21 +7,51 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
+
+// It will avoid reloading photos during scrolling
+var imageCacheNew = NSCache<AnyObject, UIImage>()
 
 class AddNewWordViewController: UIViewController {
-    
+    // Outkets
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var mainView: UIView!
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var newWord: UITextView!
+    // properties
+    var arrayOfPhotos : [JSON]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.containerView)
         self.containerView.isHidden = true
-        
-        // Do any additional setup after loading the view.
+        self.collectionView.layer.borderColor = UIColor.white.cgColor
+        self.collectionView.layer.borderWidth = 4
     }
     
+    @IBAction func addNewWordButton(_ sender: UIButton) {
+        // create word object
+        let newWord = Word()
+        // give the nameofWord property to it
+        newWord.wordName = self.newWord.text
+        // search for photos related to the new word
+        FlickrService.getPhotos(searchKey: newWord.wordName) { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                DispatchQueue.main.async {
+                    self.arrayOfPhotos = json["photos"]["photo"].array
+                    self.collectionView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+    
+        }
+        // show the photos inside the collection view
+    }
+    // come back to list of categories
     func dismissThePage() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -31,13 +61,12 @@ class AddNewWordViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    
-
 }
+
+
 
 extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -46,18 +75,17 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.arrayOfPhotos?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        cell.backgroundColor = UIColor.red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
         
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+            cell.imageView.downloadedFrom(link: imageUrl)
+        }
         return cell
     }
-    
-    
-    
-    
-    
-    
+ 
 }
+
+

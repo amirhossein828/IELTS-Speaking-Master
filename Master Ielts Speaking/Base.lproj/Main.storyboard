@@ -278,8 +278,8 @@
                                                     <constraint firstAttribute="height" constant="53" id="aAH-QZ-GHl"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -311,6 +311,9 @@
                                         <state key="normal" title="ADD ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addNewWordButton:" destination="tPc-YW-LDh" eventType="touchUpInside" id="WyQ-Aj-u1F"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD NEW WORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-NV-A9I">
                                         <rect key="frame" x="27" y="37" width="321" height="23"/>
@@ -323,31 +326,31 @@
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GDK-Nr-DuY">
                                         <rect key="frame" x="27" y="210" width="321" height="385"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5lm-nI-B6z">
-                                            <size key="itemSize" width="112" height="101"/>
+                                            <size key="itemSize" width="151" height="149"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="hXN-bZ-gCJ" customClass="PhotoCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="112" height="101"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="149"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="101"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="149"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFr-Dc-ukU">
-                                                            <rect key="frame" x="10" y="10" width="92" height="81"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Base" translatesAutoresizingMaskIntoConstraints="NO" id="FFr-Dc-ukU">
+                                                            <rect key="frame" x="8" y="8" width="135" height="133"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="leading" secondItem="hXN-bZ-gCJ" secondAttribute="leadingMargin" constant="2" id="1WL-yv-Ufg"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="FFr-Dc-ukU" secondAttribute="bottom" constant="2" id="EAe-bV-yIy"/>
-                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="top" secondItem="hXN-bZ-gCJ" secondAttribute="topMargin" constant="2" id="EZo-Nz-ub2"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="FFr-Dc-ukU" secondAttribute="trailing" constant="2" id="m2P-Hf-KNm"/>
+                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="top" secondItem="hXN-bZ-gCJ" secondAttribute="topMargin" id="708-SM-L5N"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="FFr-Dc-ukU" secondAttribute="bottom" id="KVf-pq-B2B"/>
+                                                    <constraint firstItem="FFr-Dc-ukU" firstAttribute="leading" secondItem="hXN-bZ-gCJ" secondAttribute="leadingMargin" id="rzJ-ZK-75v"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="FFr-Dc-ukU" secondAttribute="trailing" id="uE1-P7-gwJ"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="imageView" destination="FFr-Dc-ukU" id="okk-Xg-ocj"/>
@@ -391,6 +394,7 @@
                         <viewLayoutGuide key="safeArea" id="oD4-mh-4ms"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="GDK-Nr-DuY" id="xGo-1N-Phn"/>
                         <outlet property="containerView" destination="sjG-Ba-eYg" id="Sxd-k4-Aou"/>
                         <outlet property="mainView" destination="oqu-JA-eu7" id="70e-q2-PlC"/>
                         <outlet property="newWord" destination="9Qe-Sm-MQh" id="rK8-Cy-DdH"/>

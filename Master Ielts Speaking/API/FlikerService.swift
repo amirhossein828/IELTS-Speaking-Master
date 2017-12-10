@@ -24,7 +24,10 @@ class FlickrService {
         Alamofire.request(URL).responseJSON { (response) in
             completion(response)
         }
+        
     }
+    
+    
     
     
     

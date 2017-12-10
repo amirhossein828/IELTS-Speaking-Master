@@ -16,9 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().backgroundColor = UIColor.gray
-        FlickrService.getPhotos(searchKey: "book") { (response) in
-            print(response)
-        }
+        
         return true
     }
 
