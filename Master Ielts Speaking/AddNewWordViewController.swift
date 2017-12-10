@@ -21,6 +21,7 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var newWord: UITextView!
     // properties
     var arrayOfPhotos : [JSON]? = nil
+    var newVocab : Word? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,13 @@ class AddNewWordViewController: UIViewController {
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
         // create word object
-        let newWord = Word()
+        newVocab = Word()
         // give the nameofWord property to it
-        newWord.wordName = self.newWord.text
+        newVocab?.wordName = self.newWord.text
+        // Get difinitions and examples of the newWord from Web Service
+        
         // search for photos related to the new word
-        FlickrService.getPhotos(searchKey: newWord.wordName) { (response) in
+        FlickrService.getPhotos(searchKey: (newVocab?.wordName)!) { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -57,6 +60,9 @@ class AddNewWordViewController: UIViewController {
     }
 
     @IBAction func nextButton(_ sender: UIButton) {
+        // allocate the image chosen by user to the newWord
+        
+        // go to detail page
         UIView.transition(from: self.mainView, to: self.containerView, duration: 1.2, options: [.transitionFlipFromLeft,.showHideTransitionViews], completion: nil)
     }
     override func didReceiveMemoryWarning() {
@@ -84,6 +90,15 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
             cell.imageView.downloadedFrom(link: imageUrl)
         }
         return cell
+    }
+    
+    // select one cell and change the color of it
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+            let imageData = NSData(contentsOfFile: imageUrl)
+            self.newVocab?.wordImage = imageData
+        }
+        
     }
  
 }
