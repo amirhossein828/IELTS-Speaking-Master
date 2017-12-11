@@ -20,7 +20,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        savePhtosInDatabase()
+//        savePhtosInDatabase()
         
        
         // read data
