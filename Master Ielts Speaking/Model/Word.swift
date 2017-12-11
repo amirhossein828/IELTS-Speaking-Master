@@ -13,8 +13,8 @@ import RealmSwift
 class Word : Object {
     @objc dynamic var wordId : String = UUID().uuidString
     @objc dynamic var wordName : String = ""
-    @objc dynamic var wordImage : NSData? = nil
-    @objc dynamic var wordImageString : String = ""
+    @objc dynamic var wordImage : Data? = nil
+    @objc dynamic var wordImageString : String? = nil
     var definitions = List<String>()
     var examples = List<String>()
     
