@@ -17,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().backgroundColor = UIColor.gray
-
+        let hasLaunchedKey = "HasLaunched"
+        let defaults = UserDefaults.standard
+        var hasLaunched = defaults.bool(forKey: hasLaunchedKey)
+        
+        if hasLaunched ==  false {
+            MockData.saveCategories()
+        }
+        
+        if !hasLaunched {
+            defaults.set(true, forKey: hasLaunchedKey)
+        }
+        
         return true
     }
 
