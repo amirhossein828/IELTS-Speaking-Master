@@ -204,6 +204,7 @@
                                                     <outlet property="backgroundViewForText" destination="9U8-9R-XUl" id="Nkv-LB-33j"/>
                                                     <outlet property="imageView" destination="plV-nR-jml" id="R3p-Qj-JyX"/>
                                                     <outlet property="wordField" destination="cab-4x-Gtn" id="dsk-gr-0H5"/>
+                                                    <outlet property="wordImageView" destination="Eg9-Mn-neI" id="0fh-eU-dZa"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

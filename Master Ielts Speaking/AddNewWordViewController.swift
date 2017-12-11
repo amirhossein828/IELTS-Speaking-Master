@@ -25,6 +25,7 @@ class AddNewWordViewController: UIViewController {
     var arrayOfDefString = [String]()
     var newVocab : Word? = nil
     var category : Category? = nil
+    var imageSelected : UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,10 +132,9 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
     
     // select one cell and change the color of it
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
-            let imageData = NSData(contentsOfFile: imageUrl)
-            self.newVocab?.wordImage = imageData
-        }
+        let photoCell = self.collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        let imageCell = photoCell.imageView.image
+        self.newVocab?.wordImage = UIImageJPEGRepresentation(imageCell!, 0.4)
         
     }
  

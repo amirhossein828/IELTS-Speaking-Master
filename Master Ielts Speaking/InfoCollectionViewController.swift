@@ -13,12 +13,12 @@ import RealmSwift
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var arrayOfWords = [String]() 
+    var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         for word in (self.categoryFrom?.words)! {
-            self.arrayOfWords.append(word.wordName)
+            self.arrayOfWords.append(word)
         }
 
     }
@@ -26,7 +26,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override func viewDidAppear(_ animated: Bool) {
         self.arrayOfWords.removeAll()
         for word in (self.categoryFrom?.words)! {
-            self.arrayOfWords.append(word.wordName)
+            self.arrayOfWords.append(word)
             self.collectionView.reloadData()
         }
         
@@ -46,7 +46,13 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EachCategoryCollectionViewCell
-        cell.wordField.text = self.arrayOfWords[indexPath.row]
+        cell.wordField.text = self.arrayOfWords[indexPath.row].wordName
+        if let imageData = self.arrayOfWords[indexPath.row].wordImage {
+            cell.wordImageView.image = UIImage(data: imageData as Data)
+        }
+        if let imageString = self.arrayOfWords[indexPath.row].wordImageString {
+            cell.wordImageView.image = UIImage(named: imageString)
+        }
         return cell
     }
     
