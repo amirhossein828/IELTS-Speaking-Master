@@ -10,21 +10,13 @@ import Foundation
 import RealmSwift
 
 class Category : Object {
-    @objc dynamic var categoryId : String = ""
     @objc dynamic var categoryName : String = ""
     @objc dynamic var categoryImage : String = ""
     @objc dynamic var categoryImageData : NSData?
-    
+    var words = List<Word>()
     
     override class func primaryKey() -> String {
-        return "categoryId"
+        return "categoryName"
     }
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }

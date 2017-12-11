@@ -24,6 +24,7 @@ class AddNewWordViewController: UIViewController {
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
     var newVocab : Word? = nil
+    var category : Category? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,7 @@ class AddNewWordViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         // save in database
         saveData(newVocab!)
-        
+        updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
         let detailViewController = self.childViewControllers[0] as! DetailViewController
         detailViewController.newVocabulary = self.newVocab
         detailViewController.wordLabel.text = detailViewController.newVocabulary?.wordName

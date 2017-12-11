@@ -14,11 +14,12 @@ class Word : Object {
     @objc dynamic var wordId : String = UUID().uuidString
     @objc dynamic var wordName : String = ""
     @objc dynamic var wordImage : NSData? = nil
+    @objc dynamic var wordImageString : String = ""
     var definitions = List<String>()
     var examples = List<String>()
     
     override class func primaryKey() -> String {
-        return "wordId"
+        return "wordName"
     }
     
     

@@ -44,7 +44,7 @@ class AddCategoryViewController: UIViewController,UIImagePickerControllerDelegat
         }
         let name = self.categorynameField.text
         let category = Category()
-        category.categoryId = UUID().uuidString
+//        category.categoryId = UUID().uuidString
         category.categoryName = name!
         category.categoryImageData = UIImageJPEGRepresentation(self.pickedImage2!, 1)! as NSData
         saveData(category)

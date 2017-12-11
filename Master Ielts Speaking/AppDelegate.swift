@@ -20,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hasLaunchedKey = "HasLaunched"
         let defaults = UserDefaults.standard
         var hasLaunched = defaults.bool(forKey: hasLaunchedKey)
-        
         if hasLaunched ==  false {
             MockData.saveCategories()
+            MockData.saveWords(nameOfCategory: CategoryName.friends)
         }
-        
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)
         }

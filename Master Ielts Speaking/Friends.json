@@ -1,95 +1,29 @@
 [{
-    "word": "example",
+    "word": "close friend",
     "definitions": [
                     {
-                    "definition": "a representative form or pattern",
+                    "definition": "a very good friend",
                     "partOfSpeech": "noun"
                     },
                     {
                     "definition": "something to be imitated",
                     "partOfSpeech": "noun"
-                    },
-                    {
-                    "definition": "an occurrence of something",
-                    "partOfSpeech": "noun"
-                    },
-                    {
-                    "definition": "an item of information that is typical of a class or group",
-                    "partOfSpeech": "noun"
-                    },
-                    {
-                    "definition": "punishment intended as a warning to others",
-                    "partOfSpeech": "noun"
-                    },
-                    {
-                    "definition": "a task performed or problem solved in order to develop skill or understanding",
-                    "partOfSpeech": "noun"
                     }
-                    ]
+                    ],
+    "imageNameInAssets": "Friends"
 },
  {
- "word": "book",
+ "word": "ups and downs",
  "definitions": [
                  {
-                 "definition": "physical objects consisting of a number of pages bound together",
+                 "definition": "a mixture of good and bad things that happen.",
                  "partOfSpeech": "noun"
                  },
                  {
                  "definition": "a record in which commercial accounts are recorded",
                  "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "the sacred writings of Islam revealed by God to the prophet Muhammad during his life at Mecca and Medina",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a compilation of the known facts regarding something or someone",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a written version of a play or other dramatic composition; used in preparing for a performance",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "the sacred writings of the Christian religions",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a collection of rules or prescribed standards on the basis of which decisions are made",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "arrange for and reserve (something for someone else) in advance",
-                 "partOfSpeech": "verb"
-                 },
-                 {
-                 "definition": "a collection of playing cards satisfying the rules of a card game",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a major division of a long written composition",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a number of sheets (ticket or stamps etc.) bound together on one edge",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "a written work or composition that has been published (printed on pages bound together)",
-                 "partOfSpeech": "noun"
-                 },
-                 {
-                 "definition": "engage for a performance",
-                 "partOfSpeech": "verb"
-                 },
-                 {
-                 "definition": "record a charge in a police register",
-                 "partOfSpeech": "verb"
-                 },
-                 {
-                 "definition": "register in a hotel booker",
-                 "partOfSpeech": "verb"
                  }
-                 ]
+                 ],
+ "imageNameInAssets": "envir"
  }
  ]
