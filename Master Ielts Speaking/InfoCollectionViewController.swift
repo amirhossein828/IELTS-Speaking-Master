@@ -8,28 +8,28 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayOfWords = [String]() 
-
+    var categoryFrom : Category? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let path = Bundle.main.path(forResource: "Friends", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let json = try JSON(data : data)
-                for count in 0..<2 {
-                let word = json[count]["word"].string
-                    self.arrayOfWords.append(word!)
-                }
-                
-            } catch {
-                // handle error
-            }
+        for word in (self.categoryFrom?.words)! {
+            self.arrayOfWords.append(word.wordName)
         }
-        // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.arrayOfWords.removeAll()
+        for word in (self.categoryFrom?.words)! {
+            self.arrayOfWords.append(word.wordName)
+            self.collectionView.reloadData()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return self.arrayOfWords.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,14 +60,11 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goAddNewWord" {
+            let vc = segue.destination as! AddNewWordViewController
+            vc.category = self.categoryFrom
+        }
     }
-    */
 
 }

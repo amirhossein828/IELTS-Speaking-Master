@@ -56,3 +56,30 @@ public func deleteAll() {
         realm.deleteAll()
     }
 }
+
+
+// update Category
+func updateCategoryInDatabase(categoryName: String, word : Word) {
+    let realm = try! Realm()
+    
+    readData(Category.self, predicate: nil) { (resultCategories) in
+        for category in resultCategories {
+            if category.categoryName == categoryName {
+                try! realm.write {
+                category.words.append(word)
+                realm.add(category, update: true)
+                }
+            }
+        }
+    }
+    
+//        if let theCategory = realm.objects(Category.self).filter("categoryName == %@", categoryName).first {
+//        print(theCategory)
+//
+//        try! realm.write {
+//        theCategory.words.append(word)
+//
+//        realm.add(theCategory, update: true)
+//        }
+//    }
+}

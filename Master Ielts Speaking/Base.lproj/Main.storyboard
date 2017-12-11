@@ -220,7 +220,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="ic_add_circle_3x"/>
                                         <connections>
-                                            <segue destination="tPc-YW-LDh" kind="presentation" id="UYB-ha-x7O"/>
+                                            <segue destination="tPc-YW-LDh" kind="presentation" identifier="goAddNewWord" id="UYB-ha-x7O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -245,6 +245,9 @@
                         <viewLayoutGuide key="safeArea" id="7Bm-sR-AQM"/>
                     </view>
                     <navigationItem key="navigationItem" id="VUz-4F-ez5"/>
+                    <connections>
+                        <outlet property="collectionView" destination="KQ2-Ln-pyj" id="KcD-dd-FWm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6N-yc-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

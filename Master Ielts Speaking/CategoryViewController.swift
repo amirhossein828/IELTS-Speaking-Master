@@ -13,15 +13,14 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var arrayOfCategories : Results<Category>?
     let nameOfCategoriesArray = ["Environment","Friends"]
     let nameOfImagesInAssets = ["envir","Friends"]
-    
+    var category : Category? = nil
     
     @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        savePhtosInDatabase()
-        
+
        
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
@@ -43,7 +42,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         // create all category
         for count in 0..<2 {
             let category = Category()
-            category.categoryId = String(count)
             category.categoryName = self.nameOfCategoriesArray[count]
             category.categoryImage = self.nameOfImagesInAssets[count]
             // save the in Realm
@@ -92,7 +90,15 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.category = self.arrayOfCategories?[indexPath.row]
         self.performSegue(withIdentifier: "goDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let vc = segue.destination as! InfoCollectionViewController
+            vc.categoryFrom = self.category
+        }
     }
 
 
