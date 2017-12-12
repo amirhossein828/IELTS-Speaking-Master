@@ -18,8 +18,21 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imageView.layer.cornerRadius = 15
         self.backgroundViewForText.layer.cornerRadius = 20
     }
+    
+    func setCell(withWord word : Word) {
+        self.wordField.text = word.wordName
+        if let imageData = word.wordImage {
+            self.wordImageView.image = UIImage(data: imageData as Data)
+        }
+        if let imageString = word.wordImageString {
+            self.wordImageView.image = UIImage(named: imageString)
+        }
+        
+    }
+    
     
     
     
