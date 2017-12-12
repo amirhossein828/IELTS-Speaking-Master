@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
+    var isComeFromInfo : Bool? = nil
     
     lazy var vc : AddNewWordViewController = {
         return self.parent as! AddNewWordViewController
@@ -34,7 +35,12 @@ class DetailViewController: UIViewController {
 
 
     @IBAction func backButton(_ sender: UIButton) {
-        vc.dismissThePage()
+        if isComeFromInfo! {
+            self.dismiss(animated: true, completion: nil)
+        }else {
+            vc.dismissThePage()
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

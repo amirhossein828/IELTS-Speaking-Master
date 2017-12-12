@@ -70,5 +70,14 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             vc.category = self.categoryFrom
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
+        detailViewController.isComeFromInfo = true
+        detailViewController.pageControl.numberOfPages = self.arrayOfWords.count
+        self.present(detailViewController, animated: true, completion: nil)
+    }
 
 }
