@@ -155,7 +155,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-9R-XUl">
                                                                     <rect key="frame" x="8" y="131" width="163" height="155"/>
                                                                     <subviews>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cab-4x-Gtn">
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cab-4x-Gtn">
                                                                             <rect key="frame" x="0.0" y="16" width="163" height="102"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
@@ -488,7 +488,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LLe-5T-tOR">
             <objects>
-                <viewController id="exC-vy-W9y" customClass="DetailViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="exC-vy-W9y" customClass="DetailViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4s-a4-OF4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

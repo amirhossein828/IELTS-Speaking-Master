@@ -86,12 +86,13 @@ class AddNewWordViewController: UIViewController {
         let detailViewController = self.childViewControllers[0] as! DetailViewController
         detailViewController.newVocabulary = self.newVocab
         detailViewController.wordLabel.text = detailViewController.newVocabulary?.wordName
-        
+        detailViewController.isComeFromInfo = false
         // go to detail page
         UIView.transition(from: self.mainView, to: self.containerView, duration: 1.2, options: [.transitionFlipFromLeft,.showHideTransitionViews]){
             (succed) in
             if succed {
                 detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
+                
                 detailViewController.collectionView.reloadData()
                 detailViewController.advCollectionView.reloadData()
             }
