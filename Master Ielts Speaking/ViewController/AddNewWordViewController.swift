@@ -53,8 +53,7 @@ class AddNewWordViewController: UIViewController {
                     self.newVocab?.definitions.append(object["definition"].string!)
                     
                 }
-//                print("##############")
-//                print(self.newVocab?.definitions)
+
             case .failure(let error):
                 print(error)
             }
@@ -88,17 +87,13 @@ class AddNewWordViewController: UIViewController {
         detailViewController.newVocabulary = self.newVocab
         detailViewController.wordLabel.text = detailViewController.newVocabulary?.wordName
         
-        // set the definition for collection view
-//        print("!!!!!!!!!!!!!!!")
-//        print(self.newVocab?.definitions)
-//        detailViewController.definitionOfWordArray = List<String>()
-//        detailViewController.definitionOfWordArray?.append(self.newVocab?.definitions)
-//        detailViewController.collectionView.reloadData()
         // go to detail page
         UIView.transition(from: self.mainView, to: self.containerView, duration: 1.2, options: [.transitionFlipFromLeft,.showHideTransitionViews]){
             (succed) in
             if succed {
+                detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
                 detailViewController.collectionView.reloadData()
+                detailViewController.advCollectionView.reloadData()
             }
         }
         

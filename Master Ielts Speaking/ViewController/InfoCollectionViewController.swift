@@ -46,13 +46,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EachCategoryCollectionViewCell
-        cell.wordField.text = self.arrayOfWords[indexPath.row].wordName
-        if let imageData = self.arrayOfWords[indexPath.row].wordImage {
-            cell.wordImageView.image = UIImage(data: imageData as Data)
-        }
-        if let imageString = self.arrayOfWords[indexPath.row].wordImageString {
-            cell.wordImageView.image = UIImage(named: imageString)
-        }
+        cell.setCell(withWord: self.arrayOfWords[indexPath.row])
         return cell
     }
     
@@ -63,6 +57,10 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 
