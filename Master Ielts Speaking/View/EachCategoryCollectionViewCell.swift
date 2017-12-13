@@ -13,7 +13,8 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIView!
     
     @IBOutlet weak var wordImageView: UIImageView!
-    @IBOutlet weak var wordField: UITextView!
+
+    @IBOutlet weak var wordField: UILabel!
     @IBOutlet weak var backgroundViewForText: UIView!
     
     override func awakeFromNib() {

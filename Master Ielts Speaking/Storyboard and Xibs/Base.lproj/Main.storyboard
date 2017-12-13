@@ -155,31 +155,29 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-9R-XUl">
                                                                     <rect key="frame" x="8" y="131" width="163" height="155"/>
                                                                     <subviews>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cab-4x-Gtn">
-                                                                            <rect key="frame" x="0.0" y="16" width="163" height="102"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <gestureRecognizers/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="102" id="cxU-O9-YMC"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                        </textView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-Fo-j6C">
                                                                             <rect key="frame" x="0.0" y="118" width="163" height="35"/>
                                                                             <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </view>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-Sn-smL">
+                                                                            <rect key="frame" x="0.0" y="16" width="163" height="102"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="102" id="QJN-Ao-pzv"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="cab-4x-Gtn" secondAttribute="bottom" id="IRt-ay-o2a"/>
                                                                         <constraint firstAttribute="bottom" secondItem="Toq-Fo-j6C" secondAttribute="bottom" constant="2" id="KEz-oM-oB8"/>
-                                                                        <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="cab-4x-Gtn" secondAttribute="bottom" id="ThV-de-Iww"/>
-                                                                        <constraint firstItem="cab-4x-Gtn" firstAttribute="top" secondItem="9U8-9R-XUl" secondAttribute="top" constant="16" id="Yyy-BN-pV2"/>
-                                                                        <constraint firstItem="cab-4x-Gtn" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="ZYj-ZE-nOY"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="IHx-Sn-smL" secondAttribute="trailing" id="Nm9-Pb-4hA"/>
+                                                                        <constraint firstItem="IHx-Sn-smL" firstAttribute="top" secondItem="9U8-9R-XUl" secondAttribute="top" constant="16" id="Uwy-BA-cDK"/>
+                                                                        <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="IHx-Sn-smL" secondAttribute="bottom" id="Yug-C6-fDn"/>
                                                                         <constraint firstAttribute="trailing" secondItem="Toq-Fo-j6C" secondAttribute="trailing" id="aKr-2w-aFe"/>
                                                                         <constraint firstAttribute="height" constant="155" id="bT3-6N-wbe"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="cab-4x-Gtn" secondAttribute="trailing" id="hBM-d2-Xam"/>
+                                                                        <constraint firstItem="IHx-Sn-smL" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="ecI-k7-KLl"/>
                                                                         <constraint firstItem="Toq-Fo-j6C" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="qnw-jx-0Ff"/>
                                                                     </constraints>
                                                                 </view>
@@ -188,8 +186,8 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="Eg9-Mn-neI" secondAttribute="trailing" id="1bM-JG-eYq"/>
                                                                 <constraint firstItem="Eg9-Mn-neI" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="5ZX-kV-HaH"/>
-                                                                <constraint firstItem="cab-4x-Gtn" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="24" id="6tX-pB-RiE"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9U8-9R-XUl" secondAttribute="trailing" constant="8" id="9VK-u9-66f"/>
+                                                                <constraint firstItem="IHx-Sn-smL" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="24" id="OXP-KN-etI"/>
                                                                 <constraint firstItem="Eg9-Mn-neI" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" id="hxb-MS-skI"/>
                                                                 <constraint firstItem="9U8-9R-XUl" firstAttribute="centerX" secondItem="plV-nR-jml" secondAttribute="centerX" id="rbj-Li-mJu"/>
                                                             </constraints>
@@ -205,7 +203,7 @@
                                                 <connections>
                                                     <outlet property="backgroundViewForText" destination="9U8-9R-XUl" id="Nkv-LB-33j"/>
                                                     <outlet property="imageView" destination="plV-nR-jml" id="R3p-Qj-JyX"/>
-                                                    <outlet property="wordField" destination="cab-4x-Gtn" id="dsk-gr-0H5"/>
+                                                    <outlet property="wordField" destination="IHx-Sn-smL" id="l42-tF-1cY"/>
                                                     <outlet property="wordImageView" destination="Eg9-Mn-neI" id="0fh-eU-dZa"/>
                                                 </connections>
                                             </collectionViewCell>
