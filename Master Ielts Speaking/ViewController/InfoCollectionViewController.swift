@@ -20,6 +20,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
+        self.navigationItem.title = self.categoryFrom?.categoryName
 
     }
     
@@ -28,6 +29,8 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
             self.collectionView.reloadData()
+            
+            
         }
         
     }
