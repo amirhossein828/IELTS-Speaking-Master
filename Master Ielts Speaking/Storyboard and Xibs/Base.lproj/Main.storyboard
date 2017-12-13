@@ -108,7 +108,7 @@
                     <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT"/>
                     <connections>
                         <outlet property="tableView" destination="Ik0-xI-B5t" id="nvX-e6-WDW"/>
-                        <segue destination="pF2-rI-0q0" kind="show" identifier="goDetail" id="own-8m-FVA"/>
+                        <segue destination="pF2-rI-0q0" kind="show" identifier="goDetail" id="5nc-zV-F1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Kn-o3-1Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6N-yc-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5999999999999" y="240.62968515742131"/>
+            <point key="canvasLocation" x="1800.8" y="240.62968515742131"/>
         </scene>
         <!--Add New Word View Controller-->
         <scene sceneID="vWT-TB-2QF">
@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfZ-rh-Cmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160.8000000000002" y="240.62968515742131"/>
+            <point key="canvasLocation" x="2500" y="240.62968515742131"/>
         </scene>
         <!--Add Category View Controller-->
         <scene sceneID="YaK-BU-PhY">
@@ -689,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2az-3r-NBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2853.5999999999999" y="240.62968515742131"/>
+            <point key="canvasLocation" x="3192.8000000000002" y="240.62968515742131"/>
         </scene>
     </scenes>
     <resources>
