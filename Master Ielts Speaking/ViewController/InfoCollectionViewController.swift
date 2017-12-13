@@ -109,10 +109,21 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     //  Returns the photo height
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         if let imageData = self.arrayOfWords[indexPath.item].wordImage {
-            return (UIImage(data: imageData as Data)?.size.height)!
+            let height = (UIImage(data: imageData as Data)?.size.height)!
+            if height > 450 {
+                return 450
+            }else {
+                return height
+            }
+            
         }
         if let imageString = self.arrayOfWords[indexPath.item].wordImageString {
-            return (UIImage(named: imageString)?.size.height)!
+            let heightString = (UIImage(named: imageString)?.size.height)!
+            if heightString > 450 {
+                return 450
+            }else {
+                return heightString
+            }
         }
         return 0
     }
