@@ -96,14 +96,14 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
         detailViewController.isComeFromInfo = true
-//        detailViewController.pageControl.numberOfPages = self.arrayOfWords.count
+        detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
         self.present(detailViewController, animated: true, completion: nil)
     }
 
 }
 
 
-//MARK: - PINTEREST LAYOUT DELEGATE
+//MARK: - CUSTOM LAYOUT DELEGATE
 extension InfoCollectionViewController : CustomLayoutDelegate {
     
     //  Returns the photo height
