@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
     var isComeFromInfo : Bool? = nil
+    var pageControlDots : Int = 0
     
     lazy var vc : AddNewWordViewController = {
         return self.parent as! AddNewWordViewController
@@ -28,7 +29,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.viewPgeControl.isUserInteractionEnabled = false
         self.collectionView.backgroundColor = UIColor.clear
-       
+        self.wordLabel.text = self.newVocabulary?.wordName
+        self.pageControl.numberOfPages = self.pageControlDots
         
     }
     
