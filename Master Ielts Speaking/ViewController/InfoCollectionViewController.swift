@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import RealmSwift
 
-class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayOfWords = List<Word>()
@@ -21,17 +21,23 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             self.arrayOfWords.append(word)
         }
         self.navigationItem.title = self.categoryFrom?.categoryName
+        
+        // Set the PinterestLayout delegate
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+            layout.delegate = self
+        }
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.arrayOfWords.removeAll()
+        
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
             self.collectionView.reloadData()
             
-            
         }
+        
         
     }
 
@@ -41,6 +47,12 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
     
+    @IBAction func addNewWordButton(_ sender: UIButton) {
+        
+        let customLayout =  collectionView.collectionViewLayout as! CustomLayout
+        customLayout.cache.removeAll()
+        self.performSegue(withIdentifier: "goAddNewWord", sender: self)
+    }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -57,9 +69,9 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
     // make the size of each cell half of the screen
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2 - 5, height: 300)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width/2 - 5, height: 300)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
@@ -68,6 +80,8 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,4 +100,21 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         self.present(detailViewController, animated: true, completion: nil)
     }
 
+}
+
+
+//MARK: - PINTEREST LAYOUT DELEGATE
+extension InfoCollectionViewController : CustomLayoutDelegate {
+    
+    //  Returns the photo height
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        if let imageData = self.arrayOfWords[indexPath.item].wordImage {
+            return (UIImage(data: imageData as Data)?.size.height)!
+        }
+        if let imageString = self.arrayOfWords[indexPath.item].wordImageString {
+            return (UIImage(named: imageString)?.size.height)!
+        }
+        return 0
+    }
+    
 }
