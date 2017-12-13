@@ -158,6 +158,7 @@
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cab-4x-Gtn">
                                                                             <rect key="frame" x="0.0" y="16" width="163" height="102"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <gestureRecognizers/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="102" id="cxU-O9-YMC"/>
                                                                             </constraints>

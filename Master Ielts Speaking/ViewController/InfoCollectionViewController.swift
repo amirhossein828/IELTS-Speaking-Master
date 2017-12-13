@@ -37,6 +37,9 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -76,7 +79,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
         detailViewController.isComeFromInfo = true
-        detailViewController.pageControl.numberOfPages = self.arrayOfWords.count
+//        detailViewController.pageControl.numberOfPages = self.arrayOfWords.count
         self.present(detailViewController, animated: true, completion: nil)
     }
 
