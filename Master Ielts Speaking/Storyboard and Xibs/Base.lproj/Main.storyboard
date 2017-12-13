@@ -129,38 +129,30 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-Ln-pyj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UZC-mI-rWd">
-                                            <size key="itemSize" width="179" height="300"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
+                                        <collectionViewLayout key="collectionViewLayout" id="66e-jA-0tv" customClass="CustomLayout" customModule="Master_Ielts_Speaking" customModuleProvider="target"/>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HgQ-yW-7e8" customClass="EachCategoryCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="179" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="322"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="322"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plV-nR-jml">
-                                                            <rect key="frame" x="0.0" y="8" width="179" height="284"/>
+                                                            <rect key="frame" x="0.0" y="8" width="175" height="306"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Base" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Mn-neI">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="123"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="123" id="avY-eb-fQE"/>
-                                                                    </constraints>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Mn-neI">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="123"/>
                                                                 </imageView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-9R-XUl">
-                                                                    <rect key="frame" x="8" y="131" width="163" height="155"/>
+                                                                    <rect key="frame" x="8" y="131" width="159" height="155"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-Fo-j6C">
-                                                                            <rect key="frame" x="0.0" y="118" width="163" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="118" width="159" height="37"/>
                                                                             <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-Sn-smL">
-                                                                            <rect key="frame" x="0.0" y="16" width="163" height="102"/>
+                                                                            <rect key="frame" x="0.0" y="16" width="159" height="102"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="102" id="QJN-Ao-pzv"/>
                                                                             </constraints>
@@ -171,7 +163,7 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="Toq-Fo-j6C" secondAttribute="bottom" constant="2" id="KEz-oM-oB8"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Toq-Fo-j6C" secondAttribute="bottom" id="KEz-oM-oB8"/>
                                                                         <constraint firstAttribute="trailing" secondItem="IHx-Sn-smL" secondAttribute="trailing" id="Nm9-Pb-4hA"/>
                                                                         <constraint firstItem="IHx-Sn-smL" firstAttribute="top" secondItem="9U8-9R-XUl" secondAttribute="top" constant="16" id="Uwy-BA-cDK"/>
                                                                         <constraint firstItem="Toq-Fo-j6C" firstAttribute="top" secondItem="IHx-Sn-smL" secondAttribute="bottom" id="Yug-C6-fDn"/>
@@ -187,6 +179,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Eg9-Mn-neI" secondAttribute="trailing" id="1bM-JG-eYq"/>
                                                                 <constraint firstItem="Eg9-Mn-neI" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="5ZX-kV-HaH"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9U8-9R-XUl" secondAttribute="trailing" constant="8" id="9VK-u9-66f"/>
+                                                                <constraint firstAttribute="bottom" secondItem="9U8-9R-XUl" secondAttribute="bottom" constant="20" id="CVF-ax-dXl"/>
                                                                 <constraint firstItem="IHx-Sn-smL" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="24" id="OXP-KN-etI"/>
                                                                 <constraint firstItem="Eg9-Mn-neI" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" id="hxb-MS-skI"/>
                                                                 <constraint firstItem="9U8-9R-XUl" firstAttribute="centerX" secondItem="plV-nR-jml" secondAttribute="centerX" id="rbj-Li-mJu"/>
@@ -200,6 +193,7 @@
                                                     <constraint firstItem="plV-nR-jml" firstAttribute="top" secondItem="HgQ-yW-7e8" secondAttribute="topMargin" id="diE-8N-IfG"/>
                                                     <constraint firstAttribute="trailing" secondItem="plV-nR-jml" secondAttribute="trailing" id="qgo-L0-1Ch"/>
                                                 </constraints>
+                                                <size key="customSize" width="175" height="322"/>
                                                 <connections>
                                                     <outlet property="backgroundViewForText" destination="9U8-9R-XUl" id="Nkv-LB-33j"/>
                                                     <outlet property="imageView" destination="plV-nR-jml" id="R3p-Qj-JyX"/>
@@ -221,7 +215,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="ic_add_circle_3x"/>
                                         <connections>
-                                            <segue destination="tPc-YW-LDh" kind="presentation" identifier="goAddNewWord" id="UYB-ha-x7O"/>
+                                            <action selector="addNewWordButton:" destination="pF2-rI-0q0" eventType="touchUpInside" id="ulD-f9-8kR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -248,6 +242,7 @@
                     <navigationItem key="navigationItem" id="VUz-4F-ez5"/>
                     <connections>
                         <outlet property="collectionView" destination="KQ2-Ln-pyj" id="KcD-dd-FWm"/>
+                        <segue destination="tPc-YW-LDh" kind="presentation" identifier="goAddNewWord" id="yqX-kN-Au0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6N-yc-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>

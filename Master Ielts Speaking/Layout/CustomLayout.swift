@@ -22,7 +22,7 @@ class CustomLayout : UICollectionViewLayout {
     fileprivate var cellPadding: CGFloat = 6
     
     // Array to keep a cache of attributes.
-    fileprivate var cache = [UICollectionViewLayoutAttributes]()
+    var cache = [UICollectionViewLayoutAttributes]()
     
     // Content height and size
     fileprivate var contentHeight: CGFloat = 0
