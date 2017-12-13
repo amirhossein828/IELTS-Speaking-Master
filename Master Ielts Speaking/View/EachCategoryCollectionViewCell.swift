@@ -21,6 +21,7 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.imageView.layer.cornerRadius = 15
         self.backgroundViewForText.layer.cornerRadius = 20
+        self.imageView.layer.masksToBounds = true
     }
     
     func setCell(withWord word : Word) {
