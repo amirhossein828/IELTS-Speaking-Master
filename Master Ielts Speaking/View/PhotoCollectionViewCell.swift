@@ -12,6 +12,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    override func awakeFromNib() {
+        self.imageView.layer.cornerRadius = 8
+    }
+    
     override var isSelected: Bool {
         didSet {
             self.imageView.alpha = isSelected ? 0.3 : 1

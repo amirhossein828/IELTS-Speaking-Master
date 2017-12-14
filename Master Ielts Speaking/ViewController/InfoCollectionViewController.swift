@@ -11,22 +11,22 @@ import SwiftyJSON
 import RealmSwift
 
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
         self.navigationItem.title = self.categoryFrom?.categoryName
-        
         // Set the PinterestLayout delegate
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
             layout.delegate = self
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,8 +37,6 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             self.collectionView.reloadData()
             
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

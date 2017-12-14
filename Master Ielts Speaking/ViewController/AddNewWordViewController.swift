@@ -20,6 +20,10 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var newWord: UITextView!
+    @IBOutlet weak var textViewBackGround: UIView!
+    @IBOutlet weak var addNewWordButton: UIButton!
+    @IBOutlet weak var dismissScreen: UIButton!
+    
     // properties
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
@@ -32,8 +36,21 @@ class AddNewWordViewController: UIViewController {
         self.view.addSubview(self.containerView)
         self.containerView.isHidden = true
         self.collectionView.layer.borderColor = UIColor.white.cgColor
-        self.collectionView.layer.borderWidth = 4
+//        self.collectionView.layer.borderWidth = 4
+        self.textViewBackGround.layer.cornerRadius = 8
+        self.textViewBackGround.layer.masksToBounds = true
+        self.newWord.layer.cornerRadius = 8
+        let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
+        self.dismissScreen.setImage(closeImageButton, for: .normal)
+        self.dismissScreen.imageView?.tintColor = UIColor.white
+        self.addNewWordButton.layer.cornerRadius = 7
+        self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
     }
+    
+    @IBAction func dismissScreen(_ sender: UIButton) {
+        dismissThePage()
+    }
+    
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
         // create word object
@@ -49,7 +66,6 @@ class AddNewWordViewController: UIViewController {
                 
                 let arrayOfDefObjects = json["definitions"].array
                 for object in arrayOfDefObjects! {
-//                    self.arrayOfDefString.append(object["definition"].string!)
                     self.newVocab?.definitions.append(object["definition"].string!)
                     
                 }
@@ -108,7 +124,7 @@ class AddNewWordViewController: UIViewController {
 
 
 
-extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -123,6 +139,7 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
             cell.imageView.downloadedFrom(link: imageUrl)
         }
+        cell.imageView.layer.cornerRadius = 7
         return cell
     }
     
@@ -132,6 +149,18 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         let imageCell = photoCell.imageView.image
         self.newVocab?.wordImage = UIImageJPEGRepresentation(imageCell!, 0.4)
         
+    }
+    
+//     make the size of each cell half of the screen
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: (collectionView.frame.width - 9)/3, height: self.view.frame.size.height * 0.15)
+        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
     }
  
 }
