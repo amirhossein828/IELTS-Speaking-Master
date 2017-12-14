@@ -14,9 +14,13 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     let nameOfCategoriesArray = ["Environment","Friends"]
     let nameOfImagesInAssets = ["envir","Friends"]
     var category : Category? = nil
+    let transition = AnimationTransition()
     
     @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var addCategoryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,9 +102,39 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if segue.identifier == "goDetail" {
             let vc = segue.destination as! InfoCollectionViewController
             vc.categoryFrom = self.category
+        }else {
+            let addVC = segue.destination as! AddCategoryViewController
+            addVC.transitioningDelegate = self
+            addVC.modalPresentationStyle = .custom
         }
     }
 
 
+}
+
+extension CategoryViewController : UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.transition.transitionMode = .present
+        self.transition.startingPoint = self.addCategoryButton.center
+//        self.transition.circleColor = self.addCategoryButton.backgroundColor!
+        
+        return self.transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.transition.transitionMode = .dismiss
+        self.transition.startingPoint = self.addCategoryButton.center
+//        self.transition.circleColor = self.addCategoryButton.backgroundColor!
+        
+        return self.transition
+    }
+    
+   
+    
+    
+    
+    
+    
+    
 }
 
