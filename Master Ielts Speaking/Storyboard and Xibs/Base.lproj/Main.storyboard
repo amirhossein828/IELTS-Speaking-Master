@@ -83,11 +83,12 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHt-LF-9Vs">
                                         <rect key="frame" x="287" y="471" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UHt-LF-9Vs" secondAttribute="height" multiplier="1:1" id="Oiu-Ve-HDa"/>
                                             <constraint firstAttribute="height" constant="70" id="aan-ia-F9o"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ic_add_circle_3x"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="LPz-C4-45c" kind="presentation" id="n6C-wl-rKu"/>
                                         </connections>
@@ -219,11 +220,12 @@
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qs-n0-SzZ">
                                         <rect key="frame" x="288" y="474" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9qs-n0-SzZ" secondAttribute="height" multiplier="1:1" id="Ga9-2R-pbp"/>
                                             <constraint firstAttribute="height" constant="70" id="We0-O9-73G"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ic_add_circle_3x"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="addNewWordButton:" destination="pF2-rI-0q0" eventType="touchUpInside" id="ulD-f9-8kR"/>
                                         </connections>
@@ -251,6 +253,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VUz-4F-ez5"/>
                     <connections>
+                        <outlet property="addWordButton" destination="9qs-n0-SzZ" id="KYC-o5-yXY"/>
                         <outlet property="collectionView" destination="KQ2-Ln-pyj" id="KcD-dd-FWm"/>
                         <segue destination="tPc-YW-LDh" kind="presentation" identifier="goAddNewWord" id="yqX-kN-Au0"/>
                     </connections>
@@ -496,7 +499,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NPI-3A-2RT" firstAttribute="leading" secondItem="oU1-Za-qpZ" secondAttribute="leading" constant="79" id="2ya-bc-ZAL"/>
                             <constraint firstItem="oU1-Za-qpZ" firstAttribute="bottom" secondItem="NPI-3A-2RT" secondAttribute="bottom" constant="270" id="ZeX-Lt-A6k"/>
@@ -744,6 +747,5 @@
     </scenes>
     <resources>
         <image name="Base" width="960" height="540"/>
-        <image name="ic_add_circle_3x" width="72" height="72"/>
     </resources>
 </document>
