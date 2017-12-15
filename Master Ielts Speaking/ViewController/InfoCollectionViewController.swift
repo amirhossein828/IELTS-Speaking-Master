@@ -13,12 +13,18 @@ import RealmSwift
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addWordButton: UIButton!
     
     var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
+    let transition = AnimationTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addWordButton.layer.cornerRadius = (addWordButton.frame.size.width) / 2
+        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+        addWordButton.setImage(addButtonImage, for: .normal)
+        addWordButton.imageView?.tintColor = UIColor.white
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
@@ -82,6 +88,8 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         if segue.identifier == "goAddNewWord" {
             let vc = segue.destination as! AddNewWordViewController
             vc.category = self.categoryFrom
+            vc.transitioningDelegate = self
+            vc.modalPresentationStyle = .custom
         }
     }
     
@@ -125,3 +133,21 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     }
     
 }
+
+extension InfoCollectionViewController : UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.transition.transitionMode = .present
+        self.transition.startingPoint = self.addWordButton.center
+        return self.transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.transition.transitionMode = .dismiss
+        self.transition.startingPoint = self.addWordButton.center
+        return self.transition
+    }
+  
+    
+}
+
+

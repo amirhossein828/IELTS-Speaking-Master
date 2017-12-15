@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
     var arrayOfCategories : Results<Category>?
     let nameOfCategoriesArray = ["Environment","Friends"]
     let nameOfImagesInAssets = ["envir","Friends"]
@@ -18,14 +19,14 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
-    
     @IBOutlet weak var addCategoryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        self.addCategoryButton.layer.cornerRadius = (addCategoryButton.frame.size.width) / 2
+        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+        addCategoryButton.setImage(addButtonImage, for: .normal)
+        addCategoryButton.imageView?.tintColor = UIColor.white
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             print(response)
