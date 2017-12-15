@@ -22,6 +22,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
+        collectionView?.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
         self.navigationItem.title = self.categoryFrom?.categoryName
         // Set the PinterestLayout delegate
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
@@ -65,12 +66,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         cell.setCell(withWord: self.arrayOfWords[indexPath.row])
         return cell
     }
-    
-    // make the size of each cell half of the screen
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.width/2 - 5, height: 300)
-//    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -97,6 +93,8 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
         self.present(detailViewController, animated: true, completion: nil)
     }
+    
+    
 
 }
 
