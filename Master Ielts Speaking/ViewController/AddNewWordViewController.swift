@@ -23,7 +23,7 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var textViewBackGround: UIView!
     @IBOutlet weak var addNewWordButton: UIButton!
     @IBOutlet weak var dismissScreen: UIButton!
-    
+    @IBOutlet weak var nextButton: UIButton!
     // properties
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
@@ -45,6 +45,7 @@ class AddNewWordViewController: UIViewController {
         self.dismissScreen.imageView?.tintColor = UIColor.white
         self.addNewWordButton.layer.cornerRadius = 7
         self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
+        self.nextButton.setTitleColor(UIColor.gray, for: .disabled)
     }
     
     @IBAction func dismissScreen(_ sender: UIButton) {
@@ -138,6 +139,7 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         let photoCell = self.collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         let imageCell = photoCell.imageView.image
         self.newVocab?.wordImage = UIImageJPEGRepresentation(imageCell!, 0.4)
+        self.nextButton.isEnabled = true
         
     }
     
@@ -145,6 +147,7 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: (collectionView.frame.width - 9)/3, height: self.view.frame.size.height * 0.15)
         }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
