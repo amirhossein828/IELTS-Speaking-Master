@@ -29,6 +29,7 @@
 		964120E21FDB952900CAA91C /* Friends.json in Resources */ = {isa = PBXBuildFile; fileRef = 964120E11FDB952900CAA91C /* Friends.json */; };
 		966301481FE1766C0057919B /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301471FE1766B0057919B /* CustomLayout.swift */; };
 		966301881FE209B80057919B /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301871FE209B80057919B /* AnimationTransition.swift */; };
+		9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301891FE39E110057919B /* HelperFunctions.swift */; };
 		96E027E81FDCFB9800CB0222 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E027E71FDCFB9800CB0222 /* Extentions.swift */; };
 		96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */; };
 		96FF73AC1FDBC5F000AA17E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */; };
@@ -89,6 +90,7 @@
 		964120E11FDB952900CAA91C /* Friends.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Friends.json; sourceTree = "<group>"; };
 		966301471FE1766B0057919B /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		966301871FE209B80057919B /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
+		966301891FE39E110057919B /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		96E027E71FDCFB9800CB0222 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWordViewController.swift; sourceTree = "<group>"; };
 		96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				964120D71FDB465B00CAA91C /* DatabaseManager.swift */,
 				96E027E71FDCFB9800CB0222 /* Extentions.swift */,
 				9622CB2F1FDE0058009001AA /* MockData.swift */,
+				966301891FE39E110057919B /* HelperFunctions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				966301481FE1766C0057919B /* CustomLayout.swift in Sources */,
 				964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */,
 				96FF73AE1FDC994600AA17E2 /* Word.swift in Sources */,
+				9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */,
 				966301881FE209B80057919B /* AnimationTransition.swift in Sources */,
 				964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */,
 				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
