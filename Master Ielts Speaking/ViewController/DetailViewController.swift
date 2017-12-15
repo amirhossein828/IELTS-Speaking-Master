@@ -91,16 +91,16 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         return CGSize(width: self.view.frame.width, height: self.view.frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = indexPath.row
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    
-    
-    
+    // this method makes the icones white when the scrolling happen (target of collection view)
+     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = targetContentOffset.pointee.x / view.frame.width
+        let indexPath = NSIndexPath(item: Int(index), section: 0)
+        self.pageControl.currentPage = indexPath.item
+    }
 
 }
