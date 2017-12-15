@@ -20,12 +20,6 @@ class WordsApiService {
             completion(response)
         }
     }
-    
-    
-    
-    
-    
-    
-    
+   
 }
 

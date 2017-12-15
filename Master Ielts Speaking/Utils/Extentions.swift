@@ -33,3 +33,18 @@ extension UIImageView {
         downloadedFrom(url: url, contentMode: mode)
     }
 }
+
+extension UIViewController {
+
+func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default,
+                                  handler: { (_) -> Void in
+                                    alert.dismiss(animated: true, completion: nil)
+                                    DispatchQueue.main.async {
+                                        completion?()
+                                    }
+    }))
+    self.present(alert, animated: true, completion: nil)
+ }
+}

@@ -30,6 +30,7 @@ class AddNewWordViewController: UIViewController {
     var newVocab : Word? = nil
     var category : Category? = nil
     var imageSelected : UIImage? = nil
+    var hasDefinition = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,39 +56,33 @@ class AddNewWordViewController: UIViewController {
         // create word object
         newVocab = Word()
         // give the nameofWord property to it
-        newVocab?.wordName = self.newWord.text
-        // Get difinitions and examples of the newWord from Web Service
-        WordsApiService.getDefinitionOfWords(word: (newVocab?.wordName)!) { (response) in
-            // create array of string (the definition of word)
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                let arrayOfDefObjects = json["definitions"].array
-                for object in arrayOfDefObjects! {
-                    self.newVocab?.definitions.append(object["definition"].string!)
-                    
+        guard let newWordString = self.newWord.text else { return  }
+        if newWordString == "" {
+            showAlert("Enter a word", "Please enter a word")
+            return}
+        newVocab?.wordName = newWordString
+        getDefinitionsAndPhotos(withWord: newWordString, viewController: self) { (arrayOfDefObjects) in
+            for object in arrayOfDefObjects {
+                self.newVocab?.definitions.append(object["definition"].string!)
+            }
+            // search for photos related to the new word
+            FlickrService.getPhotos(searchKey: (self.newVocab?.wordName)!) { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    DispatchQueue.main.async {
+                        self.arrayOfPhotos = json["photos"]["photo"].array
+                        self.collectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
+                
+            }
+        }
 
-            case .failure(let error):
-                print(error)
-            }
-        }
-        // search for photos related to the new word
-        FlickrService.getPhotos(searchKey: (newVocab?.wordName)!) { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                DispatchQueue.main.async {
-                    self.arrayOfPhotos = json["photos"]["photo"].array
-                    self.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-    
-        }
-        // show the photos inside the collection view
     }
+
     // come back to list of categories
     func dismissThePage() {
         self.dismiss(animated: true, completion: nil)
