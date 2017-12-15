@@ -36,7 +36,6 @@ class AddNewWordViewController: UIViewController {
         self.view.addSubview(self.containerView)
         self.containerView.isHidden = true
         self.collectionView.layer.borderColor = UIColor.white.cgColor
-//        self.collectionView.layer.borderWidth = 4
         self.textViewBackGround.layer.cornerRadius = 8
         self.textViewBackGround.layer.masksToBounds = true
         self.newWord.layer.cornerRadius = 8
@@ -63,7 +62,6 @@ class AddNewWordViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                
                 let arrayOfDefObjects = json["definitions"].array
                 for object in arrayOfDefObjects! {
                     self.newVocab?.definitions.append(object["definition"].string!)
@@ -108,7 +106,6 @@ class AddNewWordViewController: UIViewController {
             (succed) in
             if succed {
                 detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
-                
                 detailViewController.collectionView.reloadData()
                 detailViewController.advCollectionView.reloadData()
             }
@@ -118,8 +115,6 @@ class AddNewWordViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }
 
 
