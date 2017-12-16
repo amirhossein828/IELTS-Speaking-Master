@@ -12,7 +12,7 @@ import RealmSwift
 class Category : Object {
     @objc dynamic var categoryName : String = ""
     @objc dynamic var categoryImage : String = ""
-    @objc dynamic var categoryImageData : NSData?
+    @objc dynamic var categoryImageData : Data? = nil
     var words = List<Word>()
     
     override class func primaryKey() -> String {
