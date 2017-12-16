@@ -34,14 +34,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // read data
-        readData(Category.self, predicate: nil) { (response : Results<Category>) in
-            print(response)
-            self.arrayOfCategories = response
-        }
-        self.tableView.reloadData()
-    }
     
     func savePhtosInDatabase() {
         // create all category
@@ -87,16 +79,20 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         } else {
             cell.categoryImage.image = #imageLiteral(resourceName: "Base")
         }
-
-        
-        
-        
+   
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.category = self.arrayOfCategories?[indexPath.row]
         self.performSegue(withIdentifier: "goDetail", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteFromDatadase(self.arrayOfCategories![indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

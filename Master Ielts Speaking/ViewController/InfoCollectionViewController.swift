@@ -41,15 +41,15 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.arrayOfWords.removeAll()
-        
-        for word in (self.categoryFrom?.words)! {
-            self.arrayOfWords.append(word)
-            self.collectionView.reloadData()
-            
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.arrayOfWords.removeAll()
+//        
+//        for word in (self.categoryFrom?.words)! {
+//            self.arrayOfWords.append(word)
+//            self.collectionView.reloadData()
+//            
+//        }
+//    }
     
     
 
