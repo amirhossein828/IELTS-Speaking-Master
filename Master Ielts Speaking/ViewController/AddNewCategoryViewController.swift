@@ -100,7 +100,10 @@ class AddNewCategoryViewController: UIViewController {
         
     }
 
-   
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
