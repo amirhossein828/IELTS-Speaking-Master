@@ -10,6 +10,11 @@ import UIKit
 import SwiftyJSON
 import RealmSwift
 
+// protocol which declare method to delegate reloading table view when coming back from addCategoryViewController
+protocol ReloadViewDelegate : class{
+    func reloadTableViewByNewData()
+}
+
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -45,11 +50,14 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             
         }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
@@ -90,6 +98,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             vc.category = self.categoryFrom
             vc.transitioningDelegate = self
             vc.modalPresentationStyle = .custom
+            vc.delegate = self
         }
     }
     
@@ -148,6 +157,16 @@ extension InfoCollectionViewController : UIViewControllerTransitioningDelegate {
     }
   
     
+}
+
+extension InfoCollectionViewController : ReloadViewDelegate {
+    func reloadTableViewByNewData() {
+        self.arrayOfWords.removeAll()
+        for word in (self.categoryFrom?.words)! {
+            self.arrayOfWords.append(word)
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 

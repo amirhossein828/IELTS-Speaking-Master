@@ -40,13 +40,13 @@ class DetailViewController: UIViewController {
         if isComeFromInfo! {
             self.dismiss(animated: true, completion: nil)
         }else {
+            vc.delegate?.reloadTableViewByNewData()
             vc.dismissThePage()
         }
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

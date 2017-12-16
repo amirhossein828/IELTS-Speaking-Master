@@ -16,6 +16,7 @@
 		96003EF81FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003EF71FDAF39500DC9A94 /* Master_Ielts_SpeakingTests.swift */; };
 		96003F031FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */; };
 		96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */; };
+		961BE51F1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */; };
 		9622CB2C1FDDB8C0009001AA /* WordsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2B1FDDB8C0009001AA /* WordsApiService.swift */; };
 		9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */; };
 		9622CB301FDE0058009001AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2F1FDE0058009001AA /* MockData.swift */; };
@@ -77,6 +78,7 @@
 		96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master_Ielts_SpeakingUITests.swift; sourceTree = "<group>"; };
 		96003F041FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		9622CB2B1FDDB8C0009001AA /* WordsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsApiService.swift; sourceTree = "<group>"; };
 		9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		9622CB2F1FDE0058009001AA /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				964120DD1FDB89D100CAA91C /* InfoCollectionViewController.swift */,
 				96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */,
 				96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */,
+				961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				966301481FE1766C0057919B /* CustomLayout.swift in Sources */,
 				964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */,
 				96FF73AE1FDC994600AA17E2 /* Word.swift in Sources */,
+				961BE51F1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift in Sources */,
 				9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */,
 				966301881FE209B80057919B /* AnimationTransition.swift in Sources */,
 				964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */,

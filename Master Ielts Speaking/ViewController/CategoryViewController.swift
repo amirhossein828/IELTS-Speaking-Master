@@ -104,12 +104,12 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let vc = segue.destination as! InfoCollectionViewController
             vc.categoryFrom = self.category
         }else {
-            let addVC = segue.destination as! AddCategoryViewController
+            let addVC = segue.destination as! AddNewCategoryViewController
             addVC.transitioningDelegate = self
             addVC.modalPresentationStyle = .custom
+            addVC.delegate = self
         }
     }
-
 
 }
 
@@ -129,12 +129,18 @@ extension CategoryViewController : UIViewControllerTransitioningDelegate {
         
         return self.transition
     }
-    
-   
-    
-    
-    
-    
+  
+}
+
+extension CategoryViewController : ReloadViewDelegate {
+    func reloadTableViewByNewData() {
+        // read data
+        readData(Category.self, predicate: nil) { (response : Results<Category>) in
+            print(response)
+            self.arrayOfCategories = response
+        }
+        self.tableView.reloadData()
+    }
     
     
 }
