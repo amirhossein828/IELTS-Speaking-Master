@@ -60,3 +60,11 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+// Lock orientation
+extension UINavigationController {
+    open override var shouldAutorotate: Bool {
+        return visibleViewController!.shouldAutorotate
+    }
+}
+
+

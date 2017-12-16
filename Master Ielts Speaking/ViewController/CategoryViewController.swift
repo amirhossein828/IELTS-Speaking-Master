@@ -36,6 +36,10 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    // Lock orientation
+    override open var shouldAutorotate: Bool {
+        return false
+    }
     
     // MARK: - Table view data source
     
