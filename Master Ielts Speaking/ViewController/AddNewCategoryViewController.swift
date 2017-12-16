@@ -104,6 +104,10 @@ class AddNewCategoryViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
 
 }
 
