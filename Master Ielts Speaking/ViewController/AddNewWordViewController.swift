@@ -36,15 +36,19 @@ class AddNewWordViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(self.containerView)
         self.containerView.isHidden = true
-        self.collectionView.layer.borderColor = UIColor.white.cgColor
+        // Configure the text view to make it's corner radiuos
         self.textViewBackGround.layer.cornerRadius = 8
         self.textViewBackGround.layer.masksToBounds = true
         self.newWord.layer.cornerRadius = 8
+        // configure close button
         let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
         self.dismissScreen.setImage(closeImageButton, for: .normal)
         self.dismissScreen.imageView?.tintColor = UIColor.white
+        // Make the add button circle
         self.addNewWordButton.layer.cornerRadius = 7
+        // configure distances between cells
         self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
+        // color of the text inside next button grey when it is not selected
         self.nextButton.setTitleColor(UIColor.gray, for: .disabled)
     }
     
