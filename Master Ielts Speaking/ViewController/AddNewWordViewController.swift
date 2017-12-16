@@ -51,6 +51,7 @@ class AddNewWordViewController: UIViewController {
         self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
         // color of the text inside next button grey when it is not selected
         self.nextButton.setTitleColor(UIColor.gray, for: .disabled)
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func dismissScreen(_ sender: UIButton) {
