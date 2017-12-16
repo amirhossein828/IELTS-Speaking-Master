@@ -53,8 +53,7 @@ class AddNewCategoryViewController: UIViewController {
         self.doneButton.setImage(addImageButton, for: .normal)
         self.doneButton.imageView?.tintColor = UIColor.white
         self.doneButton.setTitleColor(UIColor.gray, for: .disabled)
-        
-
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {

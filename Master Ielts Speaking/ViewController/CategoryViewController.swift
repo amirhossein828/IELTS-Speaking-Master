@@ -12,8 +12,6 @@ import RealmSwift
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var arrayOfCategories : Results<Category>?
-    let nameOfCategoriesArray = ["Environment","Friends"]
-    let nameOfImagesInAssets = ["envir","Friends"]
     var category : Category? = nil
     let transition = AnimationTransition()
     
@@ -34,21 +32,9 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    
-    func savePhtosInDatabase() {
-        // create all category
-        for count in 0..<2 {
-            let category = Category()
-            category.categoryName = self.nameOfCategoriesArray[count]
-            category.categoryImage = self.nameOfImagesInAssets[count]
-            // save the in Realm
-            saveData(category)
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -79,7 +65,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         } else {
             cell.categoryImage.image = #imageLiteral(resourceName: "Base")
         }
-   
         return cell
     }
     
@@ -137,7 +122,6 @@ extension CategoryViewController : ReloadViewDelegate {
         }
         self.tableView.reloadData()
     }
-    
-    
+  
 }
 
