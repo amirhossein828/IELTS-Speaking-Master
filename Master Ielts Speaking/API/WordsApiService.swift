@@ -15,7 +15,9 @@ class WordsApiService {
             "X-Mashape-Key": "9GUEoeCNaEmshOp3PfV7jivYl4YRp1faus3jsnRh8AwhK0LACA",
             "Accept": "application/json"
         ]
-        let url = URL(string: "https://wordsapiv1.p.mashape.com/words/\(word)/definitions")
+        let wordEncode = word.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let urlString = "https://wordsapiv1.p.mashape.com/words/"+wordEncode!+"/definitions"
+        let url = URL(string: urlString)
         Alamofire.request(url!, method: .get, parameters: nil, encoding:JSONEncoding.default , headers: headers).responseJSON { (response) in
             completion(response)
         }
