@@ -61,6 +61,7 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
+        
         // create word object
         newCategory = Category()
         // give the nameofWord property to it
@@ -70,12 +71,31 @@ class AddNewCategoryViewController: UIViewController {
             return}
         newCategory?.categoryName = newWordString
         // search for photos related to the new word
+        /*
         FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 DispatchQueue.main.async {
                     self.arrayOfPhotos = json["photos"]["photo"].array
+                    self.collectionView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+ */
+        QwantApiService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                DispatchQueue.main.async {
+                    let arrayOfPhotosObjects = json["data"]["result"]["items"].array
+                    self.arrayOfPhotos = [JSON]()
+                    for object in arrayOfPhotosObjects! {
+                        self.arrayOfPhotos?.append(object)
+                    }
+                    print(self.arrayOfPhotos!)
                     self.collectionView.reloadData()
                 }
             case .failure(let error):
@@ -123,9 +143,16 @@ extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
-        
-        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
-            cell.imageView.downloadedFrom(link: imageUrl)
+        cell.activityIndicator.startAnimating()
+        cell.activityIndicator.hidesWhenStopped = true
+//        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["media"].string
+        {
+            
+            print(imageUrl)
+            cell.imageView.downloadedFrom(link: imageUrl, completion: {
+                cell.activityIndicator.stopAnimating()
+            })
         }
         return cell
     }

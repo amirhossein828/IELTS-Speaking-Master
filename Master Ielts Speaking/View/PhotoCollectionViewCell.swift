@@ -16,6 +16,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 8
     }
     
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override var isSelected: Bool {
         didSet {
             self.imageView.alpha = isSelected ? 0.3 : 1
