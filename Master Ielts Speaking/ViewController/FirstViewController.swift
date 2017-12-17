@@ -10,20 +10,20 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     let test = ["envir","Friends"]
 
     @IBOutlet weak var pageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pageControl.numberOfPages = 2
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
- 
 
 }
 
@@ -42,7 +42,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCellId", for: indexPath) as! FirstPageCollectionViewCell
-            
             cell.imageView.image = UIImage(named: self.test[indexPath.row])
             return cell
         
@@ -58,10 +57,13 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     
     // this method makes the page control dots white when the scrolling happen (target of collection view)
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
         let index = targetContentOffset.pointee.x / view.frame.width
         let indexPath = NSIndexPath(item: Int(index), section: 0)
         self.pageControl.currentPage = indexPath.item
     }
+    
+    
     
 }
 
