@@ -888,15 +888,21 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-Rh-tRQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="151" height="149"/>
                                                         </imageView>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-9H-HlO">
+                                                            <rect key="frame" x="65.5" y="64" width="20" height="20"/>
+                                                        </activityIndicatorView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="sCN-Rh-tRQ" firstAttribute="top" secondItem="wxb-g1-Hvc" secondAttribute="top" id="8hb-pX-B1K"/>
                                                     <constraint firstItem="sCN-Rh-tRQ" firstAttribute="leading" secondItem="wxb-g1-Hvc" secondAttribute="leading" id="D82-ZX-mHm"/>
+                                                    <constraint firstItem="PfJ-9H-HlO" firstAttribute="centerX" secondItem="wxb-g1-Hvc" secondAttribute="centerX" id="GEo-gL-flB"/>
                                                     <constraint firstAttribute="bottom" secondItem="sCN-Rh-tRQ" secondAttribute="bottom" id="MAB-st-BsA"/>
+                                                    <constraint firstItem="PfJ-9H-HlO" firstAttribute="centerY" secondItem="wxb-g1-Hvc" secondAttribute="centerY" id="UkA-P6-sSM"/>
                                                     <constraint firstAttribute="trailing" secondItem="sCN-Rh-tRQ" secondAttribute="trailing" id="q1K-HT-bgP"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="activityIndicator" destination="PfJ-9H-HlO" id="WR9-Pc-aMo"/>
                                                     <outlet property="imageView" destination="sCN-Rh-tRQ" id="dFx-ZY-loz"/>
                                                 </connections>
                                             </collectionViewCell>

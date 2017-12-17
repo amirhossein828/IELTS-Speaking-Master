@@ -134,9 +134,13 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
-        
+        cell.activityIndicator.startAnimating()
+        cell.activityIndicator.hidesWhenStopped = true
         if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
-            cell.imageView.downloadedFrom(link: imageUrl)
+            cell.imageView.downloadedFrom(link: imageUrl, completion: {
+                cell.activityIndicator.stopAnimating()
+            })
+//            cell.imageView.downloadedFrom(link: imageUrl)
         }
         cell.imageView.layer.cornerRadius = 7
         return cell
