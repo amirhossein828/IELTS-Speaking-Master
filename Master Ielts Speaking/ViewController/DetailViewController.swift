@@ -96,7 +96,7 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         return 0
     }
     
-    // this method makes the icones white when the scrolling happen (target of collection view)
+    // this method makes the page control dots white when the scrolling happen (target of collection view)
      func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let index = targetContentOffset.pointee.x / view.frame.width
         let indexPath = NSIndexPath(item: Int(index), section: 0)
