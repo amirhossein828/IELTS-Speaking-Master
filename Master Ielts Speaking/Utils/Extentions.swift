@@ -12,25 +12,28 @@ import UIKit
 
 
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, completion : @escaping () -> Void) {
         if let image = imageCacheNew.object(forKey: url as AnyObject) {
             self.image = image
+            completion()
         }else {
             Alamofire.request(url).response { (response) in
                 if let data = response.data {
-                    let image = UIImage(data: data)
-                    imageCacheNew.setObject(image!, forKey: url as AnyObject )
+                    if let image = UIImage(data: data) {
+                    imageCacheNew.setObject(image, forKey: url as AnyObject )
                     DispatchQueue.main.async {
                         self.image = image
+                        completion()
+                    }
                     }
                     
                 }
             }
         }
     }
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit, completion : @escaping () -> Void) {
         guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
+        downloadedFrom(url: url, contentMode: mode, completion : completion)
     }
 }
 
