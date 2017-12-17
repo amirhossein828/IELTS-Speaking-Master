@@ -21,6 +21,8 @@
 		9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */; };
 		9622CB301FDE0058009001AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2F1FDE0058009001AA /* MockData.swift */; };
 		9622CB721FE049FC009001AA /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB711FE049FC009001AA /* AdvertisementCell.swift */; };
+		9634C5341FE627C100161FF4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634C5331FE627C100161FF4 /* FirstViewController.swift */; };
+		9634C5361FE62C3500161FF4 /* FirstPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */; };
 		964120D41FDB417F00CAA91C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D31FDB417F00CAA91C /* Category.swift */; };
 		964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D71FDB465B00CAA91C /* DatabaseManager.swift */; };
 		964120DA1FDB6D2C00CAA91C /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D91FDB6D2C00CAA91C /* MyNavigationController.swift */; };
@@ -82,6 +84,8 @@
 		9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		9622CB2F1FDE0058009001AA /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		9622CB711FE049FC009001AA /* AdvertisementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
+		9634C5331FE627C100161FF4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		964120D31FDB417F00CAA91C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		964120D71FDB465B00CAA91C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		964120D91FDB6D2C00CAA91C /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				96FF73A91FDBBA7200AA17E2 /* AddNewWordViewController.swift */,
 				96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */,
 				961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */,
+				9634C5331FE627C100161FF4 /* FirstViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				96FF73B21FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift */,
 				9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */,
 				9622CB711FE049FC009001AA /* AdvertisementCell.swift */,
+				9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -608,12 +614,14 @@
 				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
 				9622CB721FE049FC009001AA /* AdvertisementCell.swift in Sources */,
+				9634C5361FE62C3500161FF4 /* FirstPageCollectionViewCell.swift in Sources */,
 				9622CB2C1FDDB8C0009001AA /* WordsApiService.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
 				96FF73B31FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift in Sources */,
 				96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */,
 				96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */,
 				9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */,
+				9634C5341FE627C100161FF4 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
