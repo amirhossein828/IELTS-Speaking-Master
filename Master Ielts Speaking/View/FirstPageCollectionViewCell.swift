@@ -12,6 +12,8 @@ class FirstPageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     
 }
