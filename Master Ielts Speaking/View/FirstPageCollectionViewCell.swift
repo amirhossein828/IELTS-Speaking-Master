@@ -12,12 +12,10 @@ class FirstPageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-<<<<<<< HEAD
+
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var descriptionLabel: UILabel!
-=======
-    
->>>>>>> 28830c06c670ce70b78f3e58b18a50c50244c914
+
     
 }

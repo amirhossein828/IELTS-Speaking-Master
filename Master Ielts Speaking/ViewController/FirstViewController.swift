@@ -11,7 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-<<<<<<< HEAD
+
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var iconImage: UIImageView!
@@ -25,14 +25,7 @@ class FirstViewController: UIViewController {
         let icon =  UIImage(named: "icon3")?.withRenderingMode(.alwaysTemplate)
         self.iconImage.image = icon
         self.iconImage.tintColor = UIColor.white
-=======
-    let test = ["envir","Friends"]
 
-    @IBOutlet weak var pageControl: UIPageControl!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.pageControl.numberOfPages = 2
->>>>>>> 28830c06c670ce70b78f3e58b18a50c50244c914
         
     }
 
@@ -52,31 +45,26 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-<<<<<<< HEAD
+
             return 5
-=======
-            return 2
->>>>>>> 28830c06c670ce70b78f3e58b18a50c50244c914
+
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCellId", for: indexPath) as! FirstPageCollectionViewCell
             cell.imageView.image = UIImage(named: self.test[indexPath.row])
-<<<<<<< HEAD
+
             cell.title.text = self.titles[indexPath.row]
             cell.descriptionLabel.text = self.descriptionOfTitle[indexPath.row]
-=======
->>>>>>> 28830c06c670ce70b78f3e58b18a50c50244c914
+
             return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-<<<<<<< HEAD
+
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-=======
-        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
->>>>>>> 28830c06c670ce70b78f3e58b18a50c50244c914
+
     }
     
     
