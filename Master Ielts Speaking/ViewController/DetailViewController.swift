@@ -88,7 +88,13 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
+         if collectionView == self.collectionView {
+            return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+         }else {
+            return CGSize(width: self.advCollectionView.frame.width, height: self.advCollectionView.frame.height)
+        }
+        
+        
     }
     
     
