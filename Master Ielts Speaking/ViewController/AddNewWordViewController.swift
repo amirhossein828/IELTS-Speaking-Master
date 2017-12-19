@@ -24,6 +24,7 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var addNewWordButton: UIButton!
     @IBOutlet weak var dismissScreen: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var titleOfCollection: UILabel!
     // properties
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
@@ -60,6 +61,8 @@ class AddNewWordViewController: UIViewController {
     
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
+        // make titleOfCollection label unhidden
+        self.titleOfCollection.isHidden = false
         // create word object
         newVocab = Word()
         // give the nameofWord property to it

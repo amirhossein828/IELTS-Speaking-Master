@@ -425,7 +425,7 @@
                                             <constraint firstItem="1kj-Oc-NKD" firstAttribute="leading" secondItem="lRF-1W-Eir" secondAttribute="leading" constant="9" id="tgp-Lk-1RE"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Word " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RG-t9-lYp">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Word " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RG-t9-lYp">
                                         <rect key="frame" x="111" y="211" width="153.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -482,6 +482,7 @@
                         <outlet property="newWord" destination="9Qe-Sm-MQh" id="rK8-Cy-DdH"/>
                         <outlet property="nextButton" destination="Qzt-Sp-MSD" id="Nk8-qZ-jxI"/>
                         <outlet property="textViewBackGround" destination="SPf-8o-l12" id="qZO-x8-wu0"/>
+                        <outlet property="titleOfCollection" destination="2RG-t9-lYp" id="Xff-b8-RBv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfZ-rh-Cmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
