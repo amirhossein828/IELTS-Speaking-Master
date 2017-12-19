@@ -1,0 +1,25 @@
+ [{
+  "word": "poverty",
+  "definitions": [
+                  {
+                  "definition": "the state of having little or no money and few or no material possessions",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "poverty"
+  },
+  {
+  "word": "cosmopolitan",
+  "definitions": [
+                  {
+                  "definition": "a sophisticated person who has travelled in many countries",
+                  "partOfSpeech": "noun"
+                  },
+                  {
+                  "definition": "growing or occurring in many parts of the world",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "cosmopolitan"
+  }
+  ]

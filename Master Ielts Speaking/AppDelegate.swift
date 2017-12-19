@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MockData.saveWords(nameOfCategory: CategoryName.friends)
             MockData.saveWords(nameOfCategory: CategoryName.Environment)
             MockData.saveWords(nameOfCategory: CategoryName.Book)
+            MockData.saveWords(nameOfCategory: CategoryName.HomeTown)
         }
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)
