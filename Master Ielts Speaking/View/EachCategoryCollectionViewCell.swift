@@ -20,7 +20,7 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.imageView.layer.cornerRadius = 15
-        self.backgroundViewForText.layer.cornerRadius = 20
+        self.backgroundViewForText.layer.cornerRadius = 8
         self.imageView.layer.masksToBounds = true
     }
     
