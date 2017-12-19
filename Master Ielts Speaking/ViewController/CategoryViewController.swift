@@ -62,7 +62,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CategoryTableViewCell
 
         cell.categoryName.text = self.arrayOfCategories?[indexPath.row].categoryName ?? ""
-        if let image = UIImage(named: (self.arrayOfCategories?[indexPath.row].categoryImage) ?? "") {
+        if let image = UIImage(named: (self.arrayOfCategories?[indexPath.row].categoryImage)!) {
             cell.categoryImage.image = image
         }else if let imageFromUser = UIImage(data: (self.arrayOfCategories?[indexPath.row].categoryImageData)! as Data) {
             cell.categoryImage.image = imageFromUser

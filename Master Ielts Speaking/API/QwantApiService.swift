@@ -14,8 +14,8 @@ class QwantApiService {
     
     // method which ask for seachKey and get the photos from Qwant website.
     class func getPhotos(searchKey : String,completion : @escaping (DataResponse<Any>) -> Void) {
-//        let encodeSearchString = searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let urlString  = "https://api.qwant.com/api/search/images?count=30&offset=1&q="+searchKey
+        let encodeSearchString = searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let urlString  = "https://api.qwant.com/api/search/images?count=30&offset=1&q="+encodeSearchString!
         Alamofire.request(urlString).responseJSON { (response) in
             completion(response)
         }
