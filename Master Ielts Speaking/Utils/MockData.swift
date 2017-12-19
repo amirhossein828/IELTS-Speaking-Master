@@ -15,8 +15,8 @@ class MockData {
     
 
     class func saveCategories() {
-        let nameOfCategoriesArray = [CategoryName.Environment,CategoryName.friends,CategoryName.Book,CategoryName.HomeTown]
-        let nameOfImagesInAssets = ["envir","Friends","novel","poverty"]
+        let nameOfCategoriesArray = [CategoryName.Environment,CategoryName.friends,CategoryName.Book,CategoryName.HomeTown,CategoryName.Family]
+        let nameOfImagesInAssets = ["envir","Friends","novel","poverty","novel"]
         // create all category
         for count in 0..<nameOfCategoriesArray.count {
             let category = Category()
@@ -70,6 +70,7 @@ struct CategoryName {
     static let Environment = "Environment"
     static let Book = "Book"
     static let HomeTown = "HomeTown"
+    static let Family = "Family"
 }
 
 func getImageAssets(path : String, completion :  (JSON) -> Void){

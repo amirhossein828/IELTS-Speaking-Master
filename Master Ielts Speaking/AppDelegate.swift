@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().backgroundColor = UIColor.gray
+        UINavigationBar.appearance().backgroundColor = UIColor.red
         let hasLaunchedKey = "HasLaunched"
         let defaults = UserDefaults.standard
         var hasLaunched = defaults.bool(forKey: hasLaunchedKey)
@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MockData.saveWords(nameOfCategory: CategoryName.Environment)
             MockData.saveWords(nameOfCategory: CategoryName.Book)
             MockData.saveWords(nameOfCategory: CategoryName.HomeTown)
+            MockData.saveWords(nameOfCategory: CategoryName.Family)
         }
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)

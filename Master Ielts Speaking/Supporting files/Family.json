@@ -1,0 +1,21 @@
+ [{
+  "word": "nuclear family",
+  "definitions": [
+                  {
+                  "definition": "a family consisting of parents and their children and grandparents of a marital partner",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "nuclear family"
+  },
+  {
+  "word": "extended-family",
+  "definitions": [
+                  {
+                  "definition": "a family consisting of the nuclear family and their blood relatives",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "extended-family"
+  }
+  ]
