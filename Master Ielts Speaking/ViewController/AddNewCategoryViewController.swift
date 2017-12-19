@@ -20,6 +20,7 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var addNewWordButton: UIButton!
     @IBOutlet weak var dismissScreen: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var titleOfCollection: UILabel!
     // properties
     var arrayOfPhotos : [JSON]? = nil
 //    var arrayOfDefString = [String]()
@@ -61,7 +62,8 @@ class AddNewCategoryViewController: UIViewController {
     }
     
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
-        
+        // make the titleOfCollection unhidden
+        self.titleOfCollection.isHidden = false
         // create word object
         newCategory = Category()
         // give the nameofWord property to it

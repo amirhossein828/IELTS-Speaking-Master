@@ -997,7 +997,7 @@
                                             <constraint firstAttribute="bottom" secondItem="da2-Gy-mmf" secondAttribute="bottom" constant="6" id="YHf-fO-cGe"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-r6-oKh">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-r6-oKh">
                                         <rect key="frame" x="103" y="211" width="169" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1046,6 +1046,7 @@
                         <outlet property="mainView" destination="rg0-eo-Ekq" id="2mH-Y2-Osu"/>
                         <outlet property="newWord" destination="Am6-TP-ebq" id="ItL-xS-nvT"/>
                         <outlet property="textViewBackGround" destination="a22-ox-SI8" id="NHl-le-GLd"/>
+                        <outlet property="titleOfCollection" destination="xgp-r6-oKh" id="cSK-me-tci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfy-Vl-QYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
