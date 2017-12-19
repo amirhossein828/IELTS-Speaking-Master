@@ -1,0 +1,29 @@
+[{
+ "word": "poetry",
+ "definitions": [
+                 {
+                 "definition": "literature in metrical form",
+                 "partOfSpeech": "noun"
+                 },
+                 {
+                 "definition": "any communication resembling poetry in beauty or the evocation of feeling",
+                 "partOfSpeech": "noun"
+                 }
+                 ],
+ "imageNameInAssets": "poetry"
+ },
+ {
+ "word": "novel",
+ "definitions": [
+                 {
+                 "definition": "a printed and bound book that is an extended work of fiction",
+                 "partOfSpeech": "noun"
+                 },
+                 {
+                 "definition": "an extended fictional work in prose; usually in the form of a story",
+                 "partOfSpeech": "noun"
+                 }
+                 ],
+ "imageNameInAssets": "novel"
+ }
+ ]
