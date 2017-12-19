@@ -95,6 +95,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goAddNewWord" {
             let vc = segue.destination as! AddNewWordViewController
+            print(self.categoryFrom)
             vc.category = self.categoryFrom
             vc.transitioningDelegate = self
             vc.modalPresentationStyle = .custom
@@ -132,9 +133,12 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
         }
         if let imageString = self.arrayOfWords[indexPath.item].wordImageString {
             let heightString = (UIImage(named: imageString)?.size.height)!
-            if heightString > 450 {
-                return 450
-            }else {
+            if heightString > 450 &&  heightString < 900{
+                return heightString/2
+            }else if heightString > 900 {
+                return heightString/4
+            }
+            else {
                 return heightString
             }
         }

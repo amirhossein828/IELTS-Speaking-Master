@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if hasLaunched ==  false {
             MockData.saveCategories()
             MockData.saveWords(nameOfCategory: CategoryName.friends)
+            MockData.saveWords(nameOfCategory: CategoryName.Environment)
         }
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)

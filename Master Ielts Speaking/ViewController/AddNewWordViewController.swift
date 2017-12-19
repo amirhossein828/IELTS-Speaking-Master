@@ -101,6 +101,9 @@ class AddNewWordViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         // save in database
         saveData(newVocab!)
+        print(self.category)
+        print(self.category?.categoryName)
+        print(newVocab!)
         updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
         let detailViewController = self.childViewControllers[0] as! DetailViewController
         detailViewController.newVocabulary = self.newVocab

@@ -1,0 +1,29 @@
+ [{
+  "word": "arid",
+  "definitions": [
+                  {
+                  "definition": "lacking sufficient water or rainfall",
+                  "partOfSpeech": "noun"
+                  },
+                  {
+                  "definition": "lacking vitality or spirit; lifeless",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "arid"
+  },
+  {
+  "word": "extinct",
+  "definitions": [
+                  {
+                  "definition": "no longer in existence; lost or especially having died out leaving no living representatives",
+                  "partOfSpeech": "noun"
+                  },
+                  {
+                  "definition": "being out or having grown cold",
+                  "partOfSpeech": "noun"
+                  }
+                  ],
+  "imageNameInAssets": "extinct"
+  }
+  ]
