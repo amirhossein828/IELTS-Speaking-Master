@@ -33,6 +33,8 @@
 		9650ECF61FE8C407000A952F /* Book.json in Resources */ = {isa = PBXBuildFile; fileRef = 9650ECF51FE8C407000A952F /* Book.json */; };
 		9650ECF81FE8C8E4000A952F /* HomeTown.json in Resources */ = {isa = PBXBuildFile; fileRef = 9650ECF71FE8C8E4000A952F /* HomeTown.json */; };
 		9650ECFA1FE9C07C000A952F /* Family.json in Resources */ = {isa = PBXBuildFile; fileRef = 9650ECF91FE9C07C000A952F /* Family.json */; };
+		9650ECFC1FE9F761000A952F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650ECFB1FE9F761000A952F /* SearchResultViewController.swift */; };
+		96553A2A1FEAC11B00341CA8 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96553A291FEAC11B00341CA8 /* HelpViewController.swift */; };
 		966301481FE1766C0057919B /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301471FE1766B0057919B /* CustomLayout.swift */; };
 		966301881FE209B80057919B /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301871FE209B80057919B /* AnimationTransition.swift */; };
 		9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301891FE39E110057919B /* HelperFunctions.swift */; };
@@ -101,6 +103,8 @@
 		9650ECF51FE8C407000A952F /* Book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Book.json; sourceTree = "<group>"; };
 		9650ECF71FE8C8E4000A952F /* HomeTown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeTown.json; sourceTree = "<group>"; };
 		9650ECF91FE9C07C000A952F /* Family.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Family.json; sourceTree = "<group>"; };
+		9650ECFB1FE9F761000A952F /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		96553A291FEAC11B00341CA8 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		966301471FE1766B0057919B /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		966301871FE209B80057919B /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
 		966301891FE39E110057919B /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				96FF73AB1FDBC5F000AA17E2 /* DetailViewController.swift */,
 				961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */,
 				9634C5331FE627C100161FF4 /* FirstViewController.swift */,
+				9650ECFB1FE9F761000A952F /* SearchResultViewController.swift */,
+				96553A291FEAC11B00341CA8 /* HelpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 				961BE51F1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift in Sources */,
 				9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */,
 				966301881FE209B80057919B /* AnimationTransition.swift in Sources */,
+				96553A2A1FEAC11B00341CA8 /* HelpViewController.swift in Sources */,
 				964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */,
 				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
@@ -641,6 +648,7 @@
 				96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */,
 				96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */,
 				9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */,
+				9650ECFC1FE9F761000A952F /* SearchResultViewController.swift in Sources */,
 				9634C5341FE627C100161FF4 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

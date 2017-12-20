@@ -126,7 +126,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="llU-Bp-Ywk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT"/>
+                    <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_search" id="Og5-IJ-scZ">
+                            <connections>
+                                <action selector="searchButton:" destination="UTm-PS-4oX" id="jjT-6l-CDU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addCategoryButton" destination="UHt-LF-9Vs" id="0yL-AO-Osf"/>
                         <outlet property="tableView" destination="Ik0-xI-B5t" id="nvX-e6-WDW"/>
@@ -500,6 +506,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfZ-rh-Cmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2500" y="240.62968515742131"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="rjz-ez-KDJ">
+            <objects>
+                <viewController id="Y9C-b4-cnR" customClass="HelpViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HVp-V0-tBV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cGP-aC-TmX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pI-Bo-ZmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1025" y="-494"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="n2X-cE-28U">
@@ -1070,5 +1091,6 @@
     <resources>
         <image name="Base" width="960" height="540"/>
         <image name="background2" width="1024" height="682"/>
+        <image name="ic_search" width="24" height="24"/>
     </resources>
 </document>
