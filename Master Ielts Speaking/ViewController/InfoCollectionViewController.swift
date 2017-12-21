@@ -20,6 +20,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addWordButton: UIButton!
     
+    @IBOutlet weak var cancelDeleting: UIBarButtonItem!
     var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
     let transition = AnimationTransition()
@@ -49,6 +50,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
         self.deleteButtenIsHidden = false
+        self.cancelDeleting.isEnabled = true
         self.collectionView.reloadData()
     }
     
@@ -102,6 +104,13 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         detailViewController.isComeFromInfo = true
         detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
         self.present(detailViewController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        self.deleteButtenIsHidden = true
+        self.cancelDeleting.isEnabled = false
+        self.collectionView.reloadData()
     }
     
 
