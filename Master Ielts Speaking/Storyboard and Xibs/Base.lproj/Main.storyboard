@@ -573,13 +573,48 @@
                     <view key="view" contentMode="scaleToFill" id="HVp-V0-tBV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-zU-V3A">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MQY-6C-phm"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Back" id="cPg-kz-zvg">
+                                        <connections>
+                                            <action selector="backButton:" destination="Y9C-b4-cnR" id="WF4-eh-OKN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvO-Nd-zCL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qvO-Nd-zCL" firstAttribute="top" secondItem="qZw-zU-V3A" secondAttribute="bottom" id="4ko-sW-eKP"/>
+                            <constraint firstItem="qZw-zU-V3A" firstAttribute="trailing" secondItem="cGP-aC-TmX" secondAttribute="trailing" id="6mw-Az-0r1"/>
+                            <constraint firstItem="qvO-Nd-zCL" firstAttribute="trailing" secondItem="cGP-aC-TmX" secondAttribute="trailing" id="HS4-SB-4lh"/>
+                            <constraint firstItem="qZw-zU-V3A" firstAttribute="leading" secondItem="cGP-aC-TmX" secondAttribute="leading" id="K4B-C2-eG5"/>
+                            <constraint firstItem="qvO-Nd-zCL" firstAttribute="bottom" secondItem="cGP-aC-TmX" secondAttribute="bottom" id="VRT-jU-6yS"/>
+                            <constraint firstItem="qvO-Nd-zCL" firstAttribute="leading" secondItem="cGP-aC-TmX" secondAttribute="leading" id="gNx-IZ-C13"/>
+                            <constraint firstItem="qZw-zU-V3A" firstAttribute="top" secondItem="cGP-aC-TmX" secondAttribute="top" id="gtY-wK-6ex"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cGP-aC-TmX"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="qvO-Nd-zCL" id="ScO-M0-oy5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pI-Bo-ZmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1025" y="-494"/>
+            <point key="canvasLocation" x="-1026.4000000000001" y="-494.30284857571218"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="n2X-cE-28U">
@@ -677,6 +712,9 @@
                                 <state key="normal" title="HOW IT WORKS">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Y9C-b4-cnR" kind="show" id="viN-yI-mDP"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZT-uj-GS0">
                                 <rect key="frame" x="97" y="20" width="181" height="120"/>
