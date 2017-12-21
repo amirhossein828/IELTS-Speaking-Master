@@ -21,6 +21,8 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         })
         return resultArray
     }()
+    var filterCategoryList = [Category]()
+    var filterWordList = [Word]()
     // list of words
     var wordList : [Word]? = {
         var resultArray = [Word]()
@@ -51,6 +53,7 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         // avoid white wierd space
         definesPresentationContext = true
         self.searchController.searchBar.delegate = self
+        self.resultController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchCell")
         
     }
 
@@ -61,7 +64,35 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
     
     // this is a function get called, whenever user type text
     func updateSearchResults(for searchController: UISearchController) {
-        
+        if isCategory {
+            // filter through categories
+            // go through each item of array and returns true
+            self.filterCategoryList =   (self.categoryList?.filter { (category : Category) -> Bool in
+                // check if one string is inside another string
+                if category.categoryName.lowercased().contains((self.searchController.searchBar.text?.lowercased())!){
+                    return true
+                }else {
+                    return false
+                }
+                
+                })!
+            // update result from table view
+            self.resultController.tableView.reloadData()
+        }else {
+            // filter through categories
+            // go through each item of array and returns true
+            self.filterWordList =   (self.wordList?.filter { (word : Word) -> Bool in
+                // check if one string is inside another string
+                if word.wordName.lowercased().contains((self.searchController.searchBar.text?.lowercased())!){
+                    return true
+                }else {
+                    return false
+                }
+                
+                })!
+            // update result from table view
+            self.resultController.tableView.reloadData()
+        }
         
     }
     // this is a function get called, whenever the scope button selection changed
@@ -85,19 +116,24 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView {
-            if isCategory == true {
+            if isCategory  {
                 return categoryList?.count ?? 0
             }else{
                 return wordList?.count ?? 0
             }
+        }else {
+            if isCategory  {
+                return filterCategoryList.count
+            }else{
+                return filterWordList.count
+            }
         }
-        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
         if tableView == self.tableView {
-            if isCategory == true {
+            if isCategory  {
                 cell.textLabel?.text = self.categoryList![indexPath.row].categoryName
                 return cell
             }else {
@@ -105,7 +141,13 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
                 return cell
             }
         }else {
-            return cell
+            if isCategory {
+                cell.textLabel?.text = self.filterCategoryList[indexPath.row].categoryName
+                return cell
+            }else {
+                cell.textLabel?.text = self.filterWordList[indexPath.row].wordName
+                return cell
+            }
         }
     }
 
