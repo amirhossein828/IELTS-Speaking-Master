@@ -175,7 +175,7 @@
         <!--Info Collection View Controller-->
         <scene sceneID="iXs-e6-UQg">
             <objects>
-                <viewController id="pF2-rI-0q0" customClass="InfoCollectionViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoCollectionViewController" id="pF2-rI-0q0" customClass="InfoCollectionViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFL-z3-BUY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -707,7 +707,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LLe-5T-tOR">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="exC-vy-W9y" customClass="DetailViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DetailViewController" storyboardIdentifier="DetailViewController" id="exC-vy-W9y" customClass="DetailViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4s-a4-OF4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -907,6 +907,7 @@
                     </view>
                     <connections>
                         <outlet property="advCollectionView" destination="FhW-q6-cPM" id="QW1-EU-F0h"/>
+                        <outlet property="closeButton" destination="8Bj-Q7-94K" id="Tiu-NZ-KvW"/>
                         <outlet property="collectionView" destination="fnr-bF-28c" id="ZIh-Fe-zth"/>
                         <outlet property="pageControl" destination="Kqz-O4-36Q" id="bBS-Or-Mnu"/>
                         <outlet property="viewPgeControl" destination="JaI-bQ-uHu" id="AQn-Mv-0xE"/>

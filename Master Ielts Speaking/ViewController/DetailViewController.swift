@@ -16,9 +16,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var advCollectionView: UICollectionView!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var closeButton: UIButton!
+    
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
     var isComeFromInfo : Bool? = nil
+    var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
     
     lazy var vc : AddNewWordViewController = {
@@ -31,6 +34,8 @@ class DetailViewController: UIViewController {
         self.collectionView.backgroundColor = UIColor.clear
         self.wordLabel.text = self.newVocabulary?.wordName
         self.pageControl.numberOfPages = self.pageControlDots
+        // make close button hidden if user come from search to this page
+        _ = isComeFromSearch ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
         
     }
     

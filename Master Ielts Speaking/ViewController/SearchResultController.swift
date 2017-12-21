@@ -22,7 +22,7 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         return resultArray
     }()
     var filterCategoryList = [Category]()
-    var filterWordList = [Word]()
+    var category : Category? = nil
     // list of words
     var wordList : [Word]? = {
         var resultArray = [Word]()
@@ -34,7 +34,8 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         })
         return resultArray
     }()
-    
+    var filterWordList = [Word]()
+    var word : Word? = nil
     var searchController : UISearchController!
     var resultController = UITableViewController()
     var isCategory = true
@@ -148,6 +149,34 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
                 cell.textLabel?.text = self.filterWordList[indexPath.row].wordName
                 return cell
             }
+        }
+    }
+    
+    // It detect which row get selected
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.tableView {
+            showDetail(withCategoryArray: self.categoryList!, withWordArray: self.wordList!, withIndexPath: indexPath.row)
+        }else {
+            showDetail(withCategoryArray: self.filterCategoryList, withWordArray: self.filterWordList, withIndexPath: indexPath.row)
+        }
+  
+    }
+    
+    // Based on is it a list of categories or words and or which array is used it will go to InfoCollectionViewController or DetailViewController
+    private func showDetail( withCategoryArray :[Category], withWordArray : [Word] ,withIndexPath : Int ) {
+        if self.isCategory {
+            self.category = withCategoryArray[withIndexPath]
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let infoVC = sb.instantiateViewController(withIdentifier: "InfoCollectionViewController") as! InfoCollectionViewController
+            infoVC.categoryFrom = self.category
+            show(infoVC, sender: self)
+        }else {
+            self.word = withWordArray[withIndexPath]
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let detailVC = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            detailVC.newVocabulary = self.word
+            detailVC.isComeFromSearch = true
+            show(detailVC, sender: self)
         }
     }
 
