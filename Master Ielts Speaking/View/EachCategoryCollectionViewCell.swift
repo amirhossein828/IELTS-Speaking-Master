@@ -42,8 +42,10 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     
     @IBAction func deleteButton(_ sender: UIButton) {
     }
-    
-    
-    
-    
+
+}
+
+// protocol to delegate deleting to InfoCollectionViewController
+protocol DeleteCellDelegate : class {
+    func deleteCell(withIndex : IndexPath)
 }

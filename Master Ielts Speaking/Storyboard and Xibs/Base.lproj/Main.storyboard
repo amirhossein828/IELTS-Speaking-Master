@@ -232,7 +232,7 @@
                                                                                     <constraint firstItem="IHx-Sn-smL" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="ecI-k7-KLl"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXI-wJ-7Lv">
+                                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXI-wJ-7Lv">
                                                                                 <rect key="frame" x="8" y="8" width="30" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="fXI-wJ-7Lv" secondAttribute="height" multiplier="1:1" id="cPS-kr-BRR"/>
