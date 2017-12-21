@@ -44,10 +44,13 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
+    @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
+        self.deleteButtenIsHidden = false
+        self.collectionView.reloadData()
+    }
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
         
@@ -105,6 +108,8 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
         //
     }
+    
+    
     
     
 

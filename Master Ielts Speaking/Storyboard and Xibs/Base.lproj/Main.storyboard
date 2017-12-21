@@ -292,6 +292,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="KQ2-Ln-pyj" secondAttribute="trailing" id="0TB-Lj-vn7"/>
                                                 <constraint firstAttribute="trailing" secondItem="9qs-n0-SzZ" secondAttribute="trailing" constant="18" id="2cQ-rY-gSs"/>
@@ -300,6 +301,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="KQ2-Ln-pyj" secondAttribute="bottom" id="rpF-ld-NOR"/>
                                                 <constraint firstAttribute="bottom" secondItem="9qs-n0-SzZ" secondAttribute="bottom" constant="39" id="wfc-3g-fbT"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="BZC-a2-bj9" appends="YES" id="Nye-le-5O6"/>
+                                            </connections>
                                         </view>
                                         <blurEffect style="regular"/>
                                     </visualEffectView>
@@ -330,6 +334,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6N-yc-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="BZC-a2-bj9">
+                    <connections>
+                        <action selector="longPress:" destination="pF2-rI-0q0" id="052-gb-C63"/>
+                        <outlet property="delegate" destination="pF2-rI-0q0" id="psj-0B-vUZ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1800.8" y="240.62968515742131"/>
         </scene>
