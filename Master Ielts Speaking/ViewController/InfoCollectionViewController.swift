@@ -104,14 +104,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         self.present(detailViewController, animated: true, completion: nil)
     }
     
-    // delete word
-    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-        //
-    }
-    
-    
-    
-    
+
 
 }
 
@@ -182,6 +175,9 @@ extension InfoCollectionViewController : ReloadViewDelegate {
 // extention to adopt to DeleteCellDelegate and remove cell selected by user from database and array
 extension InfoCollectionViewController : DeleteCellDelegate {
     func deleteCell(withIndex: IndexPath) {
+        let customLayout =  collectionView.collectionViewLayout as! CustomLayout
+        customLayout.cache.removeAll()
+        deleteFromDatadase((self.categoryFrom?.words[withIndex.row])!)
         self.arrayOfWords.remove(at: withIndex.row)
         self.collectionView.reloadData()
     }
