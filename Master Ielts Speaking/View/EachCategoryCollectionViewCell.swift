@@ -12,6 +12,7 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIView!
     
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var wordImageView: UIImageView!
 
     @IBOutlet weak var wordField: UILabel!
@@ -19,6 +20,9 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let image = UIImage(named: "deleteCell")?.withRenderingMode(.alwaysTemplate)
+        self.deleteButton.setImage(image, for: .normal)
+        
         self.imageView.layer.cornerRadius = 15
         self.backgroundViewForText.layer.cornerRadius = 8
         self.imageView.layer.masksToBounds = true
@@ -36,6 +40,8 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     }
     
     
+    @IBAction func deleteButton(_ sender: UIButton) {
+    }
     
     
     

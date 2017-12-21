@@ -40,19 +40,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             layout.delegate = self
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        self.arrayOfWords.removeAll()
-//        
-//        for word in (self.categoryFrom?.words)! {
-//            self.arrayOfWords.append(word)
-//            self.collectionView.reloadData()
-//            
-//        }
-//    }
-    
-    
-
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,6 +98,11 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         detailViewController.isComeFromInfo = true
         detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
         self.present(detailViewController, animated: true, completion: nil)
+    }
+    
+    // delete word
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        //
     }
     
     

@@ -232,13 +232,25 @@
                                                                                     <constraint firstItem="IHx-Sn-smL" firstAttribute="leading" secondItem="9U8-9R-XUl" secondAttribute="leading" id="ecI-k7-KLl"/>
                                                                                 </constraints>
                                                                             </view>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXI-wJ-7Lv">
+                                                                                <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="fXI-wJ-7Lv" secondAttribute="height" multiplier="1:1" id="cPS-kr-BRR"/>
+                                                                                </constraints>
+                                                                                <color key="tintColor" red="0.99942404029999998" green="0.090767373279211749" blue="0.053147106016837087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <connections>
+                                                                                    <action selector="deleteButton:" destination="HgQ-yW-7e8" eventType="touchUpInside" id="yq1-hZ-A46"/>
+                                                                                </connections>
+                                                                            </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="Eg9-Mn-neI" secondAttribute="trailing" id="1bM-JG-eYq"/>
                                                                             <constraint firstItem="Eg9-Mn-neI" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="5ZX-kV-HaH"/>
                                                                             <constraint firstAttribute="trailing" secondItem="9U8-9R-XUl" secondAttribute="trailing" constant="8" id="9VK-u9-66f"/>
+                                                                            <constraint firstItem="fXI-wJ-7Lv" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" constant="8" id="C45-72-EEH"/>
                                                                             <constraint firstAttribute="bottom" secondItem="9U8-9R-XUl" secondAttribute="bottom" constant="8" id="CVF-ax-dXl"/>
+                                                                            <constraint firstItem="fXI-wJ-7Lv" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" constant="8" id="blM-ff-ZiL"/>
                                                                             <constraint firstItem="9U8-9R-XUl" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="8" id="cla-FY-ndk"/>
                                                                             <constraint firstItem="Eg9-Mn-neI" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" id="hxb-MS-skI"/>
                                                                             <constraint firstItem="9U8-9R-XUl" firstAttribute="centerX" secondItem="plV-nR-jml" secondAttribute="centerX" id="rbj-Li-mJu"/>
@@ -255,6 +267,7 @@
                                                             <size key="customSize" width="175" height="322"/>
                                                             <connections>
                                                                 <outlet property="backgroundViewForText" destination="9U8-9R-XUl" id="Nkv-LB-33j"/>
+                                                                <outlet property="deleteButton" destination="fXI-wJ-7Lv" id="L84-fj-8Vw"/>
                                                                 <outlet property="imageView" destination="plV-nR-jml" id="R3p-Qj-JyX"/>
                                                                 <outlet property="wordField" destination="IHx-Sn-smL" id="l42-tF-1cY"/>
                                                                 <outlet property="wordImageView" destination="Eg9-Mn-neI" id="0fh-eU-dZa"/>
