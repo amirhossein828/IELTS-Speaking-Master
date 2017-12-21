@@ -66,6 +66,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EachCategoryCollectionViewCell
+        cell.delegate = self
         cell.setCell(withWord: self.arrayOfWords[indexPath.row], withIndex : indexPath, shouldHidden : self.deleteButtenIsHidden)
         return cell
     }
@@ -84,7 +85,6 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goAddNewWord" {
             let vc = segue.destination as! AddNewWordViewController
-            print(self.categoryFrom)
             vc.category = self.categoryFrom
             vc.transitioningDelegate = self
             vc.modalPresentationStyle = .custom
