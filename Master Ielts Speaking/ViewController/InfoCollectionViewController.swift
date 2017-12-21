@@ -23,6 +23,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
     let transition = AnimationTransition()
+    var deleteButtenIsHidden = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EachCategoryCollectionViewCell
-        cell.setCell(withWord: self.arrayOfWords[indexPath.row])
+        cell.setCell(withWord: self.arrayOfWords[indexPath.row], withIndex : indexPath, shouldHidden : self.deleteButtenIsHidden)
         return cell
     }
         
@@ -171,6 +172,15 @@ extension InfoCollectionViewController : ReloadViewDelegate {
             self.collectionView.reloadData()
         }
     }
+}
+
+// extention to adopt to DeleteCellDelegate and remove cell selected by user from database and array
+extension InfoCollectionViewController : DeleteCellDelegate {
+    func deleteCell(withIndex: IndexPath) {
+        self.arrayOfWords.remove(at: withIndex.row)
+        self.collectionView.reloadData()
+    }
+   
 }
 
 

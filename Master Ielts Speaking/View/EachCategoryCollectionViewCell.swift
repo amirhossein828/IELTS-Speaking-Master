@@ -11,24 +11,26 @@ import UIKit
 class EachCategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIView!
-    
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var wordImageView: UIImageView!
-
     @IBOutlet weak var wordField: UILabel!
     @IBOutlet weak var backgroundViewForText: UIView!
+    
+    weak var delegate : DeleteCellDelegate?
+    var index  : IndexPath!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         let image = UIImage(named: "deleteCell")?.withRenderingMode(.alwaysTemplate)
         self.deleteButton.setImage(image, for: .normal)
-        
         self.imageView.layer.cornerRadius = 15
         self.backgroundViewForText.layer.cornerRadius = 8
         self.imageView.layer.masksToBounds = true
     }
     
-    func setCell(withWord word : Word) {
+    func setCell(withWord word : Word, withIndex : IndexPath, shouldHidden : Bool) {
+        self.index = withIndex
+        self.deleteButton.isHidden = shouldHidden
         self.wordField.text = word.wordName
         if let imageData = word.wordImage {
             self.wordImageView.image = UIImage(data: imageData as Data)
@@ -40,7 +42,9 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
     }
     
     
+    
     @IBAction func deleteButton(_ sender: UIButton) {
+        self.delegate?.deleteCell(withIndex: index)
     }
 
 }
