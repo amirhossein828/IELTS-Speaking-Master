@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnH-SY-7X5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnH-SY-7X5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -134,6 +134,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ik0-xI-B5t" secondAttribute="trailing" id="1X9-KU-QUL"/>
                                     <constraint firstItem="Ik0-xI-B5t" firstAttribute="top" secondItem="x5u-oh-QlV" secondAttribute="top" id="1v2-h8-Hkv"/>
@@ -595,6 +596,9 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-N5-xq5">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -603,12 +607,15 @@
                             <constraint firstItem="qvO-Nd-zCL" firstAttribute="trailing" secondItem="cGP-aC-TmX" secondAttribute="trailing" id="HS4-SB-4lh"/>
                             <constraint firstItem="qZw-zU-V3A" firstAttribute="leading" secondItem="cGP-aC-TmX" secondAttribute="leading" id="K4B-C2-eG5"/>
                             <constraint firstItem="qvO-Nd-zCL" firstAttribute="bottom" secondItem="cGP-aC-TmX" secondAttribute="bottom" id="VRT-jU-6yS"/>
+                            <constraint firstItem="hDU-N5-xq5" firstAttribute="centerX" secondItem="HVp-V0-tBV" secondAttribute="centerX" id="czF-YF-PuV"/>
                             <constraint firstItem="qvO-Nd-zCL" firstAttribute="leading" secondItem="cGP-aC-TmX" secondAttribute="leading" id="gNx-IZ-C13"/>
                             <constraint firstItem="qZw-zU-V3A" firstAttribute="top" secondItem="cGP-aC-TmX" secondAttribute="top" id="gtY-wK-6ex"/>
+                            <constraint firstItem="hDU-N5-xq5" firstAttribute="centerY" secondItem="HVp-V0-tBV" secondAttribute="centerY" id="xR3-4I-xfc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGP-aC-TmX"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="hDU-N5-xq5" id="0BD-O6-baB"/>
                         <outlet property="webView" destination="qvO-Nd-zCL" id="ScO-M0-oy5"/>
                     </connections>
                 </viewController>

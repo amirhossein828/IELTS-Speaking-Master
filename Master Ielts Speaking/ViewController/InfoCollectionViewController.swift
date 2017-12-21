@@ -15,7 +15,7 @@ protocol ReloadViewDelegate : class{
     func reloadTableViewByNewData()
 }
 
-class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addWordButton: UIButton!
@@ -28,6 +28,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationController?.hidesBarsOnSwipe = true
         self.addWordButton.layer.cornerRadius = (addWordButton.frame.size.width) / 2
         let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
         addWordButton.setImage(addButtonImage, for: .normal)
@@ -47,6 +48,9 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         super.didReceiveMemoryWarning()
     }
     
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
     
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
         self.deleteButtenIsHidden = false

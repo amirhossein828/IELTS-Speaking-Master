@@ -87,7 +87,6 @@ class AddNewWordViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 }
-                
             }
         }
 

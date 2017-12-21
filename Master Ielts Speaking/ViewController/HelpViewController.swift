@@ -9,18 +9,26 @@
 import UIKit
 import WebKit
 
-class HelpViewController: UIViewController {
+class HelpViewController: UIViewController , WKNavigationDelegate{
     // Outlets
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(webView)
         // create url
         let url = URL(string: "https://medium.com/@hashemi.eng1985/splash-screen-with-custom-dots-framework-9ed737a17770")
         // create request
         let request = URLRequest(url: url!)
         // load the page by the request
         webView.load(request)
+        webView.navigationDelegate = self
+        webView.addSubview(activityIndicator)
+        // start animating activityIndicator
+        self.activityIndicator.startAnimating()
+        self.activityIndicator.hidesWhenStopped = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +39,12 @@ class HelpViewController: UIViewController {
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // stop animating activityIndicator when the page gets loaded
+        self.activityIndicator.stopAnimating()
+    }
+    
     
 
 }

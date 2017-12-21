@@ -15,14 +15,12 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var category : Category? = nil
     let transition = AnimationTransition()
     
-    @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCategoryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.addCategoryButton.layer.cornerRadius = (addCategoryButton.frame.size.width) / 2
         let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
         addCategoryButton.setImage(addButtonImage, for: .normal)
@@ -32,7 +30,9 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
             self.arrayOfCategories = response
         }
     }
+
     
+
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
  
         
