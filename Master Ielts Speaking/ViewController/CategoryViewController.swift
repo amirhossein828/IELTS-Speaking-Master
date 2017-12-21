@@ -29,7 +29,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         addCategoryButton.imageView?.tintColor = UIColor.white
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
-            print(response)
             self.arrayOfCategories = response
         }
     }
