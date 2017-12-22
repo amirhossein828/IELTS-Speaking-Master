@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
     
+    @IBOutlet weak var examplePageControl: UIPageControl!
     @IBOutlet weak var exampleCollectionView: UICollectionView!
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
@@ -126,8 +127,16 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     // this method makes the page control dots white when the scrolling happen (target of collection view)
      func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let index = targetContentOffset.pointee.x / view.frame.width
-        let indexPath = NSIndexPath(item: Int(index), section: 0)
-        self.pageControl.currentPage = indexPath.item
+        if scrollView == self.collectionView {
+            let indexPath = NSIndexPath(item: Int(index), section: 0)
+            self.pageControl.currentPage = indexPath.item
+        }else if scrollView == self.exampleCollectionView {
+            let indexPath = NSIndexPath(item: Int(index), section: 0)
+            self.examplePageControl.currentPage = indexPath.item
+        }
+        
     }
+    
+    
 
 }
