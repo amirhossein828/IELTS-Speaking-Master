@@ -895,11 +895,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-sx-uKX">
-                                                    <rect key="frame" x="12" y="12" width="352" height="83"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="83" id="LQh-Ef-E0Q"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                    <rect key="frame" x="12" y="-3.5" width="352" height="86"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -908,7 +905,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="UvO-sx-uKX" secondAttribute="trailing" constant="5" id="IG7-oo-EdU"/>
-                                            <constraint firstItem="UvO-sx-uKX" firstAttribute="centerY" secondItem="7iT-Nh-hAI" secondAttribute="centerY" id="lbB-b9-dy6"/>
+                                            <constraint firstItem="UvO-sx-uKX" firstAttribute="height" secondItem="7iT-Nh-hAI" secondAttribute="height" multiplier="0.8" id="SZA-Gd-ER6"/>
+                                            <constraint firstItem="UvO-sx-uKX" firstAttribute="centerY" secondItem="7iT-Nh-hAI" secondAttribute="centerY" constant="-14" id="lbB-b9-dy6"/>
                                             <constraint firstItem="UvO-sx-uKX" firstAttribute="centerX" secondItem="7iT-Nh-hAI" secondAttribute="centerX" id="pSy-n1-2jc"/>
                                         </constraints>
                                         <connections>
@@ -959,7 +957,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-yD-iWc">
-                                                    <rect key="frame" x="13" y="13" width="346" height="107"/>
+                                                    <rect key="frame" x="13" y="4.5" width="346" height="100.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -967,9 +965,9 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="centerY" secondItem="bTv-mh-7Xg" secondAttribute="centerY" id="4eP-HI-Zek"/>
+                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="centerY" secondItem="bTv-mh-7Xg" secondAttribute="centerY" constant="-12" id="4eP-HI-Zek"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="DdV-yD-iWc" secondAttribute="trailing" constant="5" id="OKg-2h-XP6"/>
-                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="top" secondItem="bTv-mh-7Xg" secondAttribute="topMargin" constant="5" id="vpP-yG-gvo"/>
+                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="height" secondItem="bTv-mh-7Xg" secondAttribute="height" multiplier="0.75" id="gRH-6f-PgP"/>
                                             <constraint firstItem="DdV-yD-iWc" firstAttribute="centerX" secondItem="bTv-mh-7Xg" secondAttribute="centerX" id="wXD-y5-Pld"/>
                                         </constraints>
                                         <connections>

@@ -17,14 +17,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
-    
     @IBOutlet weak var examplePageControl: UIPageControl!
     @IBOutlet weak var exampleCollectionView: UICollectionView!
+    
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
     var isComeFromInfo : Bool? = nil
     var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
+    var pageControlExampleDots : Int = 0
     
     lazy var vc : AddNewWordViewController = {
         return self.parent as! AddNewWordViewController
@@ -36,16 +37,13 @@ class DetailViewController: UIViewController {
         self.collectionView.backgroundColor = UIColor.clear
         self.wordLabel.text = self.newVocabulary?.wordName
         self.pageControl.numberOfPages = self.pageControlDots
+        self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
         _ = isComeFromSearch ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
         
         
     }
-    
-    func test() {
-        print(newVocabulary?.examples)
-        print("ddddddd7486r732656723457463275623847")
-    }
+
 
     @IBAction func backButton(_ sender: UIButton) {
         if isComeFromInfo! {

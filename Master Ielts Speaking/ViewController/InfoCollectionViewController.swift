@@ -107,6 +107,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
         detailViewController.isComeFromInfo = true
         detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
+        detailViewController.pageControlExampleDots = self.arrayOfWords[indexPath.row].examples.count
         self.present(detailViewController, animated: true, completion: nil)
     }
     
