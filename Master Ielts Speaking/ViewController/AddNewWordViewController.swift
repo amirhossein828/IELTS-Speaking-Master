@@ -138,6 +138,7 @@ class AddNewWordViewController: UIViewController {
                 detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
                 detailViewController.collectionView.reloadData()
                 detailViewController.advCollectionView.reloadData()
+                detailViewController.exampleCollectionView.reloadData()
             }
         }
         

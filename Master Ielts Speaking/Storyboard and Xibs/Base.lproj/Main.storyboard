@@ -928,25 +928,46 @@
                                 <rect key="frame" x="0.0" y="645" width="375" height="22"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
                                 <rect key="frame" x="0.0" y="512" width="375" height="133.5"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3IV-7t-dfS">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3IV-7t-dfS">
+                                    <size key="itemSize" width="372" height="133.5"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bTv-mh-7Xg">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellOfExample" id="bTv-mh-7Xg" customClass="ExampleCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="372" height="133.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="372" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-yD-iWc">
+                                                    <rect key="frame" x="13" y="13" width="346" height="107"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="centerY" secondItem="bTv-mh-7Xg" secondAttribute="centerY" id="4eP-HI-Zek"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="DdV-yD-iWc" secondAttribute="trailing" constant="5" id="OKg-2h-XP6"/>
+                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="top" secondItem="bTv-mh-7Xg" secondAttribute="topMargin" constant="5" id="vpP-yG-gvo"/>
+                                            <constraint firstItem="DdV-yD-iWc" firstAttribute="centerX" secondItem="bTv-mh-7Xg" secondAttribute="centerX" id="wXD-y5-Pld"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="exampleLabel" destination="DdV-yD-iWc" id="HJp-sT-UpA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="exC-vy-W9y" id="R7q-nw-pZD"/>
+                                    <outlet property="delegate" destination="exC-vy-W9y" id="sUA-jM-Djq"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -984,6 +1005,7 @@
                         <outlet property="advCollectionView" destination="FhW-q6-cPM" id="QW1-EU-F0h"/>
                         <outlet property="closeButton" destination="8Bj-Q7-94K" id="Tiu-NZ-KvW"/>
                         <outlet property="collectionView" destination="fnr-bF-28c" id="ZIh-Fe-zth"/>
+                        <outlet property="exampleCollectionView" destination="SgA-7K-x8B" id="egc-fr-kLd"/>
                         <outlet property="pageControl" destination="Kqz-O4-36Q" id="bBS-Or-Mnu"/>
                         <outlet property="viewPgeControl" destination="JaI-bQ-uHu" id="AQn-Mv-0xE"/>
                         <outlet property="wordLabel" destination="Frd-UK-MDV" id="3NS-kt-KZ0"/>

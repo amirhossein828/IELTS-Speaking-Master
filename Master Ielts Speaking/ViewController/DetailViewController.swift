@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
     
+    @IBOutlet weak var exampleCollectionView: UICollectionView!
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
     var isComeFromInfo : Bool? = nil
@@ -70,10 +71,13 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
         return self.newVocabulary?.definitions.count ?? 0
+        }else if collectionView == self.advCollectionView {
+            return 1
         }else {
-            return 2
+            return self.newVocabulary?.examples.count ?? 0
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfDef", for: indexPath) as! DefinitionCollectionViewCell
@@ -84,7 +88,7 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         }
         cell.backgroundColor = UIColor.clear
         return cell
-        }else {
+        }else if collectionView == self.advCollectionView {
             let cellOfAdv = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfAd", for: indexPath) as! AdvertisementCell
             if let imageData = self.newVocabulary?.wordImage {
                 cellOfAdv.imageView.image = UIImage(data: imageData as Data)
@@ -93,13 +97,24 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
                 cellOfAdv.imageView.image = UIImage(named: imageString)
             }
             return cellOfAdv
+        }else {
+            let cellOfExample = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfExample", for: indexPath) as! ExampleCollectionViewCell
+            if let arrayOfExamples = self.newVocabulary?.examples {
+                let wordExample = arrayOfExamples[indexPath.row]
+
+                        cellOfExample.exampleLabel.text = wordExample
+            }
+            cellOfExample.backgroundColor = UIColor.clear
+            return cellOfExample
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if collectionView == self.collectionView {
             return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-         }else {
+         }else if collectionView == self.advCollectionView {
             return CGSize(width: self.advCollectionView.frame.width, height: self.advCollectionView.frame.height)
+         } else {
+             return CGSize(width: self.exampleCollectionView.frame.width, height: self.exampleCollectionView.frame.height)
         }
     }
     
