@@ -71,6 +71,29 @@ class AddNewWordViewController: UIViewController {
             showAlert("Enter a word", "Please enter a word")
             return}
         newVocab?.wordName = newWordString
+        getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: { (arrayOfDefObjects) in
+            for object in arrayOfDefObjects {
+                self.newVocab?.definitions.append(object["definition"].string!)
+            }
+            // search for photos related to the new word
+            FlickrService.getPhotos(searchKey: (self.newVocab?.wordName)!) { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    DispatchQueue.main.async {
+                        self.arrayOfPhotos = json["photos"]["photo"].array
+                        self.collectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }) { (arrayOfExampObjects) in
+            for object in arrayOfExampObjects {
+                self.newVocab?.examples.append(object.string!)
+            }
+        }
+        /*
         getDefinitionsAndPhotos(withWord: newWordString, viewController: self) { (arrayOfDefObjects) in
             for object in arrayOfDefObjects {
                 self.newVocab?.definitions.append(object["definition"].string!)
@@ -89,7 +112,7 @@ class AddNewWordViewController: UIViewController {
                 }
             }
         }
-
+        */
     }
 
     // come back to list of categories
@@ -111,6 +134,7 @@ class AddNewWordViewController: UIViewController {
             (succed) in
             if succed {
                 // configure the detail viewcontroller when transition get completed
+                detailViewController.test()
                 detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
                 detailViewController.collectionView.reloadData()
                 detailViewController.advCollectionView.reloadData()

@@ -37,9 +37,13 @@ class DetailViewController: UIViewController {
         // make close button hidden if user come from search to this page
         _ = isComeFromSearch ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
         
+        
     }
     
-
+    func test() {
+        print(newVocabulary?.examples)
+        print("ddddddd7486r732656723457463275623847")
+    }
 
     @IBAction func backButton(_ sender: UIButton) {
         if isComeFromInfo! {
@@ -88,7 +92,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
             if let imageString = self.newVocabulary?.wordImageString {
                 cellOfAdv.imageView.image = UIImage(named: imageString)
             }
-
             return cellOfAdv
         }
     }
@@ -98,8 +101,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
          }else {
             return CGSize(width: self.advCollectionView.frame.width, height: self.advCollectionView.frame.height)
         }
-        
-        
     }
     
     
