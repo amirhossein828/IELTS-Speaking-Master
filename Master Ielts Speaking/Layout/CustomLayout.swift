@@ -19,7 +19,7 @@ class CustomLayout : UICollectionViewLayout {
     
     // properties
     fileprivate var numberOfColumns = 2
-    fileprivate var cellPadding: CGFloat = 6
+    fileprivate var cellPadding: CGFloat = 3
     
     // Array to keep a cache of attributes.
     var cache = [UICollectionViewLayoutAttributes]()
@@ -62,7 +62,7 @@ class CustomLayout : UICollectionViewLayout {
             
             // Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
-            let height = cellPadding * 2 + photoHeight
+            let height = cellPadding * 2 + photoHeight + 120
             // contains the location and dimensions of a rectangle
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)

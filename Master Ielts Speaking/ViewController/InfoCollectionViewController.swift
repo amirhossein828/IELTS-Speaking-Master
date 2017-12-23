@@ -36,7 +36,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
-        collectionView?.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
+        collectionView?.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 1, right: 5)
         self.navigationItem.title = self.categoryFrom?.categoryName
         // Set the PinterestLayout delegate
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
@@ -130,12 +130,12 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         if let imageData = self.arrayOfWords[indexPath.item].wordImage {
             let height = (UIImage(data: imageData as Data)?.size.height)!
-            if height > 550 &&  height < 1000{
-                return height/2
-            }else if height > 1000 {
+            if height > 220 &&  height < 800{
                 return height/4
+            }else if height > 800 {
+                return height/8
             }else if height < 220{
-                return 300
+                return 110
             }
             else {
                 return height
@@ -144,12 +144,12 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
         }
         if let imageString = self.arrayOfWords[indexPath.item].wordImageString {
             let heightString = (UIImage(named: imageString)?.size.height)!
-            if heightString > 550 &&  heightString < 1000{
-                return heightString/2
-            }else if heightString > 1000 {
+            if heightString > 220 &&  heightString < 800{
                 return heightString/4
+            }else if heightString > 800 {
+                return heightString/8
             }else if heightString < 220{
-                 return 300
+                 return 110
             }
             else {
                 return heightString
