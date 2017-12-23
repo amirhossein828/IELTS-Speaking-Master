@@ -212,6 +212,10 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-Mn-neI">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="220"/>
                                                                             </imageView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZv-NL-ulq">
+                                                                                <rect key="frame" x="0.0" y="220" width="175" height="86"/>
+                                                                                <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-9R-XUl">
                                                                                 <rect key="frame" x="8" y="228" width="159" height="70"/>
                                                                                 <subviews>
@@ -247,14 +251,18 @@
                                                                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="Eg9-Mn-neI" secondAttribute="trailing" id="1bM-JG-eYq"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="86" id="1nR-zl-f1a"/>
+                                                                            <constraint firstItem="xZv-NL-ulq" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="4ij-Dg-R8c"/>
                                                                             <constraint firstItem="Eg9-Mn-neI" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" id="5ZX-kV-HaH"/>
                                                                             <constraint firstAttribute="trailing" secondItem="9U8-9R-XUl" secondAttribute="trailing" constant="8" id="9VK-u9-66f"/>
                                                                             <constraint firstItem="fXI-wJ-7Lv" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" constant="8" id="C45-72-EEH"/>
                                                                             <constraint firstAttribute="bottom" secondItem="9U8-9R-XUl" secondAttribute="bottom" constant="8" id="CVF-ax-dXl"/>
+                                                                            <constraint firstItem="xZv-NL-ulq" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" id="SM1-mD-pif"/>
                                                                             <constraint firstItem="fXI-wJ-7Lv" firstAttribute="leading" secondItem="plV-nR-jml" secondAttribute="leading" constant="8" id="blM-ff-ZiL"/>
-                                                                            <constraint firstItem="9U8-9R-XUl" firstAttribute="top" secondItem="Eg9-Mn-neI" secondAttribute="bottom" constant="8" id="cla-FY-ndk"/>
                                                                             <constraint firstItem="Eg9-Mn-neI" firstAttribute="top" secondItem="plV-nR-jml" secondAttribute="top" id="hxb-MS-skI"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="xZv-NL-ulq" secondAttribute="bottom" id="njy-h2-Q6r"/>
                                                                             <constraint firstItem="9U8-9R-XUl" firstAttribute="centerX" secondItem="plV-nR-jml" secondAttribute="centerX" id="rbj-Li-mJu"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="xZv-NL-ulq" secondAttribute="trailing" id="wAR-sG-taG"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
