@@ -61,6 +61,8 @@ class AddNewWordViewController: UIViewController {
     
     
     @IBAction func addNewWordButton(_ sender: UIButton) {
+        // make next button unable till user choose one photo
+        self.nextButton.isEnabled = false
         // make titleOfCollection label unhidden
         self.titleOfCollection.isHidden = false
         // create word object

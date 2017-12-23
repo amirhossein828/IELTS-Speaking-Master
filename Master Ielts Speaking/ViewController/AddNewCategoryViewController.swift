@@ -116,6 +116,16 @@ class AddNewCategoryViewController: UIViewController {
     
     
     @IBAction func nextButton(_ sender: UIButton) {
+        // check if a category name got chosen
+        if self.newWord.text == ""  {
+            showAlert("Enter a Category", "Please Enter a Category Name")
+            return
+        }
+        // check if a photo got chosen for the category.
+        if self.newCategory?.categoryImageData == nil {
+            showAlert("Choose an Image", "Please Choose an Image for Category")
+            return
+        }
         // save in database
         saveData(newCategory!)
         dismissThePage()
