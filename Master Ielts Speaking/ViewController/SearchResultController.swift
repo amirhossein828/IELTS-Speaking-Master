@@ -62,6 +62,11 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         super.didReceiveMemoryWarning()
     }
     
+    // Lock orientation
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     
     // this is a function get called, whenever user type text
     func updateSearchResults(for searchController: UISearchController) {

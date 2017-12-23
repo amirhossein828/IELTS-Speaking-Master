@@ -52,6 +52,11 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         self.navigationController?.hidesBarsOnSwipe = true
     }
     
+    // Lock orientation
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
         self.deleteButtenIsHidden = false
         self.cancelDeleting.isEnabled = true

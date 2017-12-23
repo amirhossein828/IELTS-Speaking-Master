@@ -61,6 +61,8 @@ class AddNewCategoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    
+    
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
         // make the titleOfCollection unhidden
         self.titleOfCollection.isHidden = false
@@ -73,7 +75,7 @@ class AddNewCategoryViewController: UIViewController {
             return}
         newCategory?.categoryName = newWordString
         // search for photos related to the new word
-        /*
+        
         FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
             switch response.result {
             case .success(let value):
@@ -86,7 +88,8 @@ class AddNewCategoryViewController: UIViewController {
                 print(error)
             }
         }
- */
+ 
+        /*
         QwantApiService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
             switch response.result {
             case .success(let value):
@@ -104,6 +107,7 @@ class AddNewCategoryViewController: UIViewController {
                 print(error)
             }
         }
+        */
       }
         
     
@@ -157,11 +161,10 @@ extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
         cell.activityIndicator.startAnimating()
         cell.activityIndicator.hidesWhenStopped = true
-//        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
-        if let imageUrl = self.arrayOfPhotos![indexPath.row]["media"].string
-        {
-            
-            print(imageUrl)
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+//        if let imageUrl = self.arrayOfPhotos![indexPath.row]["media"].string
+//        {
+        
             cell.imageView.downloadedFrom(link: imageUrl, completion: {
                 cell.activityIndicator.stopAnimating()
             })

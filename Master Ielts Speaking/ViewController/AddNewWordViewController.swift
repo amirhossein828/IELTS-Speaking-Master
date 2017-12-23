@@ -148,6 +148,10 @@ class AddNewWordViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    // Lock orientation
+    override open var shouldAutorotate: Bool {
+        return false
+    }
 }
 
 

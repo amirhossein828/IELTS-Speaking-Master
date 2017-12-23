@@ -35,6 +35,11 @@ class HelpViewController: UIViewController , WKNavigationDelegate{
         super.didReceiveMemoryWarning()
     }
     
+    // Lock orientation
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     // Back button
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
