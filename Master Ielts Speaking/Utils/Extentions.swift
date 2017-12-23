@@ -19,7 +19,7 @@ extension UIImageView {
         }else {
             Alamofire.request(url).response { (response) in
                 if let data = response.data {
-                    if let image = UIImage(data: data) {
+                    if let image = UIImage(data: data, scale: 0.1) {
                     imageCacheNew.setObject(image, forKey: url as AnyObject )
                     DispatchQueue.main.async {
                         self.image = image

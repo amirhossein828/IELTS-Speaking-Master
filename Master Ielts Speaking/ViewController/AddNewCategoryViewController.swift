@@ -169,6 +169,8 @@ extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionVi
         return cell
     }
     
+    
+    
     // select one cell and change the color of it
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photoCell = self.collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell

@@ -16,6 +16,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 8
     }
     
+    override func prepareForReuse() {
+        self.imageView.image = nil
+    }
+    
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
