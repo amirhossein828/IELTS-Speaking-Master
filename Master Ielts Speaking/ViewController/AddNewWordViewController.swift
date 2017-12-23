@@ -134,8 +134,8 @@ class AddNewWordViewController: UIViewController {
             (succed) in
             if succed {
                 // configure the detail viewcontroller when transition get completed
-                detailViewController.examplePageControl.numberOfPages = (self.newVocab?.examples.count)!
-                detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)!
+                detailViewController.examplePageControl.numberOfPages = (self.newVocab?.examples.count)! < 14 ? (self.newVocab?.examples.count)! : 14
+                detailViewController.pageControl.numberOfPages = (self.newVocab?.definitions.count)! < 14 ? (self.newVocab?.definitions.count)! : 14
                 detailViewController.collectionView.reloadData()
                 detailViewController.advCollectionView.reloadData()
                 detailViewController.exampleCollectionView.reloadData()

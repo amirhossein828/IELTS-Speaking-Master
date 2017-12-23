@@ -69,11 +69,13 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
-        return self.newVocabulary?.definitions.count ?? 0
+            let numberOfDefinitions = self.newVocabulary?.definitions.count ?? 0
+            return numberOfDefinitions < 14 ? numberOfDefinitions : 14
         }else if collectionView == self.advCollectionView {
             return 1
         }else {
-            return self.newVocabulary?.examples.count ?? 0
+            let numberOfExamples = self.newVocabulary?.examples.count ?? 0
+            return numberOfExamples < 14 ? numberOfExamples : 14
         }
     }
     

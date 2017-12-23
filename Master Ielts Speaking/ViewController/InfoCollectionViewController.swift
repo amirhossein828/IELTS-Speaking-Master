@@ -106,8 +106,10 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
         detailViewController.isComeFromInfo = true
-        detailViewController.pageControlDots = self.arrayOfWords[indexPath.row].definitions.count
-        detailViewController.pageControlExampleDots = self.arrayOfWords[indexPath.row].examples.count
+        let numberOfDefinitions = self.arrayOfWords[indexPath.row].definitions.count
+        detailViewController.pageControlDots = numberOfDefinitions < 14 ? numberOfDefinitions : 14
+        let numberOfExamples = self.arrayOfWords[indexPath.row].examples.count
+        detailViewController.pageControlExampleDots = numberOfExamples < 14 ? numberOfExamples : 14
         self.present(detailViewController, animated: true, completion: nil)
     }
     
