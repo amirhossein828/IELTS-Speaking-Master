@@ -18,7 +18,7 @@ class HelpViewController: UIViewController , WKNavigationDelegate{
         super.viewDidLoad()
         view.addSubview(webView)
         // create url
-        let url = URL(string: "https://medium.com/@hashemi.eng1985/splash-screen-with-custom-dots-framework-9ed737a17770")
+        let url = URL(string: "https://medium.com/@hashemi.eng1985/ielts-speaking-master-app-af7d23a02e34")
         // create request
         let request = URLRequest(url: url!)
         // load the page by the request
