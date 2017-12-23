@@ -10,7 +10,11 @@
                     "partOfSpeech": "noun"
                     }
                     ],
-    "imageNameInAssets": "close friend"
+    "imageNameInAssets": "close friend",
+    "examples": [
+              "Make an effort to cultivate effective relationships with family, friends and colleagues",
+              "Ms Laker said the police had been at the house asking about the people her eldest son, George, 13, was friends with."
+              ]
 },
  {
  "word": "ups and downs",
@@ -24,6 +28,10 @@
                  "partOfSpeech": "noun"
                  }
                  ],
- "imageNameInAssets": "ups and downs"
+ "imageNameInAssets": "ups and downs",
+ "examples": [
+              "There will be occasional ups and downs, but there has been no significant change in that trend.",
+              "The school has been through a period of ups and downs over the past year."
+              ]
  }
  ]

@@ -10,7 +10,11 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "arid"
+  "imageNameInAssets": "arid",
+  "examples": [
+               "a technically perfect but arid performance of the sonata",
+               "an arid climate"
+               ]
   },
   {
   "word": "extinct",
@@ -24,6 +28,13 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "extinct"
+  "imageNameInAssets": "extinct",
+  "examples": [
+               "an extinct species of fish",
+               "an extinct royal family",
+               "extinct laws and customs",
+               "threw his extinct cigarette into the stream",
+               "an extinct volcano"
+               ]
   }
   ]

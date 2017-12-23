@@ -6,7 +6,12 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "poverty"
+  "imageNameInAssets": "poverty",
+  "examples": [
+               "He also said it was the responsibility of governments and world leaders to stop global poverty.",
+               "You can prosecute a few people but as long as there is poverty, corruption will continue to exist.",
+               "The appointment is not a disaster, though it shows a poverty of imagination."
+               ]
   },
   {
   "word": "cosmopolitan",
@@ -20,6 +25,14 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "cosmopolitan"
+  "imageNameInAssets": "cosmopolitan",
+  "examples": [
+               "a cosmopolitan herb",
+               "cosmopolitan in distribution",
+               "an issue of cosmopolitan import",
+               "his cosmopolitan benevolence impartially extended to all races and to all creeds",
+               "the ancient and cosmopolitan societies of Syria and Egypt",
+               "that queer, cosmopolitan, rather sinister crowd found around the Marseilles docks"
+               ]
   }
   ]

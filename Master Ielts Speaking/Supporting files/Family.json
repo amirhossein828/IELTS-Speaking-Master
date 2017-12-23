@@ -6,7 +6,12 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "nuclear family"
+  "imageNameInAssets": "nuclear family",
+  "examples": [
+               "Some want to live with extended families, others with nuclear families, some on their own.",
+               "In contrast, the social units of long-tailed tits are not nuclear families, and they do not defend territories."
+
+               ]
   },
   {
   "word": "extended-family",
@@ -16,6 +21,9 @@
                   "partOfSpeech": "noun"
                   }
                   ],
-  "imageNameInAssets": "extended-family"
+  "imageNameInAssets": "extended-family",
+  "examples": [
+               "In extended families, the network of relatives acts as a close-knit community."
+               ]
   }
   ]

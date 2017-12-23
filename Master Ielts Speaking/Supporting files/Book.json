@@ -10,7 +10,11 @@
                  "partOfSpeech": "noun"
                  }
                  ],
- "imageNameInAssets": "poetry"
+ "imageNameInAssets": "poetry",
+ "examples": [
+              "His love poetry takes a different line from that of his contemporaries.",
+              "It is founded on the French tradition of the dream as a vehicle for love poetry."
+              ]
  },
  {
  "word": "novel",
@@ -24,6 +28,11 @@
                  "partOfSpeech": "noun"
                  }
                  ],
- "imageNameInAssets": "novel"
+ "imageNameInAssets": "novel",
+ "examples": [
+              "the computer produced a completely novel proof of a well-known theorem",
+              "his bookcases were filled with nothing but novels",
+              "he burned all the novels"
+              ]
  }
  ]

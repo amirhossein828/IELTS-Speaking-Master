@@ -36,8 +36,6 @@ class MockData {
 //                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
 //                let json = try JSON(data : data)
                 getImageAssets(path: path, completion: { (json) in
-                    
-               
                     for count in 0..<2 {
                         let word = Word()
                         let wordName = json[count]["word"].string
@@ -47,6 +45,14 @@ class MockData {
                             word.definitions.append(defObject["definition"].string!)
                         }
                         word.wordImageString = json[count]["imageNameInAssets"].string!
+                        let examplesJson = json[count]["examples"].array
+                        print(examplesJson)
+                        if let exampleJsonArray = examplesJson {
+                            for example in exampleJsonArray {
+                                word.examples.append(example.string!)
+                            }
+                        }
+                        
                         saveData(word)
                         // update category by saying him new word
                         updateCategoryInDatabase(categoryName: nameOfCategory, word: word)
