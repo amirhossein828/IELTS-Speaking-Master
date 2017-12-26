@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class DetailViewController: UIViewController {
-
+    // Outlets
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var viewPgeControl: UIView!
     @IBOutlet weak var advCollectionView: UICollectionView!
@@ -19,14 +19,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var examplePageControl: UIPageControl!
     @IBOutlet weak var exampleCollectionView: UICollectionView!
-    
+    // Properties
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
     var isComeFromInfo : Bool? = nil
     var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
     var pageControlExampleDots : Int = 0
-    
+    // AddNewWordViewController object
     lazy var vc : AddNewWordViewController = {
         return self.parent as! AddNewWordViewController
         }()
@@ -40,8 +40,6 @@ class DetailViewController: UIViewController {
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
         _ = isComeFromSearch ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
-        
-        
     }
 
 
@@ -73,14 +71,15 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
+        switch collectionView {
+        case self.collectionView :
             let numberOfDefinitions = self.newVocabulary?.definitions.count ?? 0
-            return numberOfDefinitions < 14 ? numberOfDefinitions : 14
-        }else if collectionView == self.advCollectionView {
+            return min(numberOfDefinitions, 14)
+        case self.advCollectionView :
             return 1
-        }else {
+        default:
             let numberOfExamples = self.newVocabulary?.examples.count ?? 0
-            return numberOfExamples < 14 ? numberOfExamples : 14
+            return min(numberOfExamples, 14)
         }
     }
     
@@ -90,7 +89,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         if let arrayOfDefenition = self.newVocabulary?.definitions {
             let wordDef = arrayOfDefenition[indexPath.row]
             cell.setCell(withIndex: indexPath, withDef: wordDef)
-//        cell.definitionFieldCell.text = arrayOfDefenition[indexPath.row]
         }
         cell.backgroundColor = UIColor.clear
         return cell
