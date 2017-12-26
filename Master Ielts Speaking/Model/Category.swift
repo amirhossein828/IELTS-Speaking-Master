@@ -9,10 +9,18 @@
 import Foundation
 import RealmSwift
 
+/**
+ * Model class for a Category
+ *
+ * - author: Amir
+ * - version: 1
+ *
+ */
 class Category : Object {
     @objc dynamic var categoryName : String = ""
     @objc dynamic var categoryImage : String = ""
     @objc dynamic var categoryImageData : Data? = nil
+    // each category has list of words
     var words = List<Word>()
     
     override class func primaryKey() -> String {
