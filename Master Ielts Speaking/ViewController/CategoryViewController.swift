@@ -10,14 +10,14 @@ import UIKit
 import RealmSwift
 
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    var arrayOfCategories : Results<Category>?
-    var category : Category? = nil
-    let transition = AnimationTransition()
-    
+    // Outlets
     @IBOutlet weak var backGroundV: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCategoryButton: UIButton!
+    // Properties
+    var arrayOfCategories : Results<Category>?
+    var category : Category? = nil
+    let transition = AnimationTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
 
-    
 
-    @IBAction func searchButton(_ sender: UIBarButtonItem) {
- 
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
