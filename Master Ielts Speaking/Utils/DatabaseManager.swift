@@ -11,6 +11,10 @@ import RealmSwift
 
 
 // MARK: - Save Data
+
+/// #### save Data on Realm DB
+/// This method saves data on Realm DB
+/// - Parameter: model - Type of model to be read from Realm DB
 public func saveData<T:Object>(_ object: T) {
     let realm = try! Realm()
     try! realm.write {
@@ -19,6 +23,13 @@ public func saveData<T:Object>(_ object: T) {
 }
 
 // MARK: - Read Data
+
+/// #### Read Data from Realm DB
+/// This method reads data from Realm DB and returns with completion block
+/// - Parameter: model - Type of model to be read from Realm DB
+/// - Parameter: predicate - predicate string such as "color = 'tan' AND name BEGINSWITH 'B'"
+/// - Parameter: completion: completion handler closure to return data
+/// - Returns: It is Void since it uses completion for call backs
 public func readData<T:Object>(_ model: T.Type, predicate: String?, completion: (_ responseData:Results<T>) -> Void) {
     let realm = try! Realm()
     let result: Results<T>
@@ -56,6 +67,8 @@ public func deleteAll() {
         realm.deleteAll()
     }
 }
+
+// MARK: - Update
 
 
 /// #### Update words in catergory
