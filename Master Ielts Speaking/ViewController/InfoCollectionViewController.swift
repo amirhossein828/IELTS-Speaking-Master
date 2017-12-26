@@ -16,11 +16,11 @@ protocol ReloadViewDelegate : class{
 }
 
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIScrollViewDelegate {
-    
+    // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addWordButton: UIButton!
-    
     @IBOutlet weak var cancelDeleting: UIBarButtonItem!
+    // Properties
     var arrayOfWords = List<Word>()
     var categoryFrom : Category? = nil
     let transition = AnimationTransition()
@@ -28,7 +28,6 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.hidesBarsOnSwipe = true
         self.addWordButton.layer.cornerRadius = (addWordButton.frame.size.width) / 2
         let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
         addWordButton.setImage(addButtonImage, for: .normal)
@@ -48,9 +47,6 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         super.didReceiveMemoryWarning()
     }
     
-    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        self.navigationController?.hidesBarsOnSwipe = true
-    }
     
     // Lock orientation
     override open var shouldAutorotate: Bool {
@@ -105,7 +101,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             vc.delegate = self
         }
     }
-    
+    // Go to DetailViewController when user clicks
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
