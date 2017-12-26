@@ -11,7 +11,7 @@ import  RealmSwift
 
 class SearchResultController: UITableViewController , UISearchResultsUpdating, UISearchBarDelegate{
     // list of categories
-    var categoryList : [Category]? = {
+    lazy var categoryList : [Category]? = {
         var resultArray = [Category]()
         readData(Category.self, predicate: nil, completion: { (response : Results<Category>) in
             for category in response {
@@ -24,7 +24,7 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
     var filterCategoryList = [Category]()
     var category : Category? = nil
     // list of words
-    var wordList : [Word]? = {
+    lazy var wordList : [Word]? = {
         var resultArray = [Word]()
         readData(Word.self, predicate: nil, completion: { (response : Results<Word>) in
             for word in response {
