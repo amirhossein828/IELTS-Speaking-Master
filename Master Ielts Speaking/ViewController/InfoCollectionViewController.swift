@@ -143,7 +143,7 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     }
         return 0
     }
-    
+    // Decrease the size of images inside cells.
      private func decreaseSizeOfImageHeight(withHeight : CGFloat ) -> CGFloat{
         if withHeight > 220 &&  withHeight < 800{
             return withHeight/4
@@ -159,6 +159,7 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     
 }
 
+// extend the viewController class to implement UIViewControllerTransitioningDelegate methods
 extension InfoCollectionViewController : UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.transition.transitionMode = .present
