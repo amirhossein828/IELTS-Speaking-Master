@@ -58,7 +58,9 @@ public func deleteAll() {
 }
 
 
-// update Category
+/// #### Update words in catergory
+/// This method updates objects from Realm DB
+/// - Parameter: categoryName - The name of category which new word wants to be updated on it. word - The new word which wnates to be added to this category
 func updateCategoryInDatabase(categoryName: String, word : Word) {
     let realm = try! Realm()
     
@@ -73,13 +75,5 @@ func updateCategoryInDatabase(categoryName: String, word : Word) {
         }
     }
     
-//        if let theCategory = realm.objects(Category.self).filter("categoryName == %@", categoryName).first {
-//        print(theCategory)
-//
-//        try! realm.write {
-//        theCategory.words.append(word)
-//
-//        realm.add(theCategory, update: true)
-//        }
-//    }
+
 }
