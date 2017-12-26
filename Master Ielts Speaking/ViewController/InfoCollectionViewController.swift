@@ -133,32 +133,28 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         if let imageData = self.arrayOfWords[indexPath.item].wordImage {
             let height = (UIImage(data: imageData as Data)?.size.height)!
-            if height > 220 &&  height < 800{
-                return height/4
-            }else if height > 800 {
-                return height/8
-            }else if height < 220{
-                return 110
-            }
-            else {
-                return height
-            }
-            
+            let decreasedSize = decreaseSizeOfImageHeight(withHeight: height)
+            return decreasedSize
         }
         if let imageString = self.arrayOfWords[indexPath.item].wordImageString {
             let heightString = (UIImage(named: imageString)?.size.height)!
-            if heightString > 220 &&  heightString < 800{
-                return heightString/4
-            }else if heightString > 800 {
-                return heightString/8
-            }else if heightString < 220{
-                 return 110
-            }
-            else {
-                return heightString
-            }
-        }
+            let decreasedSize = decreaseSizeOfImageHeight(withHeight: heightString)
+            return decreasedSize
+    }
         return 0
+    }
+    
+     private func decreaseSizeOfImageHeight(withHeight : CGFloat ) -> CGFloat{
+        if withHeight > 220 &&  withHeight < 800{
+            return withHeight/4
+        }else if withHeight > 800 {
+            return withHeight/8
+        }else if withHeight < 220{
+            return 110
+        }
+        else {
+            return withHeight
+        }
     }
     
 }
