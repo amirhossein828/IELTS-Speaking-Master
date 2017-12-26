@@ -25,7 +25,7 @@ class Word : Object {
     var definitions = List<String>()
     // sentence examples of the word
     var examples = List<String>()
-    // primary key 
+    // primary key
     override class func primaryKey() -> String {
         return "wordName"
     }
