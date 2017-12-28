@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     var pageControlExampleDots : Int = 0
     // AddNewWordViewController object
     lazy var vc : AddNewWordViewController = {
-        return self.parent as! AddNewWordViewController
+        return parent as! AddNewWordViewController
         }()
     
     override func viewDidLoad() {
