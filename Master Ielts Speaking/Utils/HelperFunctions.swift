@@ -43,3 +43,16 @@ func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewContr
     }
     
 }
+
+// get images from json files
+func getImageAssets(path : String, completion :  (JSON) -> Void){
+    do {
+        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        print(data)
+        let json = try JSON(data : data)
+        completion(json)
+        
+    } catch {
+        print("error")
+    }
+}
