@@ -10,10 +10,17 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
-
+/**
+ * Class to load categories and words from json file and save in relam DB
+ *
+ * - author: Amir
+ * - version: 1
+ *
+ */
 class MockData {
     
-
+    /// #### Create names of categories
+    /// This method Create names of categories and save in realm DB
     class func saveCategories() {
         let nameOfCategoriesArray = [CategoryName.Environment,CategoryName.friends,CategoryName.Book,CategoryName.HomeTown,CategoryName.Family]
         let nameOfImagesInAssets = ["envir","Friends","novel","cosmopolitan","family"]
@@ -27,14 +34,12 @@ class MockData {
         }
     }
     
+    /// #### loads the info from json file
+    /// This method loads the info from json file and save in realm DB
+    /// - Parameter: nameOfCategory - the name of category which this word should added to it.
     class func saveWords(nameOfCategory : String){
-//        let nameOfImagesInAssets = ["envir","Friends"]
-        
-        print(nameOfCategory)
         if let path = Bundle.main.path(forResource: nameOfCategory, ofType: "json") {
             do {
-//                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//                let json = try JSON(data : data)
                 getImageAssets(path: path, completion: { (json) in
                     for count in 0..<2 {
                         let word = Word()
@@ -46,7 +51,6 @@ class MockData {
                         }
                         word.wordImageString = json[count]["imageNameInAssets"].string!
                         let examplesJson = json[count]["examples"].array
-                        print(examplesJson)
                         if let exampleJsonArray = examplesJson {
                             for example in exampleJsonArray {
                                 word.examples.append(example.string!)
@@ -58,19 +62,16 @@ class MockData {
                         updateCategoryInDatabase(categoryName: nameOfCategory, word: word)
                     }
                 })
-                
-                
+  
             } catch {
                 // handle error
             }
         }
- 
-
     }
-    
-
 }
 
+
+// category name for mock data
 struct CategoryName {
     static let friends = "Friends"
     static let Environment = "Environment"
@@ -79,21 +80,4 @@ struct CategoryName {
     static let Family = "Family"
 }
 
-func getImageAssets(path : String, completion :  (JSON) -> Void){
-    
-    do {
-        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        print(data)
-    let json = try JSON(data : data)
-    
-    
-        completion(json)
-        
-    } catch {
-        print("fucking errrooorrrrrrrooooooooo")
-    }
-    
-    
-    
-    
-}
+
