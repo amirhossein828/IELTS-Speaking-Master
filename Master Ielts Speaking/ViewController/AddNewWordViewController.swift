@@ -90,10 +90,12 @@ class AddNewWordViewController: UIViewController {
                     print(error)
                 }
             }
-        }) { (arrayOfExampObjects) in
+        }, arrayOfExampleObject: { (arrayOfExampObjects) in
             for object in arrayOfExampObjects {
                 self.newVocab?.examples.append(object.string!)
             }
+        }) { (massage) in
+                self.showAlert("ohhhhhh No!", massage)
         }
         /*
         getDefinitionsAndPhotos(withWord: newWordString, viewController: self) { (arrayOfDefObjects) in
