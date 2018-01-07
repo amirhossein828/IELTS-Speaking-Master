@@ -15,7 +15,6 @@
     <customFonts key="customFonts">
         <array key="AvenirNextCondensed.ttc">
             <string>AvenirNextCondensed-Bold</string>
-            <string>AvenirNextCondensed-BoldItalic</string>
             <string>AvenirNextCondensed-DemiBold</string>
             <string>AvenirNextCondensed-Heavy</string>
             <string>AvenirNextCondensed-Medium</string>
@@ -414,14 +413,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soi-Aw-dbM">
-                                        <rect key="frame" x="27" y="170" width="63" height="40"/>
+                                        <rect key="frame" x="27" y="170" width="89" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="63" id="NGf-KZ-0gG"/>
+                                            <constraint firstAttribute="width" constant="89" id="NGf-KZ-0gG"/>
                                             <constraint firstAttribute="height" constant="40" id="cvF-Ov-IDV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="17"/>
-                                        <state key="normal" title="ADD ">
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                        <state key="normal" title="Add Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1124,14 +1123,14 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVL-y3-jcR">
-                                        <rect key="frame" x="27" y="170" width="63" height="40"/>
+                                        <rect key="frame" x="27" y="170" width="89" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0IK-n2-zuL"/>
-                                            <constraint firstAttribute="width" constant="63" id="EHX-xH-YOV"/>
+                                            <constraint firstAttribute="width" constant="89" id="EHX-xH-YOV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="17"/>
-                                        <state key="normal" title="ADD ">
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                        <state key="normal" title="Add Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
