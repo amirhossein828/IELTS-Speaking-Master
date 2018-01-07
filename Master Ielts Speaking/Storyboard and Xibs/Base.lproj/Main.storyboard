@@ -811,10 +811,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-bQ-uHu" userLabel="ViewPgeControl">
-                                <rect key="frame" x="0.0" y="367.5" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="367.5" width="375" height="93.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-O4-36Q">
-                                        <rect key="frame" x="168" y="83" width="39" height="37"/>
+                                        <rect key="frame" x="168" y="56.5" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1021,17 +1021,25 @@
                                     <constraint firstItem="JXR-vd-PDT" firstAttribute="centerX" secondItem="z4s-Gx-tb4" secondAttribute="centerX" id="TRb-f2-ePP"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-Q7-94K">
-                                <rect key="frame" x="333" y="20" width="36" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-Q7-94K">
+                                <rect key="frame" x="325" y="20" width="44" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="ByD-Or-vaz"/>
+                                    <constraint firstAttribute="width" constant="44" id="T4g-Af-3Em"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" image="done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="exC-vy-W9y" eventType="touchUpInside" id="fK5-Ko-gJ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-Jy-WJu">
+                                <rect key="frame" x="6" y="20" width="48" height="48"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="ic_chevron_left_2x"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="exC-vy-W9y" eventType="touchUpInside" id="aEp-oP-FoL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1044,10 +1052,11 @@
                             <constraint firstItem="z4s-Gx-tb4" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="9Tk-ku-prw"/>
                             <constraint firstItem="Frd-UK-MDV" firstAttribute="centerX" secondItem="q4s-a4-OF4" secondAttribute="centerX" id="A3b-Xf-0Ue"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.2" id="AmB-9T-GfN"/>
+                            <constraint firstItem="CFP-Jy-WJu" firstAttribute="leading" secondItem="mn4-TF-JAm" secondAttribute="leading" constant="6" id="CSw-Cz-FrQ"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" constant="42" id="D1s-c1-yoN"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="width" secondItem="q4s-a4-OF4" secondAttribute="width" id="Dta-9q-ANg"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.4" id="Dtu-Rt-aQH"/>
-                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.18" id="FcA-gb-57J"/>
+                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.14" id="FcA-gb-57J"/>
                             <constraint firstItem="fnr-bF-28c" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="GV1-Zc-Jkg"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="top" secondItem="z4s-Gx-tb4" secondAttribute="bottom" id="HgH-dd-tU1"/>
                             <constraint firstItem="KZy-Rd-kcm" firstAttribute="top" secondItem="ZSR-WT-iqn" secondAttribute="bottom" id="IQR-qs-gxb"/>
@@ -1058,6 +1067,7 @@
                             <constraint firstItem="z4s-Gx-tb4" firstAttribute="top" secondItem="fnr-bF-28c" secondAttribute="bottom" id="JYe-SX-odj"/>
                             <constraint firstItem="fnr-bF-28c" firstAttribute="centerX" secondItem="q4s-a4-OF4" secondAttribute="centerX" id="MqE-4o-At7"/>
                             <constraint firstItem="KZy-Rd-kcm" firstAttribute="leading" secondItem="mn4-TF-JAm" secondAttribute="leading" id="Srq-OX-V4W"/>
+                            <constraint firstItem="CFP-Jy-WJu" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" id="VAB-0r-vYT"/>
                             <constraint firstItem="KZy-Rd-kcm" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="VYI-WH-Dm4"/>
                             <constraint firstItem="drt-dh-BKb" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="W5s-X2-3DC"/>
                             <constraint firstItem="SgA-7K-x8B" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="Wzz-GS-Gfg"/>
@@ -1078,6 +1088,7 @@
                     </view>
                     <connections>
                         <outlet property="advCollectionView" destination="FhW-q6-cPM" id="QW1-EU-F0h"/>
+                        <outlet property="backButton" destination="CFP-Jy-WJu" id="EpA-g7-NdL"/>
                         <outlet property="closeButton" destination="8Bj-Q7-94K" id="Tiu-NZ-KvW"/>
                         <outlet property="collectionView" destination="fnr-bF-28c" id="ZIh-Fe-zth"/>
                         <outlet property="exampleCollectionView" destination="SgA-7K-x8B" id="egc-fr-kLd"/>
@@ -1294,6 +1305,8 @@
     <resources>
         <image name="Base" width="960" height="540"/>
         <image name="background2" width="1024" height="682"/>
+        <image name="done" width="72" height="72"/>
+        <image name="ic_chevron_left_2x" width="48" height="48"/>
         <image name="ic_close" width="24" height="24"/>
         <image name="ic_search" width="24" height="24"/>
     </resources>
