@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     // Properties
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
-    var isComeFromInfo : Bool? = nil
+    var isComeFromInfo : Bool = false
     var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
     var pageControlExampleDots : Int = 0
@@ -39,12 +39,12 @@ class DetailViewController: UIViewController {
         self.pageControl.numberOfPages = self.pageControlDots
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
-        _ = isComeFromSearch ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
+        _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
     }
 
 
     @IBAction func backButton(_ sender: UIButton) {
-        if isComeFromInfo! {
+        if isComeFromInfo {
             self.dismiss(animated: true, completion: nil)
         }else {
             vc.delegate?.reloadTableViewByNewData()
