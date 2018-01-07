@@ -111,7 +111,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         detailViewController.pageControlDots = numberOfDefinitions < 14 ? numberOfDefinitions : 14
         let numberOfExamples = self.arrayOfWords[indexPath.row].examples.count
         detailViewController.pageControlExampleDots = numberOfExamples < 14 ? numberOfExamples : 14
-        self.present(detailViewController, animated: true, completion: nil)
+        self.show(detailViewController, sender: nil)
     }
     
     
