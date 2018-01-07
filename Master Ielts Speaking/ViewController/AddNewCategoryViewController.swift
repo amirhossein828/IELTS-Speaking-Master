@@ -85,7 +85,8 @@ class AddNewCategoryViewController: UIViewController {
                     self.collectionView.reloadData()
                 }
             case .failure(let error):
-                print(error)
+                self.showAlert("ohhhh No!", error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
  

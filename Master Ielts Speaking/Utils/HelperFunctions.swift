@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 // This method does gives the array of defenition in json object format.
-func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewController , arrayOfDefObject : @escaping ([JSON]) -> Void ,arrayOfExampleObject : @escaping ([JSON]) -> Void ) {
+func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewController , arrayOfDefObject : @escaping ([JSON]) -> Void ,arrayOfExampleObject : @escaping ([JSON]) -> Void , failur : @escaping (_ massege : String) -> Void) {
     WordsApiService.getDefinitionOfWords(word: word) { (response) in
         // create array of string (the definition of word)
         switch response.result {
@@ -24,7 +24,8 @@ func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewContr
             }
             arrayOfDefObject(arrayOfDefObjects)
         case .failure(let error):
-            print(error)
+            failur(error.localizedDescription)
+            print(error.localizedDescription)
         }
     }
     WordsApiService.getExampleOfWords(word: word) { (response) in
