@@ -643,7 +643,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vme-MI-ZVp">
                                 <rect key="frame" x="168" y="514" width="39" height="37"/>
                             </pageControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IvU-tD-bYS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IvU-tD-bYS">
                                 <rect key="frame" x="0.0" y="110" width="375" height="399"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTc-Zb-A4o">
@@ -811,16 +811,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-bQ-uHu" userLabel="ViewPgeControl">
-                                <rect key="frame" x="0.0" y="367.5" width="375" height="93.5"/>
+                                <rect key="frame" x="0.0" y="367.5" width="375" height="120"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-O4-36Q">
-                                        <rect key="frame" x="168" y="56.5" width="39" height="37"/>
+                                        <rect key="frame" x="168" y="83" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Kqz-O4-36Q" firstAttribute="centerX" secondItem="JaI-bQ-uHu" secondAttribute="centerX" id="Cgg-GY-LYA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kqz-O4-36Q" secondAttribute="bottom" id="FtF-kU-E1Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kqz-O4-36Q" secondAttribute="bottom" id="QwH-MV-9rn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSR-WT-iqn">
@@ -873,7 +873,7 @@
                                     <constraint firstItem="FhW-q6-cPM" firstAttribute="top" secondItem="ZSR-WT-iqn" secondAttribute="top" id="wvr-D7-Um9"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-bF-28c">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-bF-28c">
                                 <rect key="frame" x="0.0" y="368" width="375" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4UQ-93-7aJ">
@@ -945,7 +945,7 @@
                                 <rect key="frame" x="0.0" y="662.5" width="375" height="4.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
                                 <rect key="frame" x="0.0" y="529" width="375" height="133.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3IV-7t-dfS">
@@ -1056,7 +1056,7 @@
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" constant="42" id="D1s-c1-yoN"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="width" secondItem="q4s-a4-OF4" secondAttribute="width" id="Dta-9q-ANg"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.4" id="Dtu-Rt-aQH"/>
-                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.14" id="FcA-gb-57J"/>
+                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.18" id="FcA-gb-57J"/>
                             <constraint firstItem="fnr-bF-28c" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="GV1-Zc-Jkg"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="top" secondItem="z4s-Gx-tb4" secondAttribute="bottom" id="HgH-dd-tU1"/>
                             <constraint firstItem="KZy-Rd-kcm" firstAttribute="top" secondItem="ZSR-WT-iqn" secondAttribute="bottom" id="IQR-qs-gxb"/>
