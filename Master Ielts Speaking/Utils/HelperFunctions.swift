@@ -57,3 +57,10 @@ func getImageAssets(path : String, completion :  (JSON) -> Void){
         print("error")
     }
 }
+
+
+class Connectivity {
+    class var isConnectedToInternet:Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}
