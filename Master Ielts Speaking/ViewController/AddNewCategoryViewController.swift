@@ -85,7 +85,7 @@ class AddNewCategoryViewController: UIViewController {
                     self.collectionView.reloadData()
                 }
             case .failure(let error):
-                self.showAlert("ohhhh No!", error.localizedDescription)
+                self.showAlert("ohhhh No!", "There is no Photo for this word")
                 print(error.localizedDescription)
             }
         }

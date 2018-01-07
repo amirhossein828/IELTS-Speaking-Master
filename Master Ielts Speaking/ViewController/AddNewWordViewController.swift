@@ -95,7 +95,7 @@ class AddNewWordViewController: UIViewController {
                 self.newVocab?.examples.append(object.string!)
             }
         }) { (massage) in
-                self.showAlert("ohhhhhh No!", massage)
+//                self.showAlert("ohhhhhh No!", massage)
         }
         /*
         getDefinitionsAndPhotos(withWord: newWordString, viewController: self) { (arrayOfDefObjects) in
