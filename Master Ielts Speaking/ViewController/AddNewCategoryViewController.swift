@@ -21,6 +21,7 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var dismissScreen: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var titleOfCollection: UILabel!
+    @IBOutlet weak var noInternetView: UIView!
     // properties
     var arrayOfPhotos : [JSON]? = nil
 //    var arrayOfDefString = [String]()
@@ -30,20 +31,24 @@ class AddNewCategoryViewController: UIViewController {
     var hasDefinition = true
     weak var delegate : ReloadViewDelegate?
     
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Configure the text view to make it's corner radiuos
-        self.textViewBackGround.layer.cornerRadius = 8
-        self.textViewBackGround.layer.masksToBounds = true
-        self.newWord.layer.cornerRadius = 8
+        self.noInternetView.isHidden = true
         // configure close button
         let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
         self.dismissScreen.setImage(closeImageButton, for: .normal)
         self.dismissScreen.imageView?.tintColor = UIColor.white
+        guard Connectivity.isConnectedToInternet else {
+            print("No! internet is not available.")
+            self.noInternetView.isHidden = false
+            return
+        }
+        // Configure the text view to make it's corner radiuos
+        self.textViewBackGround.layer.cornerRadius = 8
+        self.textViewBackGround.layer.masksToBounds = true
+        self.newWord.layer.cornerRadius = 8
+        
         // Make the add button circle
         self.addNewWordButton.layer.cornerRadius = 7
         // configure distances between cells

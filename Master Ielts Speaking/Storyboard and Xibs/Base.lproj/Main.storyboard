@@ -1280,10 +1280,36 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lv6-MQ-Vg6">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ohhhhhhh no!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-lx-o1u">
+                                                <rect key="frame" x="107.5" y="283.5" width="161.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB0-3k-KBN">
+                                                <rect key="frame" x="101.5" y="323" width="173" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="yz2-lx-o1u" firstAttribute="centerX" secondItem="lv6-MQ-Vg6" secondAttribute="centerX" id="7bP-PZ-zDG"/>
+                                            <constraint firstItem="kB0-3k-KBN" firstAttribute="centerX" secondItem="lv6-MQ-Vg6" secondAttribute="centerX" id="hgy-8k-Nrs"/>
+                                            <constraint firstItem="kB0-3k-KBN" firstAttribute="top" secondItem="yz2-lx-o1u" secondAttribute="bottom" constant="8" id="lIi-ed-bgM"/>
+                                            <constraint firstItem="yz2-lx-o1u" firstAttribute="centerY" secondItem="lv6-MQ-Vg6" secondAttribute="centerY" id="lOZ-2l-gxa"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NEx-GC-fMM" secondAttribute="trailing" id="3Dj-Wj-De1"/>
+                                    <constraint firstItem="lv6-MQ-Vg6" firstAttribute="leading" secondItem="rg0-eo-Ekq" secondAttribute="leading" id="5Ny-DT-qBq"/>
+                                    <constraint firstAttribute="bottom" secondItem="lv6-MQ-Vg6" secondAttribute="bottom" id="8hS-v0-SkO"/>
                                     <constraint firstItem="a22-ox-SI8" firstAttribute="trailing" secondItem="mfp-fL-1Oz" secondAttribute="trailing" id="EAO-gA-1WE"/>
                                     <constraint firstItem="mfI-YP-dfb" firstAttribute="leading" secondItem="rg0-eo-Ekq" secondAttribute="leading" id="EtG-Ow-ela"/>
                                     <constraint firstItem="UVL-y3-jcR" firstAttribute="leading" secondItem="rg0-eo-Ekq" secondAttribute="leading" constant="27" id="IBk-ju-ue1"/>
@@ -1294,10 +1320,12 @@
                                     <constraint firstItem="mfp-fL-1Oz" firstAttribute="leading" secondItem="mfI-YP-dfb" secondAttribute="trailing" constant="-348" id="RaZ-xk-dkD"/>
                                     <constraint firstItem="xgp-r6-oKh" firstAttribute="centerX" secondItem="rg0-eo-Ekq" secondAttribute="centerX" id="SCd-kT-v51"/>
                                     <constraint firstItem="mfp-fL-1Oz" firstAttribute="leading" secondItem="rg0-eo-Ekq" secondAttribute="leading" constant="27" id="VgP-Hv-veB"/>
+                                    <constraint firstAttribute="trailing" secondItem="lv6-MQ-Vg6" secondAttribute="trailing" id="YZK-CZ-Q0V"/>
                                     <constraint firstAttribute="bottom" secondItem="NEx-GC-fMM" secondAttribute="bottom" id="agW-lr-U1I"/>
                                     <constraint firstItem="xgp-r6-oKh" firstAttribute="top" secondItem="UVL-y3-jcR" secondAttribute="bottom" constant="1" id="b3f-R1-DqD"/>
                                     <constraint firstAttribute="trailing" secondItem="mfI-YP-dfb" secondAttribute="trailing" id="cZq-KM-fqW"/>
                                     <constraint firstItem="mfI-YP-dfb" firstAttribute="top" secondItem="rg0-eo-Ekq" secondAttribute="top" constant="21" id="ctN-LU-sUd"/>
+                                    <constraint firstItem="lv6-MQ-Vg6" firstAttribute="top" secondItem="mfI-YP-dfb" secondAttribute="bottom" constant="8" id="d3Z-8f-okl"/>
                                     <constraint firstItem="a22-ox-SI8" firstAttribute="leading" secondItem="mfp-fL-1Oz" secondAttribute="leading" id="ePe-0B-hhF"/>
                                     <constraint firstItem="mfp-fL-1Oz" firstAttribute="leading" secondItem="rg0-eo-Ekq" secondAttribute="leading" constant="27" id="efR-xn-LF9"/>
                                     <constraint firstItem="a22-ox-SI8" firstAttribute="top" secondItem="mfp-fL-1Oz" secondAttribute="bottom" constant="5" id="ei2-r0-WcE"/>
@@ -1322,13 +1350,14 @@
                         <outlet property="doneButton" destination="da2-Gy-mmf" id="UcZ-Kd-ixx"/>
                         <outlet property="mainView" destination="rg0-eo-Ekq" id="2mH-Y2-Osu"/>
                         <outlet property="newWord" destination="Am6-TP-ebq" id="ItL-xS-nvT"/>
+                        <outlet property="noInternetView" destination="lv6-MQ-Vg6" id="fqj-xF-R8I"/>
                         <outlet property="textViewBackGround" destination="a22-ox-SI8" id="NHl-le-GLd"/>
                         <outlet property="titleOfCollection" destination="xgp-r6-oKh" id="cSK-me-tci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfy-Vl-QYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="1002"/>
+            <point key="canvasLocation" x="696.79999999999995" y="1001.649175412294"/>
         </scene>
     </scenes>
     <resources>
