@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var examplePageControl: UIPageControl!
     @IBOutlet weak var exampleCollectionView: UICollectionView!
+    @IBOutlet weak var backButton: UIButton!
     // Properties
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
@@ -40,6 +41,26 @@ class DetailViewController: UIViewController {
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
         _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
+        configureCloseButton()
+        configureBackButton()
+        if isComeFromInfo {
+            self.navigationController?.navigationBar.isHidden = true
+            self.backButton.isHidden = false
+        }else {
+            self.backButton.isHidden = true
+        }
+    }
+    
+    fileprivate func configureCloseButton() {
+        let doneImage = UIImage(named: "done")?.withRenderingMode(.alwaysTemplate)
+        self.closeButton.setImage(doneImage, for: .normal)
+        self.closeButton.tintColor = UIColor.white
+    }
+    
+    fileprivate func configureBackButton() {
+        let backImage = UIImage(named: "ic_chevron_left_2x")?.withRenderingMode(.alwaysTemplate)
+        self.backButton.setImage(backImage, for: .normal)
+        self.backButton.tintColor = UIColor.white
     }
 
 
@@ -60,6 +81,12 @@ class DetailViewController: UIViewController {
     override open var shouldAutorotate: Bool {
         return false
     }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 
 }
 
