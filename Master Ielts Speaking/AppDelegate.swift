@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        UINavigationBar.appearance().backgroundColor = UIColor.red
+        UINavigationBar.appearance().backgroundColor = UIColor.red
         // make the color of status bar to white
         UINavigationBar.appearance().barStyle = UIBarStyle.blackTranslucent
         let hasLaunchedKey = "HasLaunched"
