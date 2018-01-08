@@ -41,6 +41,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
             layout.delegate = self
         }
+        configureShadowForButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +52,13 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         super.didReceiveMemoryWarning()
     }
     
+    // shodow for plus button
+    fileprivate func configureShadowForButton() {
+        addWordButton.layer.shadowColor = UIColor.black.cgColor
+        addWordButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        addWordButton.layer.shadowRadius = 5
+        addWordButton.layer.shadowOpacity = 1.0
+    }
     
     // Lock orientation
     override open var shouldAutorotate: Bool {

@@ -19,6 +19,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var category : Category? = nil
     let transition = AnimationTransition()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addCategoryButton.layer.cornerRadius = (addCategoryButton.frame.size.width) / 2
@@ -29,8 +30,9 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             self.arrayOfCategories = response
         }
+        configureShadowForButton()
     }
-
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,6 +40,13 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // Lock orientation
     override open var shouldAutorotate: Bool {
         return false
+    }
+    // shodow for plus button
+    fileprivate func configureShadowForButton() {
+        addCategoryButton.layer.shadowColor = UIColor.black.cgColor
+        addCategoryButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        addCategoryButton.layer.shadowRadius = 5
+        addCategoryButton.layer.shadowOpacity = 1.0
     }
     
     // MARK: - Table view data source

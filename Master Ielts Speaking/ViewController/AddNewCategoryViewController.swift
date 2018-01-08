@@ -35,10 +35,6 @@ class AddNewCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noInternetView.isHidden = true
-        // configure close button
-//        let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
-//        self.dismissScreen.setImage(closeImageButton, for: .normal)
-//        self.dismissScreen.imageView?.tintColor = UIColor.white
         guard Connectivity.isConnectedToInternet else {
             print("No! internet is not available.")
             self.noInternetView.isHidden = false
@@ -48,17 +44,10 @@ class AddNewCategoryViewController: UIViewController {
         self.textViewBackGround.layer.cornerRadius = 8
         self.textViewBackGround.layer.masksToBounds = true
         self.newWord.layer.cornerRadius = 8
-        
         // Make the add button circle
         self.addNewWordButton.layer.cornerRadius = 7
         // configure distances between cells
         self.collectionView.contentInset = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 3)
-        // color of the text inside next button grey when it is not selected
-        // configure close button
-//        let addImageButton = UIImage(named: "add")!.withRenderingMode(.alwaysTemplate)
-//        self.doneButton.setImage(addImageButton, for: .normal)
-//        self.doneButton.imageView?.tintColor = UIColor.white
-//        self.doneButton.setTitleColor(UIColor.gray, for: .disabled)
         self.hideKeyboardWhenTappedAround()
     }
 
