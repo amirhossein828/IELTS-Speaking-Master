@@ -42,6 +42,10 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             layout.delegate = self
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
