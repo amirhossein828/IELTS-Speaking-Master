@@ -49,8 +49,6 @@ class DetailViewController: UIViewController {
         }else {
             self.backButton.isHidden = true
         }
-        // make the color of status bar to white
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
     }
     
     fileprivate func configureCloseButton() {
