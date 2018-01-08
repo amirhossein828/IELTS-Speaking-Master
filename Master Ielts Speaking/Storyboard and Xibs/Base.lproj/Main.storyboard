@@ -1056,7 +1056,7 @@
                                     <constraint firstAttribute="height" constant="42" id="ByD-Or-vaz"/>
                                     <constraint firstAttribute="width" constant="44" id="T4g-Af-3Em"/>
                                 </constraints>
-                                <state key="normal" image="done">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1257,6 +1257,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="da2-Gy-mmf" secondAttribute="height" multiplier="1:1" id="FfL-gF-Qcb"/>
                                                 </constraints>
+                                                <state key="normal" title="Done"/>
                                                 <connections>
                                                     <action selector="nextButton:" destination="hyD-oR-JNY" eventType="touchUpInside" id="4iG-WA-aQk"/>
                                                 </connections>
@@ -1363,7 +1364,6 @@
     <resources>
         <image name="Base" width="960" height="540"/>
         <image name="background2" width="1024" height="682"/>
-        <image name="done" width="72" height="72"/>
         <image name="ic_chevron_left_2x" width="48" height="48"/>
         <image name="ic_close" width="24" height="24"/>
         <image name="ic_search" width="24" height="24"/>

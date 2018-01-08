@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
         _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
-        configureCloseButton()
+//        configureCloseButton()
         configureBackButton()
         if isComeFromInfo {
             self.navigationController?.navigationBar.isHidden = true
