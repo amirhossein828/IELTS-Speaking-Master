@@ -739,9 +739,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="avU-M9-JPa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                                <state key="normal" title="START">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                <state key="normal" title="GET STARTED">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="zLt-X1-fnW" kind="show" id="H8I-mG-rhC"/>
@@ -753,9 +753,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="LOE-Tg-GS0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                                 <state key="normal" title="HOW IT WORKS">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Y9C-b4-cnR" kind="show" id="viN-yI-mDP"/>
@@ -1242,22 +1242,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2p-ls-tky">
-                                                <rect key="frame" x="9" y="6" width="24" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="o2p-ls-tky" secondAttribute="height" multiplier="1:1" id="eHx-b6-utQ"/>
-                                                    <constraint firstAttribute="width" constant="24" id="sML-2R-P8t"/>
-                                                </constraints>
+                                                <rect key="frame" x="9" y="6" width="56" height="34"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="cancelButton:" destination="hyD-oR-JNY" eventType="touchUpInside" id="ekf-Xl-BEY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da2-Gy-mmf">
-                                                <rect key="frame" x="337" y="5" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="da2-Gy-mmf" secondAttribute="height" multiplier="1:1" id="FfL-gF-Qcb"/>
-                                                </constraints>
-                                                <state key="normal" title="Done"/>
+                                                <rect key="frame" x="324" y="6" width="43" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="nextButton:" destination="hyD-oR-JNY" eventType="touchUpInside" id="4iG-WA-aQk"/>
                                                 </connections>
@@ -1271,8 +1268,8 @@
                                             <constraint firstItem="zqx-5o-22e" firstAttribute="centerX" secondItem="mfI-YP-dfb" secondAttribute="centerX" id="Cgr-yw-juW"/>
                                             <constraint firstItem="o2p-ls-tky" firstAttribute="top" secondItem="mfI-YP-dfb" secondAttribute="top" constant="6" id="Dij-lW-yAA"/>
                                             <constraint firstItem="o2p-ls-tky" firstAttribute="leading" secondItem="mfI-YP-dfb" secondAttribute="leading" constant="9" id="Pzq-jF-oNx"/>
-                                            <constraint firstItem="da2-Gy-mmf" firstAttribute="top" secondItem="mfI-YP-dfb" secondAttribute="top" constant="5" id="SCm-Cf-gFL"/>
-                                            <constraint firstAttribute="bottom" secondItem="da2-Gy-mmf" secondAttribute="bottom" constant="6" id="YHf-fO-cGe"/>
+                                            <constraint firstItem="da2-Gy-mmf" firstAttribute="top" secondItem="mfI-YP-dfb" secondAttribute="top" constant="6" id="SCm-Cf-gFL"/>
+                                            <constraint firstItem="da2-Gy-mmf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mfI-YP-dfb" secondAttribute="leading" constant="20" symbolic="YES" id="vNh-lT-YVD"/>
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-r6-oKh">
