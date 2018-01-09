@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnH-SY-7X5">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -28,15 +28,15 @@
             <objects>
                 <tableViewController id="X8O-7p-4WU" customClass="SearchResultController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5sD-2M-8Oc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="F9V-bg-Dz5">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9V-bg-Dz5" id="I2G-aP-MLT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -56,31 +56,31 @@
             <objects>
                 <viewController id="UTm-PS-4oX" customClass="CategoryViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ci-qR-MLu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-oh-QlV">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ik0-xI-B5t">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" rowHeight="111" id="f9L-Ht-J6U" customClass="CategoryTableViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="320" height="111"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f9L-Ht-J6U" id="ct9-76-tKF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-dV-BUh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OHD-O9-WPk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-h0-3OK">
-                                                                    <rect key="frame" x="38" y="28.5" width="300" height="55"/>
+                                                                    <rect key="frame" x="10.5" y="28.5" width="300" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="300" id="oXp-Ur-nGY"/>
                                                                     </constraints>
@@ -120,7 +120,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHt-LF-9Vs">
-                                        <rect key="frame" x="232" y="372" width="70" height="70"/>
+                                        <rect key="frame" x="287" y="471" width="70" height="70"/>
                                         <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UHt-LF-9Vs" secondAttribute="height" multiplier="1:1" id="Oiu-Ve-HDa"/>
@@ -177,29 +177,29 @@
             <objects>
                 <viewController storyboardIdentifier="InfoCollectionViewController" id="pF2-rI-0q0" customClass="InfoCollectionViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFL-z3-BUY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-l2-LDY">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="xEj-Y6-8n0">
                                         <rect key="frame" x="0.0" y="-32" width="375" height="666"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eul-Q4-E9J">
-                                        <rect key="frame" x="0.0" y="-63" width="320" height="567"/>
+                                        <rect key="frame" x="0.0" y="-63" width="375" height="666"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pg7-M0-QE8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-Ln-pyj">
-                                                    <rect key="frame" x="0.0" y="63" width="320" height="504"/>
+                                                    <rect key="frame" x="0.0" y="63" width="375" height="603"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewLayout key="collectionViewLayout" id="66e-jA-0tv" customClass="CustomLayout" customModule="Master_Ielts_Speaking" customModuleProvider="target"/>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HgQ-yW-7e8" customClass="EachCategoryCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                                            <rect key="frame" x="72.5" y="0.0" width="175" height="322"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="322"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="322"/>
@@ -288,7 +288,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qs-n0-SzZ">
-                                                    <rect key="frame" x="232" y="458" width="70" height="70"/>
+                                                    <rect key="frame" x="287" y="557" width="70" height="70"/>
                                                     <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9qs-n0-SzZ" secondAttribute="height" multiplier="1:1" id="Ga9-2R-pbp"/>
@@ -363,23 +363,23 @@
             <objects>
                 <viewController id="tPc-YW-LDh" customClass="AddNewWordViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5xX-F3-TQr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjG-Ba-eYg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="exC-vy-W9y" kind="embed" id="WNm-ZO-xCl"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-JA-eu7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPf-8o-l12">
-                                        <rect key="frame" x="27" y="98" width="266" height="57"/>
+                                        <rect key="frame" x="27" y="98" width="321" height="57"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-Sm-MQh">
-                                                <rect key="frame" x="2" y="2" width="262" height="53"/>
+                                                <rect key="frame" x="2" y="2" width="317" height="53"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="53" id="aAH-QZ-GHl"/>
@@ -398,7 +398,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzt-Sp-MSD">
-                                        <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="NS6-c7-aOV"/>
@@ -428,7 +428,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-NV-A9I">
-                                        <rect key="frame" x="27" y="70" width="266" height="23"/>
+                                        <rect key="frame" x="27" y="70" width="321" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="3bc-RL-qQG"/>
                                         </constraints>
@@ -437,7 +437,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GDK-Nr-DuY">
-                                        <rect key="frame" x="3" y="238.5" width="317" height="284.5"/>
+                                        <rect key="frame" x="3" y="238.5" width="372" height="383.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5lm-nI-B6z">
                                             <size key="itemSize" width="151" height="149"/>
@@ -511,22 +511,22 @@
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Word " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RG-t9-lYp">
-                                        <rect key="frame" x="83.5" y="211" width="153.5" height="23.5"/>
+                                        <rect key="frame" x="111" y="211" width="153.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69y-Jp-Ya6">
-                                        <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ohhhhhh No!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vp-Jk-Wot">
-                                                <rect key="frame" x="87" y="234" width="146" height="30"/>
+                                                <rect key="frame" x="114.5" y="283.5" width="146" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-CZ-MPE">
-                                                <rect key="frame" x="74" y="265" width="173" height="27.5"/>
+                                                <rect key="frame" x="101.5" y="314.5" width="173" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -608,11 +608,11 @@
             <objects>
                 <viewController id="Y9C-b4-cnR" customClass="HelpViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HVp-V0-tBV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-zU-V3A">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="MQY-6C-phm"/>
@@ -627,7 +627,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvO-Nd-zCL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -635,7 +635,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-N5-xq5">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -666,14 +666,14 @@
             <objects>
                 <viewController id="mnH-SY-7X5" customClass="FirstViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ry-BS-7J7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vme-MI-ZVp">
-                                <rect key="frame" x="140.5" y="415" width="39" height="37"/>
+                                <rect key="frame" x="168" y="514" width="39" height="37"/>
                             </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IvU-tD-bYS">
-                                <rect key="frame" x="0.0" y="110" width="320" height="300"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="399"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTc-Zb-A4o">
                                     <size key="itemSize" width="368" height="395"/>
@@ -683,7 +683,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstCellId" id="HVQ-fn-Dfu" customClass="FirstPageCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-47.5" width="368" height="395"/>
+                                        <rect key="frame" x="0.0" y="2" width="368" height="395"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="368" height="395"/>
@@ -700,12 +700,18 @@
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="37"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYw-RZ-bTb">
                                                     <rect key="frame" x="16" y="240" width="336" height="158"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="33"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </view>
@@ -734,7 +740,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daF-It-fDq">
-                                <rect key="frame" x="0.0" y="521" width="320" height="47"/>
+                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
                                 <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="avU-M9-JPa"/>
@@ -748,7 +754,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-dc-BzD">
-                                <rect key="frame" x="0.0" y="474" width="320" height="47"/>
+                                <rect key="frame" x="0.0" y="573" width="375" height="47"/>
                                 <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="LOE-Tg-GS0"/>
@@ -762,7 +768,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZT-uj-GS0">
-                                <rect key="frame" x="69.5" y="20" width="181" height="102"/>
+                                <rect key="frame" x="97" y="20" width="181" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="181" id="r9L-Vh-7CP"/>
@@ -806,7 +812,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zLt-X1-fnW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hMv-0G-4Mk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -823,14 +829,14 @@
             <objects>
                 <viewController restorationIdentifier="DetailViewController" storyboardIdentifier="DetailViewController" id="exC-vy-W9y" customClass="DetailViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4s-a4-OF4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="843-kl-gfM" userLabel="ViewPageControl2">
-                                <rect key="frame" x="0.0" y="449" width="320" height="114"/>
+                                <rect key="frame" x="0.0" y="516.5" width="375" height="133.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-4k-bPH">
-                                        <rect key="frame" x="140.5" y="77" width="39" height="37"/>
+                                        <rect key="frame" x="168" y="96.5" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -840,23 +846,23 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-bQ-uHu" userLabel="ViewPgeControl">
-                                <rect key="frame" x="0.0" y="321.5" width="320" height="102"/>
+                                <rect key="frame" x="0.0" y="369" width="375" height="106.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-O4-36Q">
-                                        <rect key="frame" x="140.5" y="65" width="39" height="37"/>
+                                        <rect key="frame" x="168" y="69.5" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Kqz-O4-36Q" firstAttribute="centerX" secondItem="JaI-bQ-uHu" secondAttribute="centerX" id="Cgg-GY-LYA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kqz-O4-36Q" secondAttribute="bottom" id="QwH-MV-9rn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kqz-O4-36Q" secondAttribute="bottom" id="OAc-c3-OgH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSR-WT-iqn">
-                                <rect key="frame" x="0.0" y="62" width="320" height="227"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="267"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-q6-cPM">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h8t-kY-tGa">
                                             <size key="itemSize" width="368" height="264"/>
@@ -866,7 +872,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellOfAd" id="A0C-Wl-Tth" customClass="AdvertisementCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-18.5" width="368" height="264"/>
+                                                <rect key="frame" x="0.0" y="1.5" width="368" height="264"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="368" height="264"/>
@@ -903,7 +909,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-bF-28c">
-                                <rect key="frame" x="0.0" y="323.5" width="320" height="90.5"/>
+                                <rect key="frame" x="0.0" y="369" width="375" height="106.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4UQ-93-7aJ">
                                     <size key="itemSize" width="377" height="107"/>
@@ -913,24 +919,28 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellOfDef" id="7iT-Nh-hAI" customClass="DefinitionCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-8.5" width="377" height="107"/>
+                                        <rect key="frame" x="0.0" y="-0.5" width="377" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="377" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-sx-uKX">
-                                                    <rect key="frame" x="12" y="-3.5" width="352" height="86"/>
+                                                    <rect key="frame" x="12" y="-0.5" width="352" height="80"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.16430329623287671" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="33"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="UvO-sx-uKX" secondAttribute="trailing" constant="5" id="IG7-oo-EdU"/>
-                                            <constraint firstItem="UvO-sx-uKX" firstAttribute="height" secondItem="7iT-Nh-hAI" secondAttribute="height" multiplier="0.8" id="SZA-Gd-ER6"/>
+                                            <constraint firstItem="UvO-sx-uKX" firstAttribute="height" secondItem="7iT-Nh-hAI" secondAttribute="height" multiplier="0.75" id="SZA-Gd-ER6"/>
                                             <constraint firstItem="UvO-sx-uKX" firstAttribute="centerY" secondItem="7iT-Nh-hAI" secondAttribute="centerY" constant="-14" id="lbB-b9-dy6"/>
                                             <constraint firstItem="UvO-sx-uKX" firstAttribute="centerX" secondItem="7iT-Nh-hAI" secondAttribute="centerX" id="pSy-n1-2jc"/>
                                         </constraints>
@@ -945,16 +955,19 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-Rd-kcm" userLabel="ViewMiddle">
-                                <rect key="frame" x="0.0" y="289" width="320" height="34.5"/>
+                                <rect key="frame" x="0.0" y="329" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Definitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-bv-xnF">
-                                        <rect key="frame" x="111" y="1.5" width="99" height="30.5"/>
+                                        <rect key="frame" x="138.5" y="4" width="99" height="30.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="36"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxE-VX-l3K">
-                                        <rect key="frame" x="50" y="0.0" width="220" height="2"/>
+                                        <rect key="frame" x="50" y="0.0" width="275" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="rvj-Cj-xRY"/>
@@ -971,11 +984,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drt-dh-BKb">
-                                <rect key="frame" x="0.0" y="546" width="320" height="22"/>
+                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
-                                <rect key="frame" x="0.0" y="449" width="320" height="97"/>
+                                <rect key="frame" x="0.0" y="516.5" width="375" height="113.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3IV-7t-dfS">
                                     <size key="itemSize" width="372" height="133.5"/>
@@ -985,7 +998,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellOfExample" id="bTv-mh-7Xg" customClass="ExampleCollectionViewCell" customModule="Master_Ielts_Speaking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-18.5" width="372" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="-10" width="372" height="133.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="372" height="133.5"/>
@@ -993,9 +1006,13 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-yD-iWc">
                                                     <rect key="frame" x="13" y="4.5" width="346" height="100.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.16" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="33"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </view>
@@ -1016,7 +1033,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frd-UK-MDV">
-                                <rect key="frame" x="25" y="22" width="270" height="38.5"/>
+                                <rect key="frame" x="52.5" y="22" width="270" height="38.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="xHh-yZ-Tha"/>
                                 </constraints>
@@ -1025,16 +1042,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4s-Gx-tb4">
-                                <rect key="frame" x="0.0" y="414" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="475.5" width="375" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXR-vd-PDT">
-                                        <rect key="frame" x="117.5" y="2.5" width="85" height="30.5"/>
+                                        <rect key="frame" x="145" y="5.5" width="85" height="30.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="36"/>
+                                        </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6u-R6-Hd7">
-                                        <rect key="frame" x="51" y="0.0" width="219" height="2"/>
+                                        <rect key="frame" x="51" y="0.0" width="274" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="JGR-pw-wCF"/>
@@ -1051,7 +1071,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-Q7-94K">
-                                <rect key="frame" x="270" y="20" width="44" height="42"/>
+                                <rect key="frame" x="325" y="20" width="44" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="ByD-Or-vaz"/>
                                     <constraint firstAttribute="width" constant="44" id="T4g-Af-3Em"/>
@@ -1077,7 +1097,7 @@
                             <constraint firstItem="mn4-TF-JAm" firstAttribute="trailing" secondItem="8Bj-Q7-94K" secondAttribute="trailing" constant="6" id="2Kc-82-4wu"/>
                             <constraint firstItem="fnr-bF-28c" firstAttribute="top" secondItem="KZy-Rd-kcm" secondAttribute="bottom" id="6VP-hV-j74"/>
                             <constraint firstItem="SgA-7K-x8B" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.17" id="78k-eQ-74A"/>
-                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="top" secondItem="KZy-Rd-kcm" secondAttribute="bottom" constant="-1.5" id="87a-ef-gHw"/>
+                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="top" secondItem="KZy-Rd-kcm" secondAttribute="bottom" id="87a-ef-gHw"/>
                             <constraint firstItem="z4s-Gx-tb4" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="9Tk-ku-prw"/>
                             <constraint firstItem="Frd-UK-MDV" firstAttribute="centerX" secondItem="q4s-a4-OF4" secondAttribute="centerX" id="A3b-Xf-0Ue"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.2" id="AmB-9T-GfN"/>
@@ -1085,7 +1105,7 @@
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" constant="42" id="D1s-c1-yoN"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="width" secondItem="q4s-a4-OF4" secondAttribute="width" id="Dta-9q-ANg"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.4" id="Dtu-Rt-aQH"/>
-                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.18" id="FcA-gb-57J"/>
+                            <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.16" id="FcA-gb-57J"/>
                             <constraint firstItem="fnr-bF-28c" firstAttribute="trailing" secondItem="mn4-TF-JAm" secondAttribute="trailing" id="GV1-Zc-Jkg"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="top" secondItem="z4s-Gx-tb4" secondAttribute="bottom" id="HgH-dd-tU1"/>
                             <constraint firstItem="KZy-Rd-kcm" firstAttribute="top" secondItem="ZSR-WT-iqn" secondAttribute="bottom" id="IQR-qs-gxb"/>
@@ -1136,17 +1156,17 @@
             <objects>
                 <viewController id="hyD-oR-JNY" customClass="AddNewCategoryViewController" customModule="Master_Ielts_Speaking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w1E-Xu-OfM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-eo-Ekq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a22-ox-SI8">
-                                        <rect key="frame" x="27" y="98" width="266" height="57"/>
+                                        <rect key="frame" x="27" y="98" width="321" height="57"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Am6-TP-ebq">
-                                                <rect key="frame" x="2" y="2" width="262" height="53"/>
+                                                <rect key="frame" x="2" y="2" width="317" height="53"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="53" id="Fcm-db-zAU"/>
@@ -1180,7 +1200,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfp-fL-1Oz">
-                                        <rect key="frame" x="27" y="70" width="266" height="23"/>
+                                        <rect key="frame" x="27" y="70" width="321" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="9Rm-Yt-YAs"/>
                                         </constraints>
@@ -1189,7 +1209,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-GC-fMM">
-                                        <rect key="frame" x="3" y="239" width="317" height="329"/>
+                                        <rect key="frame" x="3" y="239" width="372" height="428"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cR6-Lk-VTw">
                                             <size key="itemSize" width="151" height="149"/>
@@ -1273,22 +1293,22 @@
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Photo For The Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-r6-oKh">
-                                        <rect key="frame" x="75.5" y="211" width="169" height="24"/>
+                                        <rect key="frame" x="103" y="211" width="169" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lv6-MQ-Vg6">
-                                        <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                        <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ohhhhhhh no!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-lx-o1u">
-                                                <rect key="frame" x="80" y="234" width="161.5" height="31.5"/>
+                                                <rect key="frame" x="107.5" y="283.5" width="161.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB0-3k-KBN">
-                                                <rect key="frame" x="74" y="273.5" width="173" height="27.5"/>
+                                                <rect key="frame" x="101.5" y="323" width="173" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
