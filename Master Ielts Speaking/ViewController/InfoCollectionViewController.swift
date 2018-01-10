@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import RealmSwift
 
-// protocol which declare method to delegate reloading table view when coming back from addCategoryViewController
+/// protocol which declare method to delegate reloading table view when coming back from addCategoryViewController
 protocol ReloadViewDelegate : class{
     func reloadTableViewByNewData()
 }
@@ -34,13 +34,12 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addWordButton.layer.cornerRadius = (addWordButton.frame.size.width) / 2
-        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
-        addWordButton.setImage(addButtonImage, for: .normal)
-        addWordButton.imageView?.tintColor = UIColor.white
+        configureAddWordButton()
+        // go trough all words and add them to arrayOfWords array
         for word in (self.categoryFrom?.words)! {
             self.arrayOfWords.append(word)
         }
+        // configure edges of collection view cell
         collectionView?.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 1, right: 5)
         self.navigationItem.title = self.categoryFrom?.categoryName
         // Set the PinterestLayout delegate
@@ -57,8 +56,15 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    /// Give icon for button and make it round
+    fileprivate func configureAddWordButton() {
+        self.addWordButton.layer.cornerRadius = (addWordButton.frame.size.width) / 2
+        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+        addWordButton.setImage(addButtonImage, for: .normal)
+        addWordButton.imageView?.tintColor = UIColor.white
+    }
     
-    // shodow for plus button
+    /// shodow for plus button
     fileprivate func configureShadowForButton() {
         addWordButton.layer.shadowColor = UIColor.black.cgColor
         addWordButton.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -70,20 +76,21 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override open var shouldAutorotate: Bool {
         return false
     }
-    
+    /// invoke when long press happens
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
         self.deleteButtenIsHidden = false
         self.cancelDeleting.isEnabled = true
         self.collectionView.reloadData()
     }
     
+    /// Goes to AddNewWord view controller when tapped
     @IBAction func addNewWordButton(_ sender: UIButton) {
-        
         let customLayout =  collectionView.collectionViewLayout as! CustomLayout
         customLayout.cache.removeAll()
         self.performSegue(withIdentifier: "goAddNewWord", sender: self)
     }
     
+    // MARK: - Collection view
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -106,9 +113,6 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goAddNewWord" {
@@ -119,6 +123,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
             vc.delegate = self
         }
     }
+    
     // Go to DetailViewController when user clicks
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -132,7 +137,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
         self.show(detailViewController, sender: nil)
     }
     
-    
+    /// Canceles the deleting
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         self.deleteButtenIsHidden = true
         self.cancelDeleting.isEnabled = false
@@ -161,7 +166,11 @@ extension InfoCollectionViewController : CustomLayoutDelegate {
     }
         return 0
     }
-    // Decrease the size of images inside cells.
+    
+    /// Decrease the size of images inside cells.
+    ///
+    /// - Parameters:
+    ///   - withHeight: the Height of image
      private func decreaseSizeOfImageHeight(withHeight : CGFloat ) -> CGFloat{
         if withHeight > 220 &&  withHeight < 800{
             return withHeight/4
@@ -213,7 +222,6 @@ extension InfoCollectionViewController : DeleteCellDelegate {
         self.arrayOfWords.remove(at: withIndex.row)
         self.collectionView.reloadData()
     }
-   
 }
 
 
