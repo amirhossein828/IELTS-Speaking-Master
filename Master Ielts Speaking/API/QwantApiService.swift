@@ -17,14 +17,17 @@ import SwiftyJSON
  */
 class QwantApiService {
     
-    // method which ask for seachKey and get the photos from Qwant website.
+    /// Ask for seachKey and get the photos from Flickr website.
+    ///
+    /// - Parameters:
+    ///   - searchKey: the searchKey
+    ///   - completion: the completion to invoke when success (the photos recieved)
     class func getPhotos(searchKey : String,completion : @escaping (DataResponse<Any>) -> Void) {
         let encodeSearchString = searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let urlString  = "https://api.qwant.com/api/search/images?count=30&offset=1&q="+encodeSearchString!
         Alamofire.request(urlString).responseJSON { (response) in
             completion(response)
         }
-        
     }
  
 }

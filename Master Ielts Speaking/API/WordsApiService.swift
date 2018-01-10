@@ -15,11 +15,17 @@ import Alamofire
  * - author: AmirHossein
  */
 class WordsApiService {
+    
     static let headers: HTTPHeaders = [
         "X-Mashape-Key": "9GUEoeCNaEmshOp3PfV7jivYl4YRp1faus3jsnRh8AwhK0LACA",
         "Accept": "application/json"
     ]
     
+    /// Get the definition of words for specific word
+    ///
+    /// - Parameters:
+    ///   - word: the word
+    ///   - completion: the completion to invoke when success (the definitions recieved)
     class func getDefinitionOfWords(word : String,completion : @escaping (DataResponse<Any>) -> Void) {
         let wordtrim = word.trimmingCharacters(in: .whitespacesAndNewlines)
         let wordEncode = wordtrim.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
@@ -30,6 +36,11 @@ class WordsApiService {
         }
     }
     
+    /// Get the examples of words for specific word
+    ///
+    /// - Parameters:
+    ///   - word: the word
+    ///   - completion: the completion to invoke when success (the examples recieved)
     class func getExampleOfWords(word : String,completion : @escaping (DataResponse<Any>) -> Void) {
         let wordtrim = word.trimmingCharacters(in: .whitespacesAndNewlines)
         let wordEncode = wordtrim.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)

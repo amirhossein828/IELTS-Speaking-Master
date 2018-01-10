@@ -22,8 +22,12 @@ import SwiftyJSON
  * - author: AmirHossein
  */
 class FlickrService {
-
-    // method which ask for seachKey and get the photos from Flickr website.
+    
+    /// Ask for seachKey and get the photos from Flickr website.
+    ///
+    /// - Parameters:
+    ///   - searchKey: the searchKey
+    ///   - completion: the completion to invoke when success (the photos recieved)
     class func getPhotos(searchKey : String,completion : @escaping (DataResponse<Any>) -> Void) {
         let trimmedSearchKey = searchKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let searchEncode = trimmedSearchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)

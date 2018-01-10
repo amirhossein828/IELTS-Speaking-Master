@@ -21,6 +21,13 @@ import UIKit
  *
  */
 extension UIImageView {
+    
+    /// Download images ( It uses caching to avoid reloading photos )
+    ///
+    /// - Parameters:
+    ///   - url: the url of photo
+    ///   - contentMode: the contentMode
+    ///   - completion: the completion to invoke when success (the photo recieved)
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, completion : @escaping () -> Void) {
         if let image = imageCacheNew.object(forKey: url as AnyObject) {
             self.image = image
@@ -54,17 +61,23 @@ extension UIImageView {
  */
 extension UIViewController {
 
-func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default,
-                                  handler: { (_) -> Void in
-                                    alert.dismiss(animated: true, completion: nil)
-                                    DispatchQueue.main.async {
-                                        completion?()
-                                    }
-    }))
-    self.present(alert, animated: true, completion: nil)
- }
+    /// show alert
+    ///
+    /// - Parameters:
+    ///   - title: the title of alert
+    ///   - message: the message of alert
+    ///   - completion: the completion to invoke when success
+    func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default,
+                                      handler: { (_) -> Void in
+                                        alert.dismiss(animated: true, completion: nil)
+                                        DispatchQueue.main.async {
+                                            completion?()
+                                        }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 /**
@@ -74,6 +87,7 @@ func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) 
  *
  */
 extension UIViewController {
+    /// hide Keyboard When user Tapped Around of keyboard
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
