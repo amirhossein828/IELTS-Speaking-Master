@@ -21,22 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // make the color of status bar to white
         UINavigationBar.appearance().barStyle = UIBarStyle.blackTranslucent
         ifFirstLaunchSaveToDatabaseFromFile()
-        
-        /*
-        let config = Realm.Configuration(
-
-            schemaVersion: 1,
-
-            migrationBlock: { migration, oldSchemaVersion in
-                
-                if oldSchemaVersion < 1 {
-
-                }
-        }
-        )
-        Realm.Configuration.defaultConfiguration = config
- */
-        
+//        createVersionForSchema(schemaVersion: 2)
         return true
     }
     
@@ -56,6 +41,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)
         }
+    }
+    
+    /// create Version For Schema when schema of database changes
+    ///
+    /// - Parameters:
+    ///   - schemaVersion: the schema Version
+    fileprivate func createVersionForSchema(schemaVersion : Int) {
+        let config = Realm.Configuration(
+            
+            schemaVersion: UInt64(schemaVersion),
+            
+            migrationBlock: { migration, oldSchemaVersion in
+                
+                if oldSchemaVersion < 1 {
+                    
+                }
+        }
+        )
+        Realm.Configuration.defaultConfiguration = config
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
