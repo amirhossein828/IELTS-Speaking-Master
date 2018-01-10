@@ -33,11 +33,11 @@ class DetailViewController: UIViewController {
     var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
     var pageControlExampleDots : Int = 0
-    // AddNewWordViewController object
+    /// AddNewWordViewController object
     lazy var vc : AddNewWordViewController = {
         return parent as! AddNewWordViewController
         }()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewPgeControl.isUserInteractionEnabled = false
@@ -49,6 +49,11 @@ class DetailViewController: UIViewController {
         _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
 //        configureCloseButton()
         configureBackButton()
+        makeHiddenBackButton()
+    }
+    
+    /// check user come from Info screen make back button unhidden.
+    fileprivate func makeHiddenBackButton() {
         if isComeFromInfo {
             self.navigationController?.navigationBar.isHidden = true
             self.backButton.isHidden = false
@@ -57,20 +62,19 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // configure CloseButton
     fileprivate func configureCloseButton() {
         let doneImage = UIImage(named: "done")?.withRenderingMode(.alwaysTemplate)
         self.closeButton.setImage(doneImage, for: .normal)
         self.closeButton.tintColor = UIColor.white
     }
-    
+    // configure BackButton
     fileprivate func configureBackButton() {
         let backImage = UIImage(named: "ic_chevron_left_2x")?.withRenderingMode(.alwaysTemplate)
         self.backButton.setImage(backImage, for: .normal)
         self.backButton.tintColor = UIColor.white
     }
     
-
-
     @IBAction func backButton(_ sender: UIButton) {
         if isComeFromInfo {
             self.dismiss(animated: true, completion: nil)
@@ -92,11 +96,9 @@ class DetailViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-
 }
 
+/// Extend to implenet collection view
 extension DetailViewController :
 UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -116,34 +118,14 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
             return min(numberOfExamples, 14)
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfDef", for: indexPath) as! DefinitionCollectionViewCell
-        if let arrayOfDefenition = self.newVocabulary?.definitions {
-            let wordDef = arrayOfDefenition[indexPath.row]
-            cell.setCell(withIndex: indexPath, withDef: wordDef)
-        }
-        cell.backgroundColor = UIColor.clear
-        return cell
+            return cellOfDefinitions(collectionView, indexPath)
         }else if collectionView == self.advCollectionView {
-            let cellOfAdv = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfAd", for: indexPath) as! AdvertisementCell
-            if let imageData = self.newVocabulary?.wordImage {
-                cellOfAdv.imageView.image = UIImage(data: imageData as Data)
-            }
-            if let imageString = self.newVocabulary?.wordImageString {
-                cellOfAdv.imageView.image = UIImage(named: imageString)
-            }
-            return cellOfAdv
+            return cellOfAdvertisement(collectionView, indexPath)
         }else {
-            let cellOfExample = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfExample", for: indexPath) as! ExampleCollectionViewCell
-            if let arrayOfExamples = self.newVocabulary?.examples {
-                let wordExample = arrayOfExamples[indexPath.row]
-
-                        cellOfExample.exampleLabel.text = wordExample
-            }
-            cellOfExample.backgroundColor = UIColor.clear
-            return cellOfExample
+            return cellOfExamples(collectionView, indexPath)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -155,7 +137,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
              return CGSize(width: self.exampleCollectionView.frame.width, height: self.exampleCollectionView.frame.height)
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
@@ -173,7 +154,53 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
         }
         
     }
+    /// cell Of Advertisement
+    ///
+    /// - Parameters:
+    ///   - collectionView: the collectionView
+    ///   - indexPath: the indexPath
+    ///   - Returns: cell for Advertisement
+    fileprivate func cellOfAdvertisement(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell {
+        let cellOfAdv = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfAd", for: indexPath) as! AdvertisementCell
+        if let imageData = self.newVocabulary?.wordImage {
+            cellOfAdv.imageView.image = UIImage(data: imageData as Data)
+        }
+        if let imageString = self.newVocabulary?.wordImageString {
+            cellOfAdv.imageView.image = UIImage(named: imageString)
+        }
+        return cellOfAdv
+    }
     
+    /// cell Of Definitions
+    ///
+    /// - Parameters:
+    ///   - collectionView: the collectionView
+    ///   - indexPath: the indexPath
+    ///   - Returns: cell for Definitions
+    fileprivate func cellOfDefinitions(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfDef", for: indexPath) as! DefinitionCollectionViewCell
+        if let arrayOfDefenition = self.newVocabulary?.definitions {
+            let wordDef = arrayOfDefenition[indexPath.row]
+            cell.setCell(withIndex: indexPath, withDef: wordDef)
+        }
+        cell.backgroundColor = UIColor.clear
+        return cell
+    }
     
+    /// cell Of Examples
+    ///
+    /// - Parameters:
+    ///   - collectionView: the collectionView
+    ///   - indexPath: the indexPath
+    ///   - Returns: cell for Examples
+    fileprivate func cellOfExamples(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell {
+        let cellOfExample = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOfExample", for: indexPath) as! ExampleCollectionViewCell
+        if let arrayOfExamples = self.newVocabulary?.examples {
+            let wordExample = arrayOfExamples[indexPath.row]
+            cellOfExample.exampleLabel.text = wordExample
+        }
+        cellOfExample.backgroundColor = UIColor.clear
+        return cellOfExample
+    }
 
 }
