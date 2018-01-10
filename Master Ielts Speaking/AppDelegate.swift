@@ -49,13 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ///   - schemaVersion: the schema Version
     fileprivate func createVersionForSchema(schemaVersion : Int) {
         let config = Realm.Configuration(
-            
             schemaVersion: UInt64(schemaVersion),
-            
             migrationBlock: { migration, oldSchemaVersion in
-                
                 if oldSchemaVersion < 1 {
-                    
                 }
         }
         )
