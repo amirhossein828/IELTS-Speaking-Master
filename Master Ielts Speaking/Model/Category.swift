@@ -17,10 +17,13 @@ import RealmSwift
  *
  */
 class Category : Object {
+    ///category Name
     @objc dynamic var categoryName : String = ""
+    ///category Image String format
     @objc dynamic var categoryImage : String = ""
+    ///category Image Data
     @objc dynamic var categoryImageData : Data? = nil
-    // each category has list of words
+    /// each category has list of words
     var words = List<Word>()
     
     override class func primaryKey() -> String {

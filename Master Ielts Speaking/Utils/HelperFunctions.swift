@@ -14,7 +14,14 @@ import SwiftyJSON
  A set of helpful functions and extensions
  */
 
-// This method does gives the array of defenition in json object format.
+/// Gives the array of defenition for specific word in json object format.
+///
+/// - Parameters:
+///   - word: the word
+///   - viewController: the viewController
+///   - arrayOfDefObject: the array Of Definition Object get invoked when success
+///   - arrayOfExampleObject: the array Of Example Object get invoked when success
+///   - failur: the failur get invoked if error happens
 func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewController , arrayOfDefObject : @escaping ([JSON]) -> Void ,arrayOfExampleObject : @escaping ([JSON]) -> Void , failur : @escaping (_ massege : String) -> Void) {
     WordsApiService.getDefinitionOfWords(word: word) { (response) in
         // create array of string (the definition of word)
@@ -48,7 +55,12 @@ func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewContr
     
 }
 
-// get images from json files
+/// Get images from json files
+///
+/// - Parameters:
+///   - path: the path of photo
+///   - viewController: the viewController
+///   - completion: the completion invoke when success ( bring Json photo)
 func getImageAssets(path : String, completion :  (JSON) -> Void){
     do {
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
