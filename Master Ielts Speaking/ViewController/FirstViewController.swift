@@ -24,9 +24,15 @@ class FirstViewController: UIViewController {
     let titles = ["Make New Category","Add New Words","See Definition","See Photo","See Example"]
     let descriptionOfTitle = ["By making new categories you would be able to add new words which just related to the category","By adding new words to each category it is possible to collect all words related to each category","The definition of words appear when new word got added","The photo of words appear when new word got added","The examples of words appear when new word got added"]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pageControl.numberOfPages = 5
+        configureIcon()
+    }
+    
+    /// configure Icon image
+    fileprivate func configureIcon() {
         let icon =  UIImage(named: "icon3")?.withRenderingMode(.alwaysTemplate)
         self.iconImage.image = icon
         self.iconImage.tintColor = UIColor.white
@@ -40,9 +46,8 @@ class FirstViewController: UIViewController {
         return false
     }
 
-
 }
-
+/// extend to implement collection view
 extension FirstViewController :
 UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -57,7 +62,6 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCellId", for: indexPath) as! FirstPageCollectionViewCell
             cell.imageView.image = UIImage(named: self.test[indexPath.row])
-
             cell.title.text = self.titles[indexPath.row]
             cell.descriptionLabel.text = self.descriptionOfTitle[indexPath.row]
             return cell

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import WebKit
 
 /**
  A set of helpful functions and extensions
@@ -70,6 +71,26 @@ func getImageAssets(path : String, completion :  (JSON) -> Void){
         
     } catch {
         print("error")
+    }
+}
+
+/// load my Page
+///
+/// - Parameters:
+///   - webSite: the webSite
+///   - webView: the webView
+///   - viewController: the viewController
+///   - activityIndicator: the activityIndicator
+func loadWebPage(webSite : String, webView : WKWebView , viewController : WKNavigationDelegate, activityIndicator : UIActivityIndicatorView?) {
+    // create url
+    let url = URL(string: webSite)
+    // create request
+    let request = URLRequest(url: url!)
+    // load the page by the request
+    webView.load(request)
+    webView.navigationDelegate = viewController
+    if let activityIndicator = activityIndicator {
+        webView.addSubview(activityIndicator)
     }
 }
 

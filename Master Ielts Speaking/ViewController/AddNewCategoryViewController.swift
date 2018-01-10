@@ -41,11 +41,7 @@ class AddNewCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noInternetView.isHidden = true
-        guard Connectivity.isConnectedToInternet else {
-            print("No! internet is not available.")
-            self.noInternetView.isHidden = false
-            return
-        }
+        checkConectivity()
         // Configure the text view to make it's corner radiuos
         self.textViewBackGround.layer.cornerRadius = 8
         self.textViewBackGround.layer.masksToBounds = true
@@ -61,8 +57,15 @@ class AddNewCategoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    
+    /// check connectivity to Internet
+    fileprivate func checkConectivity() {
+        guard Connectivity.isConnectedToInternet else {
+            print("No! internet is not available.")
+            self.noInternetView.isHidden = false
+            return
+        }
+    }
+    // Add new category 
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
         // make the titleOfCollection unhidden
         self.titleOfCollection.isHidden = false
@@ -75,7 +78,6 @@ class AddNewCategoryViewController: UIViewController {
             return}
         newCategory?.categoryName = newWordString
         // search for photos related to the new word
-        
         FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
             switch response.result {
             case .success(let value):
@@ -118,8 +120,7 @@ class AddNewCategoryViewController: UIViewController {
         delegate?.reloadTableViewByNewData()
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
+ 
     @IBAction func nextButton(_ sender: UIButton) {
         // check if a category name got chosen
         if self.newWord.text == ""  {
@@ -148,6 +149,7 @@ class AddNewCategoryViewController: UIViewController {
 
 }
 
+/// Extend to implement collection view
 extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -173,8 +175,7 @@ extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionVi
         return cell
     }
     
-    
-    
+
     // select one cell and change the color of it
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photoCell = self.collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
