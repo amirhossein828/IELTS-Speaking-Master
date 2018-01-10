@@ -29,10 +29,7 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addCategoryButton.layer.cornerRadius = (addCategoryButton.frame.size.width) / 2
-        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
-        addCategoryButton.setImage(addButtonImage, for: .normal)
-        addCategoryButton.imageView?.tintColor = UIColor.white
+        configureAddCategoryButton()
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             self.arrayOfCategories = response
@@ -48,7 +45,14 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override open var shouldAutorotate: Bool {
         return false
     }
-    // shodow for plus button
+    /// Give icon for button and make it round
+    fileprivate func configureAddCategoryButton() {
+        self.addCategoryButton.layer.cornerRadius = (addCategoryButton.frame.size.width) / 2
+        let addButtonImage = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+        addCategoryButton.setImage(addButtonImage, for: .normal)
+        addCategoryButton.imageView?.tintColor = UIColor.white
+    }
+    /// Shodow for plus button
     fileprivate func configureShadowForButton() {
         addCategoryButton.layer.shadowColor = UIColor.black.cgColor
         addCategoryButton.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -59,12 +63,10 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // MARK: - Table view data source
     
      func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.arrayOfCategories?.count ?? 0
     }
     
@@ -75,7 +77,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CategoryTableViewCell
-
         cell.categoryName.text = self.arrayOfCategories?[indexPath.row].categoryName ?? ""
         if let image = UIImage(named: (self.arrayOfCategories?[indexPath.row].categoryImage)!) {
             cell.categoryImage.image = image
@@ -108,7 +109,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
             addVC.transitioningDelegate = self
             addVC.modalPresentationStyle = .custom
             addVC.delegate = self
-            
         }
     }
 
@@ -119,7 +119,6 @@ extension CategoryViewController : UIViewControllerTransitioningDelegate {
         self.transition.transitionMode = .present
         self.transition.startingPoint = self.addCategoryButton.center
 //        self.transition.circleColor = self.addCategoryButton.backgroundColor!
-        
         return self.transition
     }
     
@@ -127,13 +126,13 @@ extension CategoryViewController : UIViewControllerTransitioningDelegate {
         self.transition.transitionMode = .dismiss
         self.transition.startingPoint = self.addCategoryButton.center
 //        self.transition.circleColor = self.addCategoryButton.backgroundColor!
-        
         return self.transition
     }
   
 }
 
 extension CategoryViewController : ReloadViewDelegate {
+    ///Reload TableView By NewData when new category gets added to database
     func reloadTableViewByNewData() {
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
@@ -142,6 +141,5 @@ extension CategoryViewController : ReloadViewDelegate {
         }
         self.tableView.reloadData()
     }
-  
 }
 
