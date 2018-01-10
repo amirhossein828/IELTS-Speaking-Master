@@ -204,6 +204,7 @@ extension InfoCollectionViewController : UIViewControllerTransitioningDelegate {
 }
 
 extension InfoCollectionViewController : ReloadViewDelegate {
+    ///Reload Collection By NewData when new word gets added to database
     func reloadTableViewByNewData() {
         self.arrayOfWords.removeAll()
         for word in (self.categoryFrom?.words)! {

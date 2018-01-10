@@ -11,7 +11,7 @@ import SwiftyJSON
 import Alamofire
 import RealmSwift
 
-// It will avoid reloading photos during scrolling
+/// It will avoid reloading photos during scrolling
 var imageCacheNew = NSCache<AnyObject, UIImage>()
 
 
@@ -45,22 +45,14 @@ class AddNewWordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noInternetView.isHidden = true
-        // configure close button
-        let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
-        self.dismissScreen.setImage(closeImageButton, for: .normal)
-        self.dismissScreen.imageView?.tintColor = UIColor.white
-        guard Connectivity.isConnectedToInternet else {
-            print("No! internet is not available.")
-            self.noInternetView.isHidden = false
-            return
-        }
+        configureCloseButton()
+        checkConectivity()
         self.view.addSubview(self.containerView)
         self.containerView.isHidden = true
         // Configure the text view to make it's corner radiuos
         self.textViewBackGround.layer.cornerRadius = 8
         self.textViewBackGround.layer.masksToBounds = true
         self.newWord.layer.cornerRadius = 8
-        
         // Make the add button circle
         self.addNewWordButton.layer.cornerRadius = 7
         // configure distances between cells
@@ -70,11 +62,27 @@ class AddNewWordViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    ///close Screen
     @IBAction func dismissScreen(_ sender: UIButton) {
         dismissThePage()
     }
     
+    /// configure close button
+    fileprivate func configureCloseButton() {
+        let closeImageButton = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
+        self.dismissScreen.setImage(closeImageButton, for: .normal)
+        self.dismissScreen.imageView?.tintColor = UIColor.white
+    }
     
+    /// check connectivity to Internet
+    fileprivate func checkConectivity() {
+        guard Connectivity.isConnectedToInternet else {
+            print("No! internet is not available.")
+            self.noInternetView.isHidden = false
+            return
+        }
+    }
+    // Get definitions and example of words and photos related to this word
     @IBAction func addNewWordButton(_ sender: UIButton) {
         // make next button unable till user choose one photo
         self.nextButton.isEnabled = false
@@ -138,11 +146,10 @@ class AddNewWordViewController: UIViewController {
     func dismissThePage() {
         self.dismiss(animated: true, completion: nil)
     }
-
+    // Go to detail view controller
     @IBAction func nextButton(_ sender: UIButton) {
         // save in database
         saveData(newVocab!)
-
         updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
         let detailViewController = self.childViewControllers[0] as! DetailViewController
         detailViewController.newVocabulary = self.newVocab
@@ -172,7 +179,7 @@ class AddNewWordViewController: UIViewController {
 }
 
 
-
+/// Extend to implement collection view
 extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -206,10 +213,10 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         
     }
     
-//     make the size of each cell half of the screen
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: (collectionView.frame.width - 9)/3, height: self.view.frame.size.height * 0.15)
-        }
+    // make the size of each cell half of the screen
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width - 9)/3, height: self.view.frame.size.height * 0.15)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
