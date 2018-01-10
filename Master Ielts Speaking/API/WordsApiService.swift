@@ -9,6 +9,11 @@
 import Foundation
 import Alamofire
 
+/**
+ * Get definitions from WordsApiService
+ *
+ * - author: AmirHossein
+ */
 class WordsApiService {
     static let headers: HTTPHeaders = [
         "X-Mashape-Key": "9GUEoeCNaEmshOp3PfV7jivYl4YRp1faus3jsnRh8AwhK0LACA",

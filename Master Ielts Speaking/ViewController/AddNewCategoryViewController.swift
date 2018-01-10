@@ -11,6 +11,12 @@ import SwiftyJSON
 import Alamofire
 import RealmSwift
 
+/**
+ * screen to add the new category
+ *
+ * - author: Amir
+ *
+ */
 class AddNewCategoryViewController: UIViewController {
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!

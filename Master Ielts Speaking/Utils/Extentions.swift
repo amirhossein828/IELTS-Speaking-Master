@@ -10,7 +10,16 @@ import Foundation
 import Alamofire
 import UIKit
 
+/**
+ A set of helpful extensions for classes from UIKit
+ */
 
+/**
+ * Extends UIImageView to download photos.
+ *
+ * - author: Amirhossein
+ *
+ */
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, completion : @escaping () -> Void) {
         if let image = imageCacheNew.object(forKey: url as AnyObject) {
@@ -37,6 +46,12 @@ extension UIImageView {
     }
 }
 
+/**
+ * Extends UIViewController to show alert.
+ *
+ * - author: Amirhossein
+ *
+ */
 extension UIViewController {
 
 func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) {
@@ -52,6 +67,12 @@ func showAlert(_ title: String, _ message: String, completion: (()->())? = nil) 
  }
 }
 
+/**
+ * Extends UIViewController to hide Keyboard When Tapped Around.
+ *
+ * - author: Amirhossein
+ *
+ */
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -63,7 +84,13 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
-// Lock orientation
+
+/**
+ * Extends UINavigationController to Lock orientation.
+ *
+ * - author: Amirhossein
+ *
+ */
 extension UINavigationController {
     open override var shouldAutorotate: Bool {
         return visibleViewController!.shouldAutorotate

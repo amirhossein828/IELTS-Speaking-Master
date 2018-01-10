@@ -8,14 +8,20 @@
 
 import UIKit
 
+/**
+ * cell of Each CategoryCollectionView
+ *
+ * - author: Amir
+ *
+ */
 class EachCategoryCollectionViewCell: UICollectionViewCell {
-    
+    // Outlets
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var wordImageView: UIImageView!
     @IBOutlet weak var wordField: UILabel!
     @IBOutlet weak var backgroundViewForText: UIView!
-    
+    // Properties
     weak var delegate : DeleteCellDelegate?
     var index  : IndexPath!
     
@@ -40,9 +46,7 @@ class EachCategoryCollectionViewCell: UICollectionViewCell {
         }
         
     }
-    
-    
-    
+
     @IBAction func deleteButton(_ sender: UIButton) {
         self.delegate?.deleteCell(withIndex: index)
     }

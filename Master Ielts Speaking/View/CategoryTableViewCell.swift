@@ -8,12 +8,16 @@
 
 import UIKit
 
+/**
+ * cell of Category table view
+ *
+ * - author: Amir
+ *
+ */
 class CategoryTableViewCell: UITableViewCell {
-    
+    // Outlets
     @IBOutlet weak var backgroundCustomView: UIView!
-    
     @IBOutlet weak var categoryImage: UIImageView!
-    
     @IBOutlet weak var categoryName: UILabel!
     
     override func awakeFromNib() {

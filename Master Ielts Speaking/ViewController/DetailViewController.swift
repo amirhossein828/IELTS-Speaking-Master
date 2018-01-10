@@ -9,6 +9,12 @@
 import UIKit
 import RealmSwift
 
+/**
+ * Detail information of each words screen
+ *
+ * - author: Amir
+ *
+ */
 class DetailViewController: UIViewController {
     // Outlets
     @IBOutlet weak var pageControl: UIPageControl!

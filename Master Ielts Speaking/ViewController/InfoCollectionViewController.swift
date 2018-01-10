@@ -15,6 +15,12 @@ protocol ReloadViewDelegate : class{
     func reloadTableViewByNewData()
 }
 
+/**
+ * show the words of the specific Category screen
+ *
+ * - author: Amir
+ *
+ */
 class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIScrollViewDelegate {
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!

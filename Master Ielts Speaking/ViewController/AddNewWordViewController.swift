@@ -14,6 +14,13 @@ import RealmSwift
 // It will avoid reloading photos during scrolling
 var imageCacheNew = NSCache<AnyObject, UIImage>()
 
+
+/**
+ * screen to add the new word to specific category
+ *
+ * - author: Amir
+ *
+ */
 class AddNewWordViewController: UIViewController {
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!

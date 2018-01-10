@@ -8,13 +8,16 @@
 
 import UIKit
 
+/**
+ * Cell first collection view ( collection view which shows the info about app)
+ *
+ * - author: Amir
+ *
+ */
 class FirstPageCollectionViewCell: UICollectionViewCell {
-    
+    // Outlets
     @IBOutlet weak var imageView: UIImageView!
-    
-
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
 
     

@@ -9,6 +9,12 @@
 import UIKit
 import  RealmSwift
 
+/**
+ * Search screen
+ *
+ * - author: Amir
+ *
+ */
 class SearchResultController: UITableViewController , UISearchResultsUpdating, UISearchBarDelegate{
     // list of categories
     lazy var categoryList : [Category]? = {
@@ -17,7 +23,6 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
             for category in response {
                 resultArray.append(category)
             }
-            
         })
         return resultArray
     }()
@@ -30,7 +35,6 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
             for word in response {
                 resultArray.append(word)
             }
-            
         })
         return resultArray
     }()

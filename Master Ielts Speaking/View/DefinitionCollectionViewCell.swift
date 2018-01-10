@@ -8,14 +8,16 @@
 
 import UIKit
 
+/**
+ * Cell of collection view of defenitions
+ *
+ * - author: Amir
+ *
+ */
 class DefinitionCollectionViewCell: UICollectionViewCell {
-    
+    // Outlets
     @IBOutlet weak var definitionFieldCell: UILabel!
-    
-    
-    override func awakeFromNib() {
-    }
-    
+
     func setCell(withIndex index : IndexPath, withDef definition : String) {
         self.definitionFieldCell.text = definition
     }

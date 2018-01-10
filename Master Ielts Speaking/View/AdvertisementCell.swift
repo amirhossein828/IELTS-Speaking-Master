@@ -8,10 +8,14 @@
 
 import UIKit
 
+/**
+ * Cell advertisement collection view
+ *
+ * - author: Amir
+ *
+ */
 class AdvertisementCell: UICollectionViewCell {
-    
-    
+    // Outlets
     @IBOutlet weak var imageView: UIImageView!
-    
-    
+
 }

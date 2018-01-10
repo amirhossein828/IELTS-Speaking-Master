@@ -10,6 +10,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/**
+ A set of helpful functions and extensions
+ */
 
 // This method does gives the array of defenition in json object format.
 func getDefinitionsAndPhotos(withWord word : String,viewController : UIViewController , arrayOfDefObject : @escaping ([JSON]) -> Void ,arrayOfExampleObject : @escaping ([JSON]) -> Void , failur : @escaping (_ massege : String) -> Void) {
@@ -58,7 +61,12 @@ func getImageAssets(path : String, completion :  (JSON) -> Void){
     }
 }
 
-
+/**
+ * Class to check connectivity to Internet
+ *
+ * - author: Amir
+ *
+ */
 class Connectivity {
     class var isConnectedToInternet:Bool {
         return NetworkReachabilityManager()!.isReachable

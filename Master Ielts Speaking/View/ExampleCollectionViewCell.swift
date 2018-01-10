@@ -8,7 +8,13 @@
 
 import UIKit
 
+/**
+ * Cell example collection view  ( collection view which shows the example of words inside detail screen.)
+ *
+ * - author: Amir
+ *
+ */
 class ExampleCollectionViewCell: UICollectionViewCell {
-    
+    // Outlets
     @IBOutlet weak var exampleLabel: UILabel!
 }

@@ -9,6 +9,13 @@
 import UIKit
 import RealmSwift
 
+/**
+ * Category Screen
+ *
+ * - author: Amir
+ *
+ *
+ */
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     // Outlets
     @IBOutlet weak var backGroundV: UIView!

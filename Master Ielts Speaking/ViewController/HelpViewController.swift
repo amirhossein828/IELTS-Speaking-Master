@@ -9,11 +9,17 @@
 import UIKit
 import WebKit
 
+/**
+ * web view screen to show the blog info
+ *
+ * - author: Amir
+ *
+ */
 class HelpViewController: UIViewController , WKNavigationDelegate{
     // Outlets
     @IBOutlet weak var webView: WKWebView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
@@ -49,7 +55,5 @@ class HelpViewController: UIViewController , WKNavigationDelegate{
         // stop animating activityIndicator when the page gets loaded
         self.activityIndicator.stopAnimating()
     }
-    
-    
 
 }

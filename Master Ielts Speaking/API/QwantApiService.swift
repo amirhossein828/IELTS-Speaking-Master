@@ -10,6 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/**
+ * Get photos from Qwant API
+ *
+ * - author: AmirHossein
+ */
 class QwantApiService {
     
     // method which ask for seachKey and get the photos from Qwant website.

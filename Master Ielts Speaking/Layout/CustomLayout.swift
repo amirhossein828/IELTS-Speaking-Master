@@ -14,6 +14,12 @@ protocol CustomLayoutDelegate: class {
     func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
 }
 
+/**
+ * Custom layout for info collection view
+ *
+ * - author: Amir
+ *
+ */
 class CustomLayout : UICollectionViewLayout {
     weak var delegate: CustomLayoutDelegate!
     

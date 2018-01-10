@@ -14,7 +14,7 @@ import SwiftyJSON
  * Class to load categories and words from json file and save in relam DB
  *
  * - author: Amir
- * - version: 1
+ *
  *
  */
 class MockData {
