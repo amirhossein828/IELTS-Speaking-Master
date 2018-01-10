@@ -8,18 +8,21 @@
 
 import UIKit
 
+/**
+ * circular animation for transition
+ *
+ * - author: Amir
+ *
+ */
 class AnimationTransition: NSObject {
     
     var circle = UIView()
-    
     var startingPoint = CGPoint.zero {
         didSet {
             circle.center = startingPoint
         }
     }
-    
     var circleColor = UIColor.black
-    
     var duration = 0.3
     
     enum CircularTransitionMode:Int {
@@ -27,7 +30,6 @@ class AnimationTransition: NSObject {
     }
     
     var transitionMode:CircularTransitionMode = .present
-    
 }
 
 extension AnimationTransition:UIViewControllerAnimatedTransitioning {
