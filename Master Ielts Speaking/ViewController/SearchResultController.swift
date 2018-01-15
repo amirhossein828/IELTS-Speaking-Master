@@ -61,6 +61,10 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
         self.resultController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchCell")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
