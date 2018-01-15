@@ -54,14 +54,19 @@ class DetailViewController: UIViewController {
     
     /// check user come from Info screen make back button unhidden.
     fileprivate func makeHiddenBackButton() {
-        if isComeFromInfo {
+        if isComeFromInfo || isComeFromSearch {
             self.navigationController?.navigationBar.isHidden = true
             self.backButton.isHidden = false
         }else {
             self.backButton.isHidden = true
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        if isComeFromSearch {
+            self.navigationController?.navigationBar.isHidden = true
+            setNeedsFocusUpdate()
+        }
+    }
     // configure CloseButton
     fileprivate func configureCloseButton() {
         let doneImage = UIImage(named: "done")?.withRenderingMode(.alwaysTemplate)
