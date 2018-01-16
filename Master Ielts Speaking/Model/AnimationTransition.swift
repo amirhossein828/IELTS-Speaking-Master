@@ -49,9 +49,7 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
             if let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) {
                 let viewCenter = presentedView.center
                 let viewSize = presentedView.frame.size
-                
                 circle = UIView()
-    
                 circle!.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
                 
                 circle!.layer.cornerRadius = circle!.frame.size.height / 2
@@ -59,13 +57,10 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                 circle!.backgroundColor = circleColor
                 circle!.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 containerView.addSubview(circle!)
-                
-                
                 presentedView.center = startingPoint
                 presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 presentedView.alpha = 0
                 containerView.addSubview(presentedView)
-                
                 UIView.animate(withDuration: duration, animations: {
                     self.circle!.transform = CGAffineTransform.identity
                     presentedView.transform = CGAffineTransform.identity
@@ -79,17 +74,12 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
             
         }else{
             let transitionModeKey = (transitionMode == .pop) ? UITransitionContextViewKey.to : UITransitionContextViewKey.from
-            
             if let returningView = transitionContext.view(forKey: transitionModeKey) {
                 let viewCenter = returningView.center
                 let viewSize = returningView.frame.size
-                
-                
                 circle!.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
-                
                 circle!.layer.cornerRadius = circle!.frame.size.height / 2
                 circle!.center = startingPoint
-                
                 UIView.animate(withDuration: duration, animations: {
                     self.circle!.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                     returningView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
@@ -105,33 +95,29 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                 }, completion: { (success:Bool) in
                     returningView.center = viewCenter
                     returningView.removeFromSuperview()
-                    
                     self.circle!.removeFromSuperview()
-                    
                     transitionContext.completeTransition(success)
-                    
                 })
-                
             }
-            
-            
         }
-        
     }
     
     
-    
-    func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
+    /// frame For Circle
+    ///
+    /// - Parameters:
+    ///   - viewCenter: the viewCenter
+    ///   - webView: the webView
+    ///   - viewSize: the viewSize
+    ///   - startPoint: the startPoint
+    func frameForCircle (withViewCenter viewCenter:CGPoint,
+                         size viewSize:CGSize,
+                         startPoint:CGPoint) -> CGRect {
         let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
         let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
-        
         let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
         let size = CGSize(width: offestVector, height: offestVector)
-        
         return CGRect(origin: CGPoint.zero, size: size)
-        
     }
-    
-    
 }
 
