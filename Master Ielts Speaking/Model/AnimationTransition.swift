@@ -15,24 +15,29 @@ import UIKit
  *
  */
 class AnimationTransition: NSObject {
-    
-    var circle = UIView()
+    /// circle view
+    var circle : UIView?
+    /// starting point of animation
     var startingPoint = CGPoint.zero {
         didSet {
-            circle.center = startingPoint
+            circle?.center = startingPoint
         }
     }
+    /// color of circle view
     var circleColor = UIColor.black
+    /// duration of animation
     var duration = 0.3
-    
+    /// enum for TransitionMode
     enum CircularTransitionMode:Int {
         case present, dismiss, pop
     }
-    
+    /// mode of transition
     var transitionMode:CircularTransitionMode = .present
 }
 
+/// Extend to implement animation transition
 extension AnimationTransition:UIViewControllerAnimatedTransitioning {
+    // the duration of transition
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
@@ -46,14 +51,14 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                 let viewSize = presentedView.frame.size
                 
                 circle = UIView()
+    
+                circle!.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
                 
-                circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
-                
-                circle.layer.cornerRadius = circle.frame.size.height / 2
-                circle.center = startingPoint
-                circle.backgroundColor = circleColor
-                circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-                containerView.addSubview(circle)
+                circle!.layer.cornerRadius = circle!.frame.size.height / 2
+                circle!.center = startingPoint
+                circle!.backgroundColor = circleColor
+                circle!.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                containerView.addSubview(circle!)
                 
                 
                 presentedView.center = startingPoint
@@ -62,7 +67,7 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                 containerView.addSubview(presentedView)
                 
                 UIView.animate(withDuration: duration, animations: {
-                    self.circle.transform = CGAffineTransform.identity
+                    self.circle!.transform = CGAffineTransform.identity
                     presentedView.transform = CGAffineTransform.identity
                     presentedView.alpha = 1
                     presentedView.center = viewCenter
@@ -80,20 +85,20 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                 let viewSize = returningView.frame.size
                 
                 
-                circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
+                circle!.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
                 
-                circle.layer.cornerRadius = circle.frame.size.height / 2
-                circle.center = startingPoint
+                circle!.layer.cornerRadius = circle!.frame.size.height / 2
+                circle!.center = startingPoint
                 
                 UIView.animate(withDuration: duration, animations: {
-                    self.circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                    self.circle!.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                     returningView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                     returningView.center = self.startingPoint
                     returningView.alpha = 0
                     
                     if self.transitionMode == .pop {
                         containerView.insertSubview(returningView, belowSubview: returningView)
-                        containerView.insertSubview(self.circle, belowSubview: returningView)
+                        containerView.insertSubview(self.circle!, belowSubview: returningView)
                     }
                     
                     
@@ -101,7 +106,7 @@ extension AnimationTransition:UIViewControllerAnimatedTransitioning {
                     returningView.center = viewCenter
                     returningView.removeFromSuperview()
                     
-                    self.circle.removeFromSuperview()
+                    self.circle!.removeFromSuperview()
                     
                     transitionContext.completeTransition(success)
                     

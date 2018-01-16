@@ -74,13 +74,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-dV-BUh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OHD-O9-WPk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-h0-3OK">
-                                                                    <rect key="frame" x="10.5" y="28.5" width="300" height="55"/>
+                                                                    <rect key="frame" x="38" y="28.5" width="300" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="300" id="oXp-Ur-nGY"/>
                                                                     </constraints>
