@@ -39,8 +39,6 @@ public func readData<T:Object>(_ model: T.Type, predicate: String?, completion: 
         result = realm.objects(model)
     }
     completion(result)
-    
-    
 }
 
 // MARK: - Delete
@@ -50,11 +48,8 @@ public func readData<T:Object>(_ model: T.Type, predicate: String?, completion: 
 /// - Parameter: model - type of the model that is subclass of a Object and will be deleted
 public func deleteFromDatadase<T:Object>(_ model: T) {
     let realm = try! Realm()
-    
     try! realm.write {
-        
         realm.delete(model)
-        
     }
 }
 
@@ -76,7 +71,6 @@ public func deleteAll() {
 /// - Parameter: categoryName - The name of category which new word wants to be updated on it. word - The new word which wnates to be added to this category
 func updateCategoryInDatabase(categoryName: String, word : Word) {
     let realm = try! Realm()
-    
     readData(Category.self, predicate: nil) { (resultCategories) in
         for category in resultCategories {
             if category.categoryName == categoryName {
@@ -87,6 +81,4 @@ func updateCategoryInDatabase(categoryName: String, word : Word) {
             }
         }
     }
-    
-
 }
