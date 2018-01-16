@@ -118,14 +118,14 @@ extension CategoryViewController : UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.transition.transitionMode = .present
         self.transition.startingPoint = self.addCategoryButton.center
-//        self.transition.circleColor = self.addCategoryButton.backgroundColor!
+        self.transition.circleColor = self.addCategoryButton.backgroundColor!
         return self.transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.transition.transitionMode = .dismiss
         self.transition.startingPoint = self.addCategoryButton.center
-//        self.transition.circleColor = self.addCategoryButton.backgroundColor!
+        self.transition.circleColor = self.addCategoryButton.backgroundColor!
         return self.transition
     }
   
