@@ -21,16 +21,16 @@ protocol CustomLayoutDelegate: class {
  *
  */
 class CustomLayout : UICollectionViewLayout {
+    /// delegate
     weak var delegate: CustomLayoutDelegate!
-    
     // properties
+    /// number Of Columns
     fileprivate var numberOfColumns = 2
+    /// cell Padding
     fileprivate var cellPadding: CGFloat = 3
-    
-    // Array to keep a cache of attributes.
+    /// Array to keep a cache of attributes.
     var cache = [UICollectionViewLayoutAttributes]()
-    
-    // Content height and size
+    /// Content height and size
     fileprivate var contentHeight: CGFloat = 0
     
     fileprivate var contentWidth: CGFloat {
@@ -45,7 +45,8 @@ class CustomLayout : UICollectionViewLayout {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
-    //  During each layout update, the collection view calls this method first to give your layout object a chance to prepare for the upcoming layout operation.
+    //  During each layout update, the collection view calls this method first to give layout object a chance to prepare for the upcoming layout operation.
+    // create 2 columns and attributes frame and save in cache
     override func prepare() {
         //  Only calculate once
         guard cache.isEmpty == true, let collectionView = collectionView else {
@@ -63,9 +64,7 @@ class CustomLayout : UICollectionViewLayout {
         
         // Iterates through the list of items in the first section
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-            
             let indexPath = IndexPath(item: item, section: 0)
-            
             // Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
             let height = cellPadding * 2 + photoHeight + 120
@@ -77,20 +76,17 @@ class CustomLayout : UICollectionViewLayout {
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = insetFrame
             cache.append(attributes)
-            
             // Updates the collection view content height
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
-            
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
         }
     }
     
-    // The attributed which has been created in prepare method and saved in cache, now with this method would be given to the layout.
+    //
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+        /// visible LayoutAttributes in the rectangle
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
         // Loop through the cache and look for items in the rect
         for attributes in cache {
             if attributes.frame.intersects(rect) {
@@ -99,10 +95,8 @@ class CustomLayout : UICollectionViewLayout {
         }
         return visibleLayoutAttributes
     }
-    
     // Returns the layout attributes for the item at the specified index path.
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
     }
-
 }
