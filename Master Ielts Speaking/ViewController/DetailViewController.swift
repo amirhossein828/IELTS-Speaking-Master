@@ -49,7 +49,7 @@ class DetailViewController: UIViewController {
         _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
 //        configureCloseButton()
         configureBackButton()
-        makeHiddenBackButton()
+//        makeHiddenBackButton()
     }
     
     /// check user come from Info screen make back button unhidden.
@@ -63,7 +63,8 @@ class DetailViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if isComeFromSearch {
-            self.navigationController?.navigationBar.isHidden = true
+//            self.navigationController?.navigationBar.isHidden = true
+            self.tabBarController?.tabBar.isHidden = true
             setNeedsFocusUpdate()
         }
     }
