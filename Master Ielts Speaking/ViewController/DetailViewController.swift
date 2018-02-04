@@ -46,10 +46,20 @@ class DetailViewController: UIViewController {
         topView.translatesAutoresizingMaskIntoConstraints = false
         return topView
     }()
+    /// button to restart song
+    let doneButton : UIButton =  {
+        let doneButton = UIButton()
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.setTitleColor(UIColor.white, for: .normal)
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        return doneButton
+    }()
     /// set uo the top label layout
     private func setTopViewLayout() {
         topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         topView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        doneButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        doneButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
     }
  
     override func viewDidLoad() {
@@ -71,6 +81,7 @@ class DetailViewController: UIViewController {
     fileprivate func showTopView() {
         if (isComeFromSearch || isComeFromInfo) == false {
             view.addSubview(topView)
+            view.addSubview(doneButton)
             setTopViewLayout()
             topView.bringSubview(toFront: photoContainerView)
             topView.text = self.newVocabulary?.wordName
