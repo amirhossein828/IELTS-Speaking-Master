@@ -86,7 +86,13 @@ class DetailViewController: UIViewController {
             topView.bringSubview(toFront: photoContainerView)
             topView.text = self.newVocabulary?.wordName
             photoContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+            doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         }
+    }
+    
+    @objc private func doneButtonPressed() {
+        vc.delegate?.reloadTableViewByNewData()
+        vc.dismissThePage()
     }
     override func viewWillAppear(_ animated: Bool) {
         if isComeFromSearch {
