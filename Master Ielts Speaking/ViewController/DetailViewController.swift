@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var examplePageControl: UIPageControl!
     @IBOutlet weak var exampleCollectionView: UICollectionView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var photoContainerView: UIView!
     // Properties
     var definitionOfWordArray : List<String>? = nil
     var newVocabulary : Word? = nil
@@ -37,34 +38,50 @@ class DetailViewController: UIViewController {
     lazy var vc : AddNewWordViewController = {
         return parent as! AddNewWordViewController
         }()
+    /// top label to show the name of word
+    let topView : UILabel = {
+        let topView = UILabel()
+        topView.textColor = UIColor.white
+        topView.font = UIFont.boldSystemFont(ofSize: 26)
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        return topView
+    }()
+    /// set uo the top label layout
+    private func setTopViewLayout() {
+        topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        topView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewPgeControl.isUserInteractionEnabled = false
         self.collectionView.backgroundColor = UIColor.clear
-        self.wordLabel.text = self.newVocabulary?.wordName
+//        self.wordLabel.text = self.newVocabulary?.wordName
+        self.navigationController?.navigationBar.topItem?.title = self.newVocabulary?.wordName
         self.pageControl.numberOfPages = self.pageControlDots
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
-        _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
+//        _ = (isComeFromSearch || isComeFromInfo) ? (self.closeButton.isHidden = true) : (self.closeButton.isHidden = false)
 //        configureCloseButton()
         configureBackButton()
-//        makeHiddenBackButton()
+        showTopView()
     }
     
-    /// check user come from Info screen make back button unhidden.
-    fileprivate func makeHiddenBackButton() {
-        if isComeFromInfo || isComeFromSearch {
-            self.navigationController?.navigationBar.isHidden = true
-            self.backButton.isHidden = false
-        }else {
-            self.backButton.isHidden = true
+    /// check user come from Add.
+    fileprivate func showTopView() {
+        if (isComeFromSearch || isComeFromInfo) == false {
+            view.addSubview(topView)
+            setTopViewLayout()
+            topView.bringSubview(toFront: photoContainerView)
+            topView.text = self.newVocabulary?.wordName
+            photoContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         if isComeFromSearch {
 //            self.navigationController?.navigationBar.isHidden = true
             self.tabBarController?.tabBar.isHidden = true
+            
             setNeedsFocusUpdate()
         }
     }

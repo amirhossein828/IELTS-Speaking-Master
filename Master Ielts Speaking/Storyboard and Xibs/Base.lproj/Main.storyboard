@@ -806,7 +806,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="843-kl-gfM" userLabel="ViewPageControl2">
-                                <rect key="frame" x="0.0" y="516.5" width="375" height="133.5"/>
+                                <rect key="frame" x="0.0" y="474.5" width="375" height="133.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-4k-bPH">
                                         <rect key="frame" x="168" y="96.5" width="39" height="37"/>
@@ -819,7 +819,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-bQ-uHu" userLabel="ViewPgeControl">
-                                <rect key="frame" x="0.0" y="369" width="375" height="106.5"/>
+                                <rect key="frame" x="0.0" y="327" width="375" height="106.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-O4-36Q">
                                         <rect key="frame" x="168" y="69.5" width="39" height="37"/>
@@ -832,7 +832,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSR-WT-iqn">
-                                <rect key="frame" x="0.0" y="62" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="267"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-q6-cPM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
@@ -873,7 +873,7 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FhW-q6-cPM" secondAttribute="bottom" id="38T-4h-svZ"/>
                                     <constraint firstItem="FhW-q6-cPM" firstAttribute="leading" secondItem="ZSR-WT-iqn" secondAttribute="leading" id="5hh-8G-nly"/>
@@ -882,7 +882,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-bF-28c">
-                                <rect key="frame" x="0.0" y="369" width="375" height="106.5"/>
+                                <rect key="frame" x="0.0" y="327" width="375" height="106.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4UQ-93-7aJ">
                                     <size key="itemSize" width="377" height="107"/>
@@ -928,7 +928,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-Rd-kcm" userLabel="ViewMiddle">
-                                <rect key="frame" x="0.0" y="329" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="287" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Definitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-bv-xnF">
                                         <rect key="frame" x="138.5" y="4" width="99" height="30.5"/>
@@ -957,11 +957,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drt-dh-BKb">
-                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="588" width="375" height="79"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-7K-x8B" userLabel="Example Collection View">
-                                <rect key="frame" x="0.0" y="516.5" width="375" height="113.5"/>
+                                <rect key="frame" x="0.0" y="474.5" width="375" height="113.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3IV-7t-dfS">
                                     <size key="itemSize" width="372" height="133.5"/>
@@ -1015,7 +1015,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4s-Gx-tb4">
-                                <rect key="frame" x="0.0" y="475.5" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="433.5" width="375" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXR-vd-PDT">
                                         <rect key="frame" x="145" y="5.5" width="85" height="30.5"/>
@@ -1075,7 +1075,7 @@
                             <constraint firstItem="Frd-UK-MDV" firstAttribute="centerX" secondItem="q4s-a4-OF4" secondAttribute="centerX" id="A3b-Xf-0Ue"/>
                             <constraint firstItem="843-kl-gfM" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.2" id="AmB-9T-GfN"/>
                             <constraint firstItem="CFP-Jy-WJu" firstAttribute="leading" secondItem="mn4-TF-JAm" secondAttribute="leading" constant="6" id="CSw-Cz-FrQ"/>
-                            <constraint firstItem="ZSR-WT-iqn" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" constant="42" id="D1s-c1-yoN"/>
+                            <constraint firstItem="ZSR-WT-iqn" firstAttribute="top" secondItem="mn4-TF-JAm" secondAttribute="top" id="D1s-c1-yoN"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="width" secondItem="q4s-a4-OF4" secondAttribute="width" id="Dta-9q-ANg"/>
                             <constraint firstItem="ZSR-WT-iqn" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.4" id="Dtu-Rt-aQH"/>
                             <constraint firstItem="JaI-bQ-uHu" firstAttribute="height" secondItem="q4s-a4-OF4" secondAttribute="height" multiplier="0.16" id="FcA-gb-57J"/>
@@ -1107,6 +1107,13 @@
                             <constraint firstItem="drt-dh-BKb" firstAttribute="bottom" secondItem="mn4-TF-JAm" secondAttribute="bottom" id="wGn-xD-VuD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mn4-TF-JAm"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Frd-UK-MDV"/>
+                                <exclude reference="8Bj-Q7-94K"/>
+                                <exclude reference="CFP-Jy-WJu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="advCollectionView" destination="FhW-q6-cPM" id="QW1-EU-F0h"/>
@@ -1116,6 +1123,7 @@
                         <outlet property="exampleCollectionView" destination="SgA-7K-x8B" id="egc-fr-kLd"/>
                         <outlet property="examplePageControl" destination="pAa-4k-bPH" id="Hk3-hx-pwX"/>
                         <outlet property="pageControl" destination="Kqz-O4-36Q" id="bBS-Or-Mnu"/>
+                        <outlet property="photoContainerView" destination="ZSR-WT-iqn" id="XJU-VL-0ik"/>
                         <outlet property="viewPgeControl" destination="JaI-bQ-uHu" id="AQn-Mv-0xE"/>
                         <outlet property="wordLabel" destination="Frd-UK-MDV" id="3NS-kt-KZ0"/>
                     </connections>
