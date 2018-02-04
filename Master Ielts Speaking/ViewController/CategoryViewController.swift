@@ -29,12 +29,17 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureAddCategoryButton()
         // read data
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             self.arrayOfCategories = response
         }
         configureShadowForButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
 

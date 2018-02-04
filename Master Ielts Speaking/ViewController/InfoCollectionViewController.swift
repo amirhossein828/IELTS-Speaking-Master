@@ -34,7 +34,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
+        
         configureAddWordButton()
         // go trough all words and add them to arrayOfWords array
         for word in (self.categoryFrom?.words)! {
@@ -52,6 +52,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
  
     override func didReceiveMemoryWarning() {

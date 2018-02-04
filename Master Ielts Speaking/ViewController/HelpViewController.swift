@@ -43,7 +43,8 @@ class HelpViewController: UIViewController , WKNavigationDelegate{
     
     // Back button
     @IBAction func backButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.tabBarController?.view.removeFromSuperview()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
