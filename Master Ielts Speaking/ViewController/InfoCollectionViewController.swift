@@ -130,6 +130,7 @@ class InfoCollectionViewController: UIViewController,UICollectionViewDelegate,UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        let aObjNavi = UINavigationController(rootViewController: detailViewController)
         detailViewController.newVocabulary = self.arrayOfWords[indexPath.row]
         detailViewController.isComeFromInfo = true
         let numberOfDefinitions = self.arrayOfWords[indexPath.row].definitions.count

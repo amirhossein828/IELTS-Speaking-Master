@@ -368,9 +368,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjG-Ba-eYg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="exC-vy-W9y" kind="embed" id="WNm-ZO-xCl"/>
-                                </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-JA-eu7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -602,6 +599,7 @@
                         <outlet property="noInternetView" destination="69y-Jp-Ya6" id="cGi-A7-UCI"/>
                         <outlet property="textViewBackGround" destination="SPf-8o-l12" id="qZO-x8-wu0"/>
                         <outlet property="titleOfCollection" destination="2RG-t9-lYp" id="Xff-b8-RBv"/>
+                        <segue destination="exC-vy-W9y" kind="show" id="fne-mc-2ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfZ-rh-Cmj" userLabel="First Responder" sceneMemberID="firstResponder"/>

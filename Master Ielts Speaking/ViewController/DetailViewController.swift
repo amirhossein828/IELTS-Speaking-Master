@@ -66,8 +66,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.viewPgeControl.isUserInteractionEnabled = false
         self.collectionView.backgroundColor = UIColor.clear
-//        self.wordLabel.text = self.newVocabulary?.wordName
-        self.navigationController?.navigationBar.topItem?.title = self.newVocabulary?.wordName
         self.pageControl.numberOfPages = self.pageControlDots
         self.examplePageControl.numberOfPages = self.pageControlExampleDots
         // make close button hidden if user come from search to this page
@@ -87,6 +85,8 @@ class DetailViewController: UIViewController {
             topView.text = self.newVocabulary?.wordName
             photoContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
             doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        }else {
+            self.navigationItem.title = self.newVocabulary?.wordName
         }
     }
     
