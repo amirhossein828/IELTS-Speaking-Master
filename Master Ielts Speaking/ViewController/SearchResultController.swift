@@ -64,6 +64,7 @@ class SearchResultController: UITableViewController , UISearchResultsUpdating, U
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
