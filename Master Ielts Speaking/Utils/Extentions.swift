@@ -105,11 +105,11 @@ extension UIViewController {
  * - author: Amirhossein
  *
  */
-extension UINavigationController {
-    open override var shouldAutorotate: Bool {
-        return visibleViewController!.shouldAutorotate
-    }
-}
+//extension UINavigationController {
+//    open override var shouldAutorotate: Bool {
+//        return visibleViewController!.shouldAutorotate
+//    }
+//}
 
 
 
