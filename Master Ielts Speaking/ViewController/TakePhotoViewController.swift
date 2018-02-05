@@ -39,6 +39,18 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         model = Inceptionv3()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.newVocab = nil
+        self.wordDetected = nil
+        self.category = nil
+        self.selectedTopic = nil
+        self.listOfTopicsfields.text = ""
+        self.imageView.image = UIImage(named: "imagePlaceholder")
+        self.classifier.text = ""
+        self.exampleRecieved = false
+        self.definitionRecieved = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,23 +84,32 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             showAlert("no word ", "no word detected")
             return
         }
+        guard wordDetected != "" else {
+            return
+        }
+        guard let category = self.selectedTopic else {
+            showAlert("Choose Topic", "Choose topic for your new vocabulary")
+            return
+        }
+        
+        self.category = category
         newVocab = Word()
         newVocab?.wordName = wordDetected
         let takenPhoto = self.imageView.image
         self.newVocab?.wordImage = UIImageJPEGRepresentation(takenPhoto!, 0.4)
-        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: { (arrayOfDefenitions) in
+        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: {[weak self] (arrayOfDefenitions) in
             for definition in arrayOfDefenitions {
-                self.newVocab?.definitions.append(definition)
+                self?.newVocab?.definitions.append(definition)
             }
-            self.definitionRecieved = true
-            self.saveVocabularyAndGoNextPage()
-        }, arrayOfExample: { (arrayOfExamples) in
+            self?.definitionRecieved = true
+            //            self.saveVocabularyAndGoNextPage()
+        }, arrayOfExample: {[weak self] (arrayOfExamples) in
             for example in arrayOfExamples {
-                self.newVocab?.examples.append(example)
+                self?.newVocab?.examples.append(example)
                 
             }
-            self.exampleRecieved = true
-            self.saveVocabularyAndGoNextPage()
+            self?.exampleRecieved = true
+            self?.saveVocabularyAndGoNextPage()
         }) { (_) in
             // error
         }
@@ -99,14 +120,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         if (definitionRecieved && exampleRecieved) {
             // save in database
             saveData(newVocab!)
-            
-            guard let category = self.selectedTopic else {
-                showAlert("Choose Topic", "Choose topic for your new vocabulary")
-                return
-            }
-            
-            self.category = category
-            
+ 
             updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -213,7 +227,7 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
         }
             let detectedWord = prediction.classLabel
             self.wordDetected = self.trimWordDetected(word: detectedWord)
-            classifier.text = "This is a \(self.wordDetected)."
+            classifier.text = "This is a \(self.wordDetected ?? "")."
 
     }
 }
