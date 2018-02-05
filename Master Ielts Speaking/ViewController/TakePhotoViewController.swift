@@ -73,6 +73,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
         newVocab = Word()
         newVocab?.wordName = wordDetected
+        let takenPhoto = self.imageView.image
+        self.newVocab?.wordImage = UIImageJPEGRepresentation(takenPhoto!, 0.4)
         WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: { (arrayOfDefenitions) in
             for definition in arrayOfDefenitions {
                 self.newVocab?.definitions.append(definition)
@@ -111,7 +113,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             //        let aObjNavi = UINavigationController(rootViewController: detailViewController)
             detailViewController.newVocabulary = self.newVocab
             detailViewController.isComeFromCamera = true
-//            detailViewController.isComeFromInfo = true
             let numberOfDefinitions = self.newVocab?.definitions.count
             detailViewController.pageControlDots = numberOfDefinitions! < 14 ? numberOfDefinitions! : 14
             let numberOfExamples = self.newVocab?.examples.count
@@ -135,19 +136,14 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     
     func createToolbar() {
-        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        
         //Customizations
         toolBar.barTintColor = .black
         toolBar.tintColor = .white
-        
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissKeyboard))
-        
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
-        
         listOfTopicsfields.inputAccessoryView = toolBar
     }
     
