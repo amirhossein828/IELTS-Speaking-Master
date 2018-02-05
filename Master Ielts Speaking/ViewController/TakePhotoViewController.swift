@@ -69,6 +69,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
         guard let wordDetected = self.wordDetected else {
+            showAlert("no word ", "no word detected")
             return
         }
         newVocab = Word()
@@ -147,6 +148,22 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         listOfTopicsfields.inputAccessoryView = toolBar
     }
     
+    // seperate just one of the meaning
+    func trimWordDetected(word: String) -> String? {
+        if word.contains(",") {
+            var firstWord = ""
+            for char in word {
+                
+                
+                if char == "," {
+                    return firstWord
+                }else {
+                    firstWord = firstWord + String(char)
+                }
+            }
+        }
+        return nil
+    }
     
 }
 
@@ -194,8 +211,10 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
         guard let prediction = try? model.prediction(image: pixelBuffer!) else {
             return
         }
-        wordDetected = prediction.classLabel
-        classifier.text = "I think this is a \(prediction.classLabel)."
+            let detectedWord = prediction.classLabel
+            self.wordDetected = self.trimWordDetected(word: detectedWord)
+            classifier.text = "This is a \(self.wordDetected)."
+
     }
 }
 

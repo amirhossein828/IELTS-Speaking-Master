@@ -41,6 +41,9 @@ class HelpViewController: UIViewController , WKNavigationDelegate{
         return false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+    }
+    
     // Back button
     @IBAction func backButton(_ sender: UIBarButtonItem) {
 //        self.dismiss(animated: true, completion: nil)
