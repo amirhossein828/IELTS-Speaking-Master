@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
     var isComeFromSearch : Bool = false
     var pageControlDots : Int = 0
     var pageControlExampleDots : Int = 0
+    var isComeFromCamera: Bool = false
     /// AddNewWordViewController object
     lazy var vc : AddNewWordViewController = {
         return parent as! AddNewWordViewController
@@ -91,8 +92,13 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func doneButtonPressed() {
-        vc.delegate?.reloadTableViewByNewData()
-        vc.dismissThePage()
+        if isComeFromCamera {
+            self.dismiss(animated: true, completion: nil)
+        }else {
+            vc.delegate?.reloadTableViewByNewData()
+            vc.dismissThePage()
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         if isComeFromSearch {

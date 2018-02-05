@@ -8,17 +8,31 @@
 
 import UIKit
 import CoreML
+import RealmSwift
 
 class TakePhotoViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var listOfTopicsfields: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var classifier: UILabel!
     
     var model: Inceptionv3!
+    var wordDetected: String?
+    var newVocab : Word? = nil
+    var category : Category? = nil
+    var definitionRecieved = false
+    var exampleRecieved = false
+    var listOfTopics: Results<Category>?
+    var selectedTopic: Category?
+    var selectedTopicString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        readData(Category.self, predicate: nil) { (response : Results<Category>) in
+            self.listOfTopics = response
+        }
+        createDayPicker()
+        createToolbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +68,87 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
+        guard let wordDetected = self.wordDetected else {
+            return
+        }
+        newVocab = Word()
+        newVocab?.wordName = wordDetected
+        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: { (arrayOfDefenitions) in
+            for definition in arrayOfDefenitions {
+                self.newVocab?.definitions.append(definition)
+            }
+            self.definitionRecieved = true
+            self.saveVocabularyAndGoNextPage()
+        }, arrayOfExample: { (arrayOfExamples) in
+            for example in arrayOfExamples {
+                self.newVocab?.examples.append(example)
+                
+            }
+            self.exampleRecieved = true
+            self.saveVocabularyAndGoNextPage()
+        }) { (_) in
+            // error
+        }
         
+    }
+    
+    func saveVocabularyAndGoNextPage() {
+        if (definitionRecieved && exampleRecieved) {
+            // save in database
+            saveData(newVocab!)
+            
+            guard let category = self.selectedTopic else {
+                showAlert("Choose Topic", "Choose topic for your new vocabulary")
+                return
+            }
+            
+            self.category = category
+            
+            updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            //        let aObjNavi = UINavigationController(rootViewController: detailViewController)
+            detailViewController.newVocabulary = self.newVocab
+            detailViewController.isComeFromCamera = true
+//            detailViewController.isComeFromInfo = true
+            let numberOfDefinitions = self.newVocab?.definitions.count
+            detailViewController.pageControlDots = numberOfDefinitions! < 14 ? numberOfDefinitions! : 14
+            let numberOfExamples = self.newVocab?.examples.count
+            detailViewController.pageControlExampleDots = numberOfExamples! < 14 ? numberOfExamples! : 14
+            self.show(detailViewController, sender: nil)
+            
+        }
         
+    }
+    
+    func createDayPicker() {
+        
+        let dayPicker = UIPickerView()
+        dayPicker.delegate = self
+        
+        listOfTopicsfields.inputView = dayPicker
+        
+        //Customizations
+        dayPicker.backgroundColor = UIColor.white
+    }
+    
+    
+    func createToolbar() {
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        //Customizations
+        toolBar.barTintColor = .black
+        toolBar.tintColor = .white
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        listOfTopicsfields.inputAccessoryView = toolBar
     }
     
     
@@ -105,14 +198,55 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
         guard let prediction = try? model.prediction(image: pixelBuffer!) else {
             return
         }
-        
+        wordDetected = prediction.classLabel
         classifier.text = "I think this is a \(prediction.classLabel)."
-        
-        
-        
-        
-        
-        
     }
-
 }
+
+extension TakePhotoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.listOfTopics?.count ?? 0
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.listOfTopics?[row].categoryName
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedTopic = self.listOfTopics?[row]
+        selectedTopicString = self.listOfTopics?[row].categoryName
+        listOfTopicsfields.text = selectedTopicString
+    }
+    
+//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//
+//        var label: UILabel
+//
+//        if let view = view as? UILabel {
+//            label = view
+//        } else {
+//            label = UILabel()
+//        }
+//
+//        label.textColor = .green
+//        label.textAlignment = .center
+//        label.font = UIFont(name: "Menlo-Regular", size: 17)
+//
+//        label.text = days[row]
+//
+//        return label
+//    }
+}
+
+
+
+
