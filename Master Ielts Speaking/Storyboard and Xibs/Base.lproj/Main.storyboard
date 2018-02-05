@@ -642,20 +642,20 @@
                                     <constraint firstAttribute="width" secondItem="zYN-Kr-D3X" secondAttribute="height" multiplier="1:1" id="DiK-7C-mHi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-Mh-K6G">
-                                <rect key="frame" x="144" y="379" width="32" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-Mh-K6G">
+                                <rect key="frame" x="160" y="379" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a topic for new vocabulary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-QF-oxi">
-                                <rect key="frame" x="19.5" y="414.5" width="281" height="31"/>
+                                <rect key="frame" x="19.5" y="391" width="281" height="31"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of topic" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-NX-R9Q">
-                                <rect key="frame" x="80" y="460" width="160" height="30"/>
+                                <rect key="frame" x="80" y="436.5" width="160" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="GIm-rp-nmA"/>
                                 </constraints>
@@ -738,7 +738,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGP-aC-TmX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Help" id="qKp-0o-wu7"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="help" id="qKp-0o-wu7"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hDU-N5-xq5" id="0BD-O6-baB"/>
                         <outlet property="webView" destination="qvO-Nd-zCL" id="ScO-M0-oy5"/>
@@ -1441,7 +1441,7 @@
         <scene sceneID="oB2-WD-qmY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="311-Jl-4ty" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Topics" id="3dx-FV-8nK"/>
+                    <tabBarItem key="tabBarItem" title="Topics" image="home" id="3dx-FV-8nK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X50-QR-Gnz">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -1479,6 +1479,8 @@
     <resources>
         <image name="Base" width="960" height="540"/>
         <image name="background2" width="1024" height="682"/>
+        <image name="help" width="24" height="24"/>
+        <image name="home" width="24" height="24"/>
         <image name="ic_chevron_left_2x" width="48" height="48"/>
         <image name="ic_photo_camera" width="24" height="24"/>
         <image name="ic_search" width="24" height="24"/>
