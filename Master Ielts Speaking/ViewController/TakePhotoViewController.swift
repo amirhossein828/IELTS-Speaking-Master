@@ -39,16 +39,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         
     }
     
-    func startCamera() {
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            return
-        }
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .camera
-        cameraPicker.allowsEditing = false
-        present(cameraPicker, animated: true)
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         model = Inceptionv3()
@@ -72,6 +63,17 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func startCamera() {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            return
+        }
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .camera
+        cameraPicker.allowsEditing = false
+        present(cameraPicker, animated: true)
     }
     
     @IBAction func camera(_ sender: Any) {
@@ -133,6 +135,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             //        let aObjNavi = UINavigationController(rootViewController: detailViewController)
             detailViewController.newVocabulary = self.newVocab
             detailViewController.isComeFromCamera = true
+            detailViewController.delegate = self
             let numberOfDefinitions = self.newVocab?.definitions.count
             detailViewController.pageControlDots = numberOfDefinitions! < 14 ? numberOfDefinitions! : 14
             let numberOfExamples = self.newVocab?.examples.count
@@ -183,7 +186,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        ifComeBackFromCamera = true
+//        ifComeBackFromCamera = true
         dismiss(animated: true, completion: nil)
         self.tabBarController?.selectedIndex = 0
     }
@@ -261,6 +264,16 @@ extension TakePhotoViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 //    }
 }
 
+extension TakePhotoViewController: GoToFirstTabBarDelegate {
+    func goToFirstTabBar() {
+        self.tabBarController?.selectedIndex = 0
+    }
+}
+
+
+protocol GoToFirstTabBarDelegate: class {
+    func goToFirstTabBar()
+}
 
 
 

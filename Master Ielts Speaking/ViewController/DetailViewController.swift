@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
     var pageControlDots : Int = 0
     var pageControlExampleDots : Int = 0
     var isComeFromCamera: Bool = false
+    weak var delegate: GoToFirstTabBarDelegate?
     /// AddNewWordViewController object
     lazy var vc : AddNewWordViewController = {
         return parent as! AddNewWordViewController
@@ -93,7 +94,8 @@ class DetailViewController: UIViewController {
     
     @objc private func doneButtonPressed() {
         if isComeFromCamera {
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.goToFirstTabBar()
+            self.dismiss(animated: true, completion: nil )
         }else {
             vc.delegate?.reloadTableViewByNewData()
             vc.dismissThePage()
@@ -250,3 +252,5 @@ UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
 
 }
+
+
