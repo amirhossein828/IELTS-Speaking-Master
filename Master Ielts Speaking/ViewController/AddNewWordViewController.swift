@@ -42,6 +42,11 @@ class AddNewWordViewController: UIViewController {
     var imageSelected : UIImage? = nil
     var hasDefinition = true
     weak var delegate : ReloadViewDelegate?
+    var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.red
+        return activityIndicator
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +91,10 @@ class AddNewWordViewController: UIViewController {
     }
     // Get definitions and example of words and photos related to this word
     @IBAction func addNewWordButton(_ sender: UIButton) {
-//        self.bigActivityIndicator.startAnimating()
-//        self.bigActivityIndicator.hidesWhenStopped = true
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         // make next button unable till user choose one photo
         self.nextButton.isEnabled = false
         // make titleOfCollection label unhidden
@@ -110,7 +117,7 @@ class AddNewWordViewController: UIViewController {
                 case .success(let value):
                     let json = JSON(value)
                     DispatchQueue.main.async {
-//                        self.bigActivityIndicator.stopAnimating()
+                        self.activityIndicator.stopAnimating()
                         self.arrayOfPhotos = json["photos"]["photo"].array
                         self.collectionView.reloadData()
                     }
