@@ -43,11 +43,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
         createTopicPicker()
         createToolbar()
-        
     }
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         model = Inceptionv3()
         self.nextBtn.isEnabled = true
@@ -83,6 +79,11 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         present(cameraPicker, animated: true)
     }
     
+    @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    
     @IBAction func camera(_ sender: Any) {
     }
     @IBAction func openLibrary(_ sender: Any) {
@@ -97,8 +98,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
         self.view.addSubview(activityIndicator)
         activityIndicator.center = view.center
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
         guard let wordDetected = self.wordDetected else {
             showAlert("no word ", "no word detected")
             return
@@ -110,6 +109,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             showAlert("Choose Topic", "Choose topic for your new vocabulary")
             return
         }
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         self.nextBtn.isEnabled = false
         self.category = category
         newVocab = Word()
@@ -132,16 +133,13 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }) { (_) in
             // error
         }
-        
     }
     
     func saveVocabularyAndGoNextPage() {
         if (definitionRecieved && exampleRecieved) {
             // save in database
             saveData(newVocab!)
- 
             updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
-            
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let detailViewController = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
             //        let aObjNavi = UINavigationController(rootViewController: detailViewController)
@@ -157,16 +155,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     }
     
     func createTopicPicker() {
-        
         let topicPicker = UIPickerView()
         topicPicker.delegate = self
-        
         listOfTopicsfields.inputView = topicPicker
-        
         //Customizations
         topicPicker.backgroundColor = UIColor.white
     }
-    
     
     func createToolbar() {
         let toolBar = UIToolbar()
@@ -222,13 +216,19 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
                 return
             }
             let detectedWord = prediction.classLabel
+            
             self.wordDetected = self.trimWordDetected(word: detectedWord)
             DispatchQueue.main.async {
-                self.classifier.text = "This is a \(self.wordDetected ?? "")."
+                if let wordDetected = self.wordDetected {
+                    self.classifier.text = "This is a \(wordDetected)."
+                    self.nextBtn.isEnabled = true
+                }else {
+                    self.showAlert("No object found for this photo", "No object found for this photo", completion: {
+                        self.startCamera()
+                    })
+                }
             }
         }
-
-        
     }
 }
 
