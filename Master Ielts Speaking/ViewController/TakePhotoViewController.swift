@@ -29,6 +29,13 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     var pixelBuffer: CVPixelBuffer?
     var ifComeBackFromCamera = false
     
+    var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.red
+        return activityIndicator
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
@@ -88,6 +95,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         guard let wordDetected = self.wordDetected else {
             showAlert("no word ", "no word detected")
             return
@@ -117,6 +128,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             }
             self?.exampleRecieved = true
             self?.saveVocabularyAndGoNextPage()
+            self?.activityIndicator.stopAnimating()
         }) { (_) in
             // error
         }
