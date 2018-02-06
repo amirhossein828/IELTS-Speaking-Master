@@ -36,6 +36,11 @@ class AddNewCategoryViewController: UIViewController {
     var imageSelected : UIImage? = nil
     var hasDefinition = true
     weak var delegate : ReloadViewDelegate?
+    var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.red
+        return activityIndicator
+    }()
     
 
     override func viewDidLoad() {
@@ -67,6 +72,10 @@ class AddNewCategoryViewController: UIViewController {
     }
     // Add new category 
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         // make the titleOfCollection unhidden
         self.titleOfCollection.isHidden = false
         // create word object
@@ -83,6 +92,7 @@ class AddNewCategoryViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
                     self?.arrayOfPhotos = json["photos"]["photo"].array
                     self?.collectionView.reloadData()
                 }
