@@ -217,10 +217,6 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
     }
 }
 
-
-
-
-
 extension TakePhotoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

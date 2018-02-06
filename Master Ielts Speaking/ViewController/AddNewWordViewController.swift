@@ -33,6 +33,7 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var titleOfCollection: UILabel!
     @IBOutlet weak var noInternetView: UIView!
+    
     // properties
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
@@ -64,6 +65,7 @@ class AddNewWordViewController: UIViewController {
     
     ///close Screen
     @IBAction func dismissScreen(_ sender: UIButton) {
+        self.delegate?.reloadTableViewByNewData()
         dismissThePage()
     }
     
@@ -84,6 +86,8 @@ class AddNewWordViewController: UIViewController {
     }
     // Get definitions and example of words and photos related to this word
     @IBAction func addNewWordButton(_ sender: UIButton) {
+//        self.bigActivityIndicator.startAnimating()
+//        self.bigActivityIndicator.hidesWhenStopped = true
         // make next button unable till user choose one photo
         self.nextButton.isEnabled = false
         // make titleOfCollection label unhidden
@@ -106,6 +110,7 @@ class AddNewWordViewController: UIViewController {
                 case .success(let value):
                     let json = JSON(value)
                     DispatchQueue.main.async {
+//                        self.bigActivityIndicator.stopAnimating()
                         self.arrayOfPhotos = json["photos"]["photo"].array
                         self.collectionView.reloadData()
                     }
@@ -151,6 +156,7 @@ class AddNewWordViewController: UIViewController {
         // save in database
         saveData(newVocab!)
         updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
+        print(self.childViewControllers[0])
         let detailViewController = self.childViewControllers[0] as! DetailViewController
         detailViewController.newVocabulary = self.newVocab
         detailViewController.topView.text = detailViewController.newVocabulary?.wordName

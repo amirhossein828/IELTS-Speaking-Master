@@ -30,7 +30,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "my error"
+            symbolName = ""
             moduleName = "">
             <Locations>
             </Locations>
