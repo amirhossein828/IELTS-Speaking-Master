@@ -75,13 +75,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-dV-BUh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OHD-O9-WPk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-h0-3OK">
-                                                                    <rect key="frame" x="38" y="28.5" width="300" height="55"/>
+                                                                    <rect key="frame" x="10.5" y="28.5" width="300" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="300" id="oXp-Ur-nGY"/>
                                                                     </constraints>
@@ -155,13 +155,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="llU-Bp-Ywk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_search" id="Og5-IJ-scZ">
-                            <connections>
-                                <action selector="searchButton:" destination="UTm-PS-4oX" id="jjT-6l-CDU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Category" id="tlo-bl-BeT"/>
                     <connections>
                         <outlet property="addCategoryButton" destination="UHt-LF-9Vs" id="0yL-AO-Osf"/>
                         <outlet property="tableView" destination="Ik0-xI-B5t" id="nvX-e6-WDW"/>
@@ -701,6 +695,7 @@
                         <outlet property="classifier" destination="XJY-Mh-K6G" id="Z70-ao-JEV"/>
                         <outlet property="imageView" destination="zYN-Kr-D3X" id="IeF-ZH-slu"/>
                         <outlet property="listOfTopicsfields" destination="2fh-NX-R9Q" id="Ejg-6F-JLW"/>
+                        <outlet property="nextBtn" destination="IAW-Re-sYm" id="zxy-xj-TcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqr-3g-bAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1483,7 +1478,6 @@
         <image name="home" width="24" height="24"/>
         <image name="ic_chevron_left_2x" width="48" height="48"/>
         <image name="ic_photo_camera" width="24" height="24"/>
-        <image name="ic_search" width="24" height="24"/>
         <image name="imagePlaceholder" width="800" height="533"/>
     </resources>
 </document>

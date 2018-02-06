@@ -12,6 +12,7 @@ import RealmSwift
 
 class TakePhotoViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var nextBtn: UIBarButtonItem!
     @IBOutlet weak var listOfTopicsfields: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var classifier: UILabel!
@@ -37,6 +38,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         model = Inceptionv3()
+        self.nextBtn.isEnabled = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -69,7 +71,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         
         present(cameraPicker, animated: true)
     }
-    
     @IBAction func openLibrary(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.allowsEditing = false
@@ -91,7 +92,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             showAlert("Choose Topic", "Choose topic for your new vocabulary")
             return
         }
-        
+        self.nextBtn.isEnabled = false
         self.category = category
         newVocab = Word()
         newVocab?.wordName = wordDetected
@@ -167,8 +168,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         if word.contains(",") {
             var firstWord = ""
             for char in word {
-                
-                
                 if char == "," {
                     return firstWord
                 }else {
@@ -178,7 +177,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
         return nil
     }
-    
 }
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate {
@@ -187,13 +185,14 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         picker.dismiss(animated: true)
+        
         classifier.text = "Analyzing Image..."
         guard let image = info["UIImagePickerControllerOriginalImage"] as? UIImage else {
             return
         } //1
         
+
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 2.0)
         image.draw(in: CGRect(x: 0, y: 0, width: 299, height: 299))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -228,7 +227,7 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
             let detectedWord = prediction.classLabel
             self.wordDetected = self.trimWordDetected(word: detectedWord)
             classifier.text = "This is a \(self.wordDetected ?? "")."
-
+        
     }
 }
 
