@@ -34,7 +34,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             self.listOfTopics = response
         }
-        createDayPicker()
+        createTopicPicker()
         createToolbar()
         
     }
@@ -141,15 +141,15 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
     }
     
-    func createDayPicker() {
+    func createTopicPicker() {
         
-        let dayPicker = UIPickerView()
-        dayPicker.delegate = self
+        let topicPicker = UIPickerView()
+        topicPicker.delegate = self
         
-        listOfTopicsfields.inputView = dayPicker
+        listOfTopicsfields.inputView = topicPicker
         
         //Customizations
-        dayPicker.backgroundColor = UIColor.white
+        topicPicker.backgroundColor = UIColor.white
     }
     
     
