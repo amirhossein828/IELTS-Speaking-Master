@@ -26,6 +26,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     var listOfTopics: Results<Category>?
     var selectedTopic: Category?
     var selectedTopicString: String?
+    var pixelBuffer: CVPixelBuffer?
+    var ifComeBackFromCamera = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +36,26 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
         createDayPicker()
         createToolbar()
+        
+    }
+    
+    func startCamera() {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            return
+        }
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .camera
+        cameraPicker.allowsEditing = false
+        present(cameraPicker, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         model = Inceptionv3()
         self.nextBtn.isEnabled = true
+        if !ifComeBackFromCamera {
+            startCamera()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -47,29 +64,17 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         self.category = nil
         self.selectedTopic = nil
         self.listOfTopicsfields.text = ""
-        self.imageView.image = UIImage(named: "imagePlaceholder")
         self.classifier.text = ""
         self.exampleRecieved = false
         self.definitionRecieved = false
+        ifComeBackFromCamera = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func camera(_ sender: Any) {
-        
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            return
-        }
-        
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .camera
-        cameraPicker.allowsEditing = false
-        
-        present(cameraPicker, animated: true)
     }
     @IBAction func openLibrary(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -107,7 +112,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }, arrayOfExample: {[weak self] (arrayOfExamples) in
             for example in arrayOfExamples {
                 self?.newVocab?.examples.append(example)
-                
             }
             self?.exampleRecieved = true
             self?.saveVocabularyAndGoNextPage()
@@ -134,9 +138,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             let numberOfExamples = self.newVocab?.examples.count
             detailViewController.pageControlExampleDots = numberOfExamples! < 14 ? numberOfExamples! : 14
             self.show(detailViewController, sender: nil)
-            
         }
-        
     }
     
     func createDayPicker() {
@@ -181,55 +183,75 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
 
 extension TakePhotoViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        ifComeBackFromCamera = true
         dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 0
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
-        
+        ifComeBackFromCamera = true
         classifier.text = "Analyzing Image..."
         guard let image = info["UIImagePickerControllerOriginalImage"] as? UIImage else {
             return
-        } //1
-        
-
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 2.0)
-        image.draw(in: CGRect(x: 0, y: 0, width: 299, height: 299))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
-        var pixelBuffer : CVPixelBuffer?
-        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(newImage.size.width), Int(newImage.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
-        guard (status == kCVReturnSuccess) else {
-            return
         }
-        
-        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
-        let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
-        
-        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
-        let context = CGContext(data: pixelData, width: Int(newImage.size.width), height: Int(newImage.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue) //3
-        
-        context?.translateBy(x: 0, y: newImage.size.height)
-        context?.scaleBy(x: 1.0, y: -1.0)
-        
-        UIGraphicsPushContext(context!)
-        newImage.draw(in: CGRect(x: 0, y: 0, width: newImage.size.width, height: newImage.size.height))
-        UIGraphicsPopContext()
-        CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+    
+        let newImage = resizePhoto(image: image)
+        pixelBuffer = createpixelBuffer(newImage: newImage)
         imageView.image = newImage
-        
-        // Core ML
-        guard let prediction = try? model.prediction(image: pixelBuffer!) else {
-            return
-        }
+        let concurrentQueue = DispatchQueue(label: "queuename", attributes: .concurrent)
+        concurrentQueue.async {
+            guard let pixelBuffer = self.pixelBuffer else { return  }
+            // Core ML
+            guard let prediction = try? self.model.prediction(image: pixelBuffer) else {
+                return
+            }
             let detectedWord = prediction.classLabel
             self.wordDetected = self.trimWordDetected(word: detectedWord)
-            classifier.text = "This is a \(self.wordDetected ?? "")."
+            DispatchQueue.main.async {
+                self.classifier.text = "This is a \(self.wordDetected ?? "")."
+            }
+        }
+
         
     }
 }
+
+func resizePhoto(image: UIImage) -> UIImage{
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 2.0)
+    image.draw(in: CGRect(x: 0, y: 0, width: 299, height: 299))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()!
+    
+    return newImage
+}
+
+func createpixelBuffer(newImage: UIImage) -> CVPixelBuffer? {
+    UIGraphicsEndImageContext()
+    
+    let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
+    var pixelBuffer : CVPixelBuffer?
+    let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(newImage.size.width), Int(newImage.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
+    guard (status == kCVReturnSuccess) else {
+        return nil
+    }
+    
+    CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+    let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
+    
+    let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+    let context = CGContext(data: pixelData, width: Int(newImage.size.width), height: Int(newImage.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue) //3
+    
+    context?.translateBy(x: 0, y: newImage.size.height)
+    context?.scaleBy(x: 1.0, y: -1.0)
+    
+    UIGraphicsPushContext(context!)
+    newImage.draw(in: CGRect(x: 0, y: 0, width: newImage.size.width, height: newImage.size.height))
+    UIGraphicsPopContext()
+    CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+    return pixelBuffer
+}
+
+
 
 extension TakePhotoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
