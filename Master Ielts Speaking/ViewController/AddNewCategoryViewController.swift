@@ -78,16 +78,16 @@ class AddNewCategoryViewController: UIViewController {
             return}
         newCategory?.categoryName = newWordString
         // search for photos related to the new word
-        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
+        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 DispatchQueue.main.async {
-                    self.arrayOfPhotos = json["photos"]["photo"].array
-                    self.collectionView.reloadData()
+                    self?.arrayOfPhotos = json["photos"]["photo"].array
+                    self?.collectionView.reloadData()
                 }
             case .failure(let error):
-                self.showAlert("ohhhh No!", "There is no Photo for this word")
+                self?.showAlert("ohhhh No!", "There is no Photo for this word")
                 print(error.localizedDescription)
             }
         }

@@ -107,27 +107,27 @@ class AddNewWordViewController: UIViewController {
             showAlert("Enter a word", "Please enter a word")
             return}
         newVocab?.wordName = newWordString
-        getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: { (arrayOfDefObjects) in
+        getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: {[weak self] (arrayOfDefObjects) in
             for object in arrayOfDefObjects {
-                self.newVocab?.definitions.append(object["definition"].string!)
+                self?.newVocab?.definitions.append(object["definition"].string!)
             }
             // search for photos related to the new word
-            FlickrService.getPhotos(searchKey: (self.newVocab?.wordName)!) { (response) in
+            FlickrService.getPhotos(searchKey: (self?.newVocab?.wordName)!) { (response) in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
                     DispatchQueue.main.async {
-                        self.activityIndicator.stopAnimating()
-                        self.arrayOfPhotos = json["photos"]["photo"].array
-                        self.collectionView.reloadData()
+                        self?.activityIndicator.stopAnimating()
+                        self?.arrayOfPhotos = json["photos"]["photo"].array
+                        self?.collectionView.reloadData()
                     }
                 case .failure(let error):
                     print(error)
                 }
             }
-        }, arrayOfExampleObject: { (arrayOfExampObjects) in
+        }, arrayOfExampleObject: {[weak self] (arrayOfExampObjects) in
             for object in arrayOfExampObjects {
-                self.newVocab?.examples.append(object.string!)
+                self?.newVocab?.examples.append(object.string!)
             }
         }) { (massage) in
 //                self.showAlert("ohhhhhh No!", massage)
