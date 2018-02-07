@@ -29,7 +29,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     var pixelBuffer: CVPixelBuffer?
     var ifComeBackFromCamera = false
     
-    var activityIndicator: UIActivityIndicatorView = {
+    lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.color = UIColor.red
         return activityIndicator
@@ -43,10 +43,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         }
         createTopicPicker()
         createToolbar()
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
     override func viewWillAppear(_ animated: Bool) {
         model = Inceptionv3()
-        self.nextBtn.isEnabled = true
+        self.nextBtn.isEnabled = false
         if !ifComeBackFromCamera {
             startCamera()
         }
@@ -96,19 +98,21 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
-        self.view.addSubview(activityIndicator)
-        activityIndicator.center = view.center
+        
+        
         guard let wordDetected = self.wordDetected else {
             showAlert("no word ", "no word detected")
             return
         }
         guard wordDetected != "" else {
+            showAlert("no word ", "no word detected")
             return
         }
         guard let category = self.selectedTopic else {
             showAlert("Choose Topic", "Choose topic for your new vocabulary")
             return
         }
+        print(activityIndicator)
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         self.nextBtn.isEnabled = false
@@ -117,26 +121,54 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         newVocab?.wordName = wordDetected
         let takenPhoto = self.imageView.image
         self.newVocab?.wordImage = UIImageJPEGRepresentation(takenPhoto!, 0.4)
-        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: {[weak self] (arrayOfDefenitions) in
+        WordsApiService.getDefinitionOfVocabulary(word: wordDetected) {
+            [weak self] (arrayOfDefenitions) in
+            guard let arrayOfDefenitions = arrayOfDefenitions else {
+                self?.showAlert("No definition", "There is no definition for this object, Try again", completion: {
+                    self?.startCamera()
+                })
+                return
+            }
             for definition in arrayOfDefenitions {
                 self?.newVocab?.definitions.append(definition)
             }
-            self?.definitionRecieved = true
-            //            self.saveVocabularyAndGoNextPage()
-        }, arrayOfExample: {[weak self] (arrayOfExamples) in
-            for example in arrayOfExamples {
+            WordsApiService.getExampleOfVocabulary(word: wordDetected, arrayOfExample: { [weak self] (arrayOfExamples) in
+                guard let arrayOfExamples = arrayOfExamples else {
+                    self?.saveVocabularyAndGoNextPage()
+                    return
+                }
+                for example in arrayOfExamples {
                 self?.newVocab?.examples.append(example)
-            }
-            self?.exampleRecieved = true
-            self?.saveVocabularyAndGoNextPage()
-            self?.activityIndicator.stopAnimating()
-        }) { (_) in
-            // error
+                }
+                self?.exampleRecieved = true
+                self?.saveVocabularyAndGoNextPage()
+            })
         }
+//        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: {[weak self] (arrayOfDefenitions) in
+//            for definition in arrayOfDefenitions {
+//                self?.newVocab?.definitions.append(definition)
+//                print(10)
+//            }
+//            self?.definitionRecieved = true
+//            //            self.saveVocabularyAndGoNextPage()
+//        }, arrayOfExample: {[weak self] (arrayOfExamples) in
+//            for example in arrayOfExamples {
+//                self?.newVocab?.examples.append(example)
+//            }
+//            self?.exampleRecieved = true
+//            self?.saveVocabularyAndGoNextPage()
+//            print(13)
+//
+//        }) { (_) in
+//            // error
+//        }
     }
     
     func saveVocabularyAndGoNextPage() {
-        if (definitionRecieved && exampleRecieved) {
+        print(11)
+        print(definitionRecieved)
+        print(exampleRecieved)
+//        if (definitionRecieved && exampleRecieved) {
             // save in database
             saveData(newVocab!)
             updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
@@ -150,8 +182,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             detailViewController.pageControlDots = numberOfDefinitions! < 14 ? numberOfDefinitions! : 14
             let numberOfExamples = self.newVocab?.examples.count
             detailViewController.pageControlExampleDots = numberOfExamples! < 14 ? numberOfExamples! : 14
+            self.activityIndicator.stopAnimating()
+            print(12)
             self.show(detailViewController, sender: nil)
-        }
+//        }
     }
     
     func createTopicPicker() {
