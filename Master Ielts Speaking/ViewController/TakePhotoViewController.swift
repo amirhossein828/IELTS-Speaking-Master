@@ -112,7 +112,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             showAlert("Choose Topic", "Choose topic for your new vocabulary")
             return
         }
-        print(activityIndicator)
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         self.nextBtn.isEnabled = false
@@ -254,6 +253,14 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
             self.wordDetected = self.trimWordDetected(word: detectedWord)
             DispatchQueue.main.async {
                 if let wordDetected = self.wordDetected {
+                    checkRepeatofWords(word: wordDetected, completion: {[weak self] (status) in
+                        guard !status else {
+                            self?.showAlert("The \(wordDetected) is repetitive", "Choose another object", completion: {
+                                self?.startCamera()
+                            })
+                            return
+                        }
+                    })
                     self.classifier.text = "This is a \(wordDetected)."
                     self.nextBtn.isEnabled = true
                 }else {
@@ -322,4 +329,14 @@ protocol GoToFirstTabBarDelegate: class {
 }
 
 
+func checkRepeatofWords(word: String, completion: (Bool) -> Void)  {
+        let predicate = "wordName = '\(word)'"
+    readData(Word.self, predicate: predicate) { (response) in
+        if response.count > 0 {
+            completion(true)
+        }else {
+            completion(false)
+        }
+}
+}
 
