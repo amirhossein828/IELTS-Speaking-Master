@@ -90,6 +90,34 @@ class AddNewWordViewController: UIViewController {
         }
     }
     // Get definitions and example of words and photos related to this word
+    fileprivate func getPhotosAndDefFor(_ newWordString: String) {
+        getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: {[weak self] (arrayOfDefObjects) in
+            for object in arrayOfDefObjects {
+                self?.newVocab?.definitions.append(object["definition"].string!)
+            }
+            // search for photos related to the new word
+            FlickrService.getPhotos(searchKey: (self?.newVocab?.wordName)!) { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    DispatchQueue.main.async {
+                        self?.activityIndicator.stopAnimating()
+                        self?.arrayOfPhotos = json["photos"]["photo"].array
+                        self?.collectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            }, arrayOfExampleObject: {[weak self] (arrayOfExampObjects) in
+                for object in arrayOfExampObjects {
+                    self?.newVocab?.examples.append(object.string!)
+                }
+        }) { (massage) in
+            //                self.showAlert("ohhhhhh No!", massage)
+        }
+    }
+    
     @IBAction func addNewWordButton(_ sender: UIButton) {
         self.view.addSubview(activityIndicator)
         activityIndicator.center = view.center
@@ -110,56 +138,13 @@ class AddNewWordViewController: UIViewController {
             guard !status else {
                 self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
                 self?.newWord.text = ""
+                self?.activityIndicator.stopAnimating()
                 })
                 return
             }
+            newVocab?.wordName = newWordString
+            getPhotosAndDefFor(newWordString)
         }
-        newVocab?.wordName = newWordString
-        getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: {[weak self] (arrayOfDefObjects) in
-            for object in arrayOfDefObjects {
-                self?.newVocab?.definitions.append(object["definition"].string!)
-            }
-            // search for photos related to the new word
-            FlickrService.getPhotos(searchKey: (self?.newVocab?.wordName)!) { (response) in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    DispatchQueue.main.async {
-                        self?.activityIndicator.stopAnimating()
-                        self?.arrayOfPhotos = json["photos"]["photo"].array
-                        self?.collectionView.reloadData()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }, arrayOfExampleObject: {[weak self] (arrayOfExampObjects) in
-            for object in arrayOfExampObjects {
-                self?.newVocab?.examples.append(object.string!)
-            }
-        }) { (massage) in
-//                self.showAlert("ohhhhhh No!", massage)
-        }
-        /*
-        getDefinitionsAndPhotos(withWord: newWordString, viewController: self) { (arrayOfDefObjects) in
-            for object in arrayOfDefObjects {
-                self.newVocab?.definitions.append(object["definition"].string!)
-            }
-            // search for photos related to the new word
-            FlickrService.getPhotos(searchKey: (self.newVocab?.wordName)!) { (response) in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    DispatchQueue.main.async {
-                        self.arrayOfPhotos = json["photos"]["photo"].array
-                        self.collectionView.reloadData()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-        */
     }
 
     // come back to list of categories
