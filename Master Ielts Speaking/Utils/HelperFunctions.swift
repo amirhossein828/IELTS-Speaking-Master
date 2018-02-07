@@ -169,8 +169,8 @@ func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
 }
 
 func resizePhoto(image: UIImage) -> UIImage{
-    UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 2.0)
-    image.draw(in: CGRect(x: 0, y: 0, width: 299, height: 299))
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: 224, height: 224), true, 2.0)
+    image.draw(in: CGRect(x: 0, y: 0, width: 224, height: 224))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()!
     return newImage
 }
@@ -216,7 +216,6 @@ func checkRepeatofWords(word: String, completion: (Bool) -> Void)  {
 func checkRepeatofCategories(category: String, completion: (Bool) -> Void)  {
     let predicate = "categoryName = '\(category)'"
     readData(Category.self, predicate: predicate) { (response) in
-        print(response.count)
         if response.count > 0 {
             completion(true)
         }else {

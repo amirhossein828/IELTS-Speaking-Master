@@ -21,6 +21,7 @@
 		9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */; };
 		9622CB301FDE0058009001AA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2F1FDE0058009001AA /* MockData.swift */; };
 		9622CB721FE049FC009001AA /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB711FE049FC009001AA /* AdvertisementCell.swift */; };
+		962D097E202AC08A00677547 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 962D097D202AC08900677547 /* Resnet50.mlmodel */; };
 		9634C5341FE627C100161FF4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634C5331FE627C100161FF4 /* FirstViewController.swift */; };
 		9634C5361FE62C3500161FF4 /* FirstPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */; };
 		964120D41FDB417F00CAA91C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964120D31FDB417F00CAA91C /* Category.swift */; };
@@ -39,7 +40,6 @@
 		966301881FE209B80057919B /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301871FE209B80057919B /* AnimationTransition.swift */; };
 		9663018A1FE39E110057919B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966301891FE39E110057919B /* HelperFunctions.swift */; };
 		967E23FD20279A9B002A8668 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E23FC20279A9B002A8668 /* TakePhotoViewController.swift */; };
-		967E23FF20279AFC002A8668 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 967E23FE20279AFC002A8668 /* Inceptionv3.mlmodel */; };
 		9699BE341FE6F0C900FE9525 /* QwantApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699BE331FE6F0C900FE9525 /* QwantApiService.swift */; };
 		96B5B3461FED75F5007DC024 /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5B3451FED75F5007DC024 /* ExampleCollectionViewCell.swift */; };
 		96E027E81FDCFB9800CB0222 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E027E71FDCFB9800CB0222 /* Extentions.swift */; };
@@ -94,6 +94,7 @@
 		9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCollectionViewCell.swift; sourceTree = "<group>"; };
 		9622CB2F1FDE0058009001AA /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		9622CB711FE049FC009001AA /* AdvertisementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
+		962D097D202AC08900677547 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		9634C5331FE627C100161FF4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		964120D31FDB417F00CAA91C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 		966301871FE209B80057919B /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
 		966301891FE39E110057919B /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		967E23FC20279A9B002A8668 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
-		967E23FE20279AFC002A8668 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		9699BE331FE6F0C900FE9525 /* QwantApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantApiService.swift; sourceTree = "<group>"; };
 		96B5B3451FED75F5007DC024 /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		96E027E71FDCFB9800CB0222 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		96003EE11FDAF39500DC9A94 /* Master Ielts Speaking */ = {
 			isa = PBXGroup;
 			children = (
-				967E23FE20279AFC002A8668 /* Inceptionv3.mlmodel */,
+				962D097D202AC08900677547 /* Resnet50.mlmodel */,
 				966301461FE1760B0057919B /* Layout */,
 				96FF73AF1FDC9C1000AA17E2 /* API */,
 				964120D61FDB464000CAA91C /* Utils */,
@@ -649,7 +649,6 @@
 				96553A2A1FEAC11B00341CA8 /* HelpViewController.swift in Sources */,
 				964120E01FDB8EF000CAA91C /* EachCategoryCollectionViewCell.swift in Sources */,
 				964120DE1FDB89D100CAA91C /* InfoCollectionViewController.swift in Sources */,
-				967E23FF20279AFC002A8668 /* Inceptionv3.mlmodel in Sources */,
 				96003EE31FDAF39500DC9A94 /* AppDelegate.swift in Sources */,
 				9622CB721FE049FC009001AA /* AdvertisementCell.swift in Sources */,
 				9634C5361FE62C3500161FF4 /* FirstPageCollectionViewCell.swift in Sources */,
@@ -657,6 +656,7 @@
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
 				96553A2C1FEB2DBE00341CA8 /* SearchResultController.swift in Sources */,
 				96FF73B31FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift in Sources */,
+				962D097E202AC08A00677547 /* Resnet50.mlmodel in Sources */,
 				96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */,
 				96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */,
 				967E23FD20279A9B002A8668 /* TakePhotoViewController.swift in Sources */,

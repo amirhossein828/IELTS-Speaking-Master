@@ -17,7 +17,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var classifier: UILabel!
     
-    var model: Inceptionv3!
+    var modelRes: Resnet50!
     var wordDetected: String?
     var newVocab : Word? = nil
     var category : Category? = nil
@@ -48,7 +48,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         activityIndicator.center = view.center
     }
     override func viewWillAppear(_ animated: Bool) {
-        model = Inceptionv3()
+        modelRes = Resnet50()
         self.nextBtn.isEnabled = false
         if !ifComeBackFromCamera {
             startCamera()
@@ -86,9 +86,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         self.tabBarController?.selectedIndex = 0
     }
     
-    
-    @IBAction func camera(_ sender: Any) {
-    }
     @IBAction func openLibrary(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.allowsEditing = false
@@ -99,8 +96,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
-        
-        
         guard let wordDetected = self.wordDetected else {
             showAlert("no word ", "no word detected")
             return
@@ -144,32 +139,9 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
                 self?.saveVocabularyAndGoNextPage()
             })
         }
-//        WordsApiService.getDefinitionAndExamples(viewController: self, word: wordDetected, arrayOfWordsDefinition: {[weak self] (arrayOfDefenitions) in
-//            for definition in arrayOfDefenitions {
-//                self?.newVocab?.definitions.append(definition)
-//                print(10)
-//            }
-//            self?.definitionRecieved = true
-//            //            self.saveVocabularyAndGoNextPage()
-//        }, arrayOfExample: {[weak self] (arrayOfExamples) in
-//            for example in arrayOfExamples {
-//                self?.newVocab?.examples.append(example)
-//            }
-//            self?.exampleRecieved = true
-//            self?.saveVocabularyAndGoNextPage()
-//            print(13)
-//
-//        }) { (_) in
-//            // error
-//        }
     }
     
     func saveVocabularyAndGoNextPage() {
-        print(11)
-        print(definitionRecieved)
-        print(exampleRecieved)
-//        if (definitionRecieved && exampleRecieved) {
-            // save in database
             saveData(newVocab!)
             updateCategoryInDatabase(categoryName: (self.category?.categoryName)!, word: newVocab!)
             let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -183,9 +155,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             let numberOfExamples = self.newVocab?.examples.count
             detailViewController.pageControlExampleDots = numberOfExamples! < 14 ? numberOfExamples! : 14
             self.activityIndicator.stopAnimating()
-            print(12)
             self.show(detailViewController, sender: nil)
-//        }
     }
     
     func createTopicPicker() {
@@ -219,6 +189,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
                     firstWord = firstWord + String(char)
                 }
             }
+        }else {
+            return word
         }
         return nil
     }
@@ -256,11 +228,11 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
         concurrentQueue.async {
             guard let pixelBuffer = self.pixelBuffer else { return  }
             // Core ML
-            guard let prediction = try? self.model.prediction(image: pixelBuffer) else {
+            guard let predictionRes = try? self.modelRes.prediction(image: pixelBuffer) else {
                 return
             }
-            let detectedWord = prediction.classLabel
-            
+            let detectedWord = predictionRes.classLabel
+            print(detectedWord)
             self.wordDetected = self.trimWordDetected(word: detectedWord)
             DispatchQueue.main.async {
                 if let wordDetected = self.wordDetected {
