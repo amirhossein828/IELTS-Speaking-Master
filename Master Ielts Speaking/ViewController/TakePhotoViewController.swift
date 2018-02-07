@@ -86,15 +86,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         self.tabBarController?.selectedIndex = 0
     }
     
-    @IBAction func openLibrary(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = false
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        present(picker, animated: true)
-    }
-    
-    
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
         guard let wordDetected = self.wordDetected else {
             showAlert("no word ", "no word detected")
@@ -172,28 +163,24 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         //Customizations
         toolBar.barTintColor = .black
         toolBar.tintColor = .white
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissKeyboard))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePressed))
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         listOfTopicsfields.inputAccessoryView = toolBar
     }
     
-    // seperate just one of the meaning
-    func trimWordDetected(word: String) -> String? {
-        if word.contains(",") {
-            var firstWord = ""
-            for char in word {
-                if char == "," {
-                    return firstWord
-                }else {
-                    firstWord = firstWord + String(char)
-                }
-            }
+    @objc func donePressed() {
+        if self.selectedTopic == nil {
+            self.selectedTopic = self.listOfTopics?[0]
+            selectedTopicString = self.listOfTopics?[0].categoryName
+            listOfTopicsfields.text = selectedTopicString
+            self.dismissKeyboard()
         }else {
-            return word
+            self.dismissKeyboard()
         }
-        return nil
     }
+    
+    
     
     /// check connectivity to Internet
     fileprivate func checkConectivity() {
@@ -232,8 +219,7 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
                 return
             }
             let detectedWord = predictionRes.classLabel
-            print(detectedWord)
-            self.wordDetected = self.trimWordDetected(word: detectedWord)
+            self.wordDetected = trimWordDetected(word: detectedWord)
             DispatchQueue.main.async {
                 if let wordDetected = self.wordDetected {
                     checkRepeatofWords(word: wordDetected, completion: {[weak self] (status) in
@@ -274,7 +260,6 @@ extension TakePhotoViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         selectedTopic = self.listOfTopics?[row]
         selectedTopicString = self.listOfTopics?[row].categoryName
         listOfTopicsfields.text = selectedTopicString

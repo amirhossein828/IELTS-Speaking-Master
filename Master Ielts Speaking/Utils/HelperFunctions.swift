@@ -223,3 +223,20 @@ func checkRepeatofCategories(category: String, completion: (Bool) -> Void)  {
         }
     }
 }
+
+// seperate just one of the meaning
+func trimWordDetected(word: String) -> String? {
+    if word.contains(",") {
+        var firstWord = ""
+        for char in word {
+            if char == "," {
+                return firstWord
+            }else {
+                firstWord = firstWord + String(char)
+            }
+        }
+    }else {
+        return word
+    }
+    return nil
+}
