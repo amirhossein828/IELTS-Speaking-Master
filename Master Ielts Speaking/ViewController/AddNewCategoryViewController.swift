@@ -78,13 +78,21 @@ class AddNewCategoryViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         // make the titleOfCollection unhidden
         self.titleOfCollection.isHidden = false
-        // create word object
-        newCategory = Category()
         // give the nameofWord property to it
         guard let newWordString = self.newWord.text else { return  }
         if newWordString == "" {
             showAlert("Enter a word", "Please enter a word")
             return}
+        checkRepeatofCategories(category: newWordString) {[weak self] (status) in
+            guard !status else {
+                self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
+                    self?.newWord.text = ""
+                })
+                return
+            }
+        }
+        // create word object
+        newCategory = Category()
         newCategory?.categoryName = newWordString
         // search for photos related to the new word
         FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in

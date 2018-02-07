@@ -340,14 +340,5 @@ protocol GoToFirstTabBarDelegate: class {
 }
 
 
-func checkRepeatofWords(word: String, completion: (Bool) -> Void)  {
-        let predicate = "wordName = '\(word)'"
-    readData(Word.self, predicate: predicate) { (response) in
-        if response.count > 0 {
-            completion(true)
-        }else {
-            completion(false)
-        }
-}
-}
+
 

@@ -106,6 +106,14 @@ class AddNewWordViewController: UIViewController {
         if newWordString == "" {
             showAlert("Enter a word", "Please enter a word")
             return}
+        checkRepeatofWords(word: newWordString) {[weak self] (status) in
+            guard !status else {
+                self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
+                self?.newWord.text = ""
+                })
+                return
+            }
+        }
         newVocab?.wordName = newWordString
         getDefinitionsAndPhotos(withWord: newWordString, viewController: self, arrayOfDefObject: {[weak self] (arrayOfDefObjects) in
             for object in arrayOfDefObjects {

@@ -200,3 +200,25 @@ func createpixelBuffer(newImage: UIImage) -> CVPixelBuffer? {
     CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
     return pixelBuffer
 }
+
+func checkRepeatofWords(word: String, completion: (Bool) -> Void)  {
+    let predicate = "wordName = '\(word)'"
+    readData(Word.self, predicate: predicate) { (response) in
+        if response.count > 0 {
+            completion(true)
+        }else {
+            completion(false)
+        }
+    }
+}
+
+func checkRepeatofCategories(category: String, completion: (Bool) -> Void)  {
+    let predicate = "wordName = '\(category)'"
+    readData(Category.self, predicate: predicate) { (response) in
+        if response.count > 0 {
+            completion(true)
+        }else {
+            completion(false)
+        }
+    }
+}
