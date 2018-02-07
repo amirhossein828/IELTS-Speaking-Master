@@ -103,8 +103,9 @@ class AddNewCategoryViewController: UIViewController {
             return}
         checkRepeatofCategories(category: newWordString) {[weak self] (status) in
             guard !status else {
+                self?.newWord.text = ""
+                self?.activityIndicator.stopAnimating()
                 self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
-                    self?.newWord.text = ""
                 })
                 return
             }

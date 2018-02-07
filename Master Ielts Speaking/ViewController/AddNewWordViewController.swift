@@ -136,9 +136,9 @@ class AddNewWordViewController: UIViewController {
             return}
         checkRepeatofWords(word: newWordString) {[weak self] (status) in
             guard !status else {
-                self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
                 self?.newWord.text = ""
                 self?.activityIndicator.stopAnimating()
+                self?.showAlert("The \(newWordString) is repetitive", "Choose another object", completion: {
                 })
                 return
             }

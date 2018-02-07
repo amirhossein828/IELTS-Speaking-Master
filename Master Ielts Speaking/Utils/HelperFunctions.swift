@@ -216,6 +216,7 @@ func checkRepeatofWords(word: String, completion: (Bool) -> Void)  {
 func checkRepeatofCategories(category: String, completion: (Bool) -> Void)  {
     let predicate = "categoryName = '\(category)'"
     readData(Category.self, predicate: predicate) { (response) in
+        print(response.count)
         if response.count > 0 {
             completion(true)
         }else {
