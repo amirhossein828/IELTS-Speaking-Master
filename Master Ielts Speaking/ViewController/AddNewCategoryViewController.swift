@@ -71,6 +71,24 @@ class AddNewCategoryViewController: UIViewController {
         }
     }
     // Add new category 
+    fileprivate func getPhotoForCategoryByName() {
+        // search for photos related to the new word
+        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.arrayOfPhotos = json["photos"]["photo"].array
+                    self?.collectionView.reloadData()
+                }
+            case .failure(let error):
+                self?.showAlert("ohhhh No!", "There is no Photo for this word")
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
         self.view.addSubview(activityIndicator)
         activityIndicator.center = view.center
@@ -90,25 +108,12 @@ class AddNewCategoryViewController: UIViewController {
                 })
                 return
             }
+            // create word object
+            newCategory = Category()
+            newCategory?.categoryName = newWordString
+            getPhotoForCategoryByName()
         }
-        // create word object
-        newCategory = Category()
-        newCategory?.categoryName = newWordString
-        // search for photos related to the new word
-        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                DispatchQueue.main.async {
-                    self?.activityIndicator.stopAnimating()
-                    self?.arrayOfPhotos = json["photos"]["photo"].array
-                    self?.collectionView.reloadData()
-                }
-            case .failure(let error):
-                self?.showAlert("ohhhh No!", "There is no Photo for this word")
-                print(error.localizedDescription)
-            }
-        }
+        
  
         /*
         QwantApiService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
