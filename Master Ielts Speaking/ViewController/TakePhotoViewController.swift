@@ -38,6 +38,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkConectivity()
         readData(Category.self, predicate: nil) { (response : Results<Category>) in
             self.listOfTopics = response
         }
@@ -220,6 +221,16 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
             }
         }
         return nil
+    }
+    
+    /// check connectivity to Internet
+    fileprivate func checkConectivity() {
+        guard Connectivity.isConnectedToInternet else {
+            print("No! internet is not available.")
+            self.nextBtn.isEnabled = false
+            showAlert("Oh No", "There is no Internet")
+            return
+        }
     }
 }
 
