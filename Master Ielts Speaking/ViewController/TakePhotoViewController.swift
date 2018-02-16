@@ -17,7 +17,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var classifier: UILabel!
     
-    var modelRes: Resnet50!
+    var modelRes: SqueezeNet!
     var wordDetected: String?
     var newVocab : Word? = nil
     var category : Category? = nil
@@ -48,7 +48,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate 
         activityIndicator.center = view.center
     }
     override func viewWillAppear(_ animated: Bool) {
-        modelRes = Resnet50()
+        modelRes = SqueezeNet()
         self.nextBtn.isEnabled = false
         if !ifComeBackFromCamera {
             startCamera()
@@ -214,12 +214,20 @@ extension TakePhotoViewController: UIImagePickerControllerDelegate {
         let concurrentQueue = DispatchQueue(label: "queuename", attributes: .concurrent)
         concurrentQueue.async {
             guard let pixelBuffer = self.pixelBuffer else { return  }
-            // Core ML
-            guard let predictionRes = try? self.modelRes.prediction(image: pixelBuffer) else {
-                return
+            // MARK: Core ML
+            do {
+                let predictionRes = try self.modelRes.prediction(image: pixelBuffer)
+                let detectedWord = predictionRes.classLabel
+                self.wordDetected = trimWordDetected(word: detectedWord)
+            }catch let err {
+                print(err)
+                print("hhhhh")
             }
-            let detectedWord = predictionRes.classLabel
-            self.wordDetected = trimWordDetected(word: detectedWord)
+//            guard let predictionRes = try? self.modelRes.prediction(image: pixelBuffer) else {
+//                return
+//            }
+            
+            
             DispatchQueue.main.async {
                 if let wordDetected = self.wordDetected {
                     checkRepeatofWords(word: wordDetected, completion: {[weak self] (status) in

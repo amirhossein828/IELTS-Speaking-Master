@@ -169,8 +169,8 @@ func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
 }
 
 func resizePhoto(image: UIImage) -> UIImage{
-    UIGraphicsBeginImageContextWithOptions(CGSize(width: 224, height: 224), true, 2.0)
-    image.draw(in: CGRect(x: 0, y: 0, width: 224, height: 224))
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: 227, height: 227), true, 2.0)
+    image.draw(in: CGRect(x: 0, y: 0, width: 227, height: 227))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()!
     return newImage
 }
