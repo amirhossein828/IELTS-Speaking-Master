@@ -28,6 +28,8 @@ class AddNewCategoryViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var titleOfCollection: UILabel!
     @IBOutlet weak var noInternetView: UIView!
+    
+    @IBOutlet weak var pexelView: PexelView!
     // properties
     var arrayOfPhotos : [JSON]? = nil
 //    var arrayOfDefString = [String]()
@@ -45,6 +47,7 @@ class AddNewCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.pexelView.delegate = self
         self.noInternetView.isHidden = true
         checkConectivity()
         // Configure the text view to make it's corner radiuos
@@ -73,13 +76,16 @@ class AddNewCategoryViewController: UIViewController {
     // Add new category 
     fileprivate func getPhotoForCategoryByName() {
         // search for photos related to the new word
-        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in
+        PexelsService.getPhotosPexels(searchKey: (self.newCategory?.categoryName)!) { [weak self] (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print("=============")
+                print(json)
+                print("ffff")
                 DispatchQueue.main.async {
                     self?.activityIndicator.stopAnimating()
-                    self?.arrayOfPhotos = json["photos"]["photo"].array
+                    self?.arrayOfPhotos = json["photos"].array
                     self?.collectionView.reloadData()
                 }
             case .failure(let error):
@@ -87,6 +93,20 @@ class AddNewCategoryViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+//        FlickrService.getPhotos(searchKey: (self.newCategory?.categoryName)!) {[weak self] (response) in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                DispatchQueue.main.async {
+//                    self?.activityIndicator.stopAnimating()
+//                    self?.arrayOfPhotos = json["photos"]["photo"].array
+//                    self?.collectionView.reloadData()
+//                }
+//            case .failure(let error):
+//                self?.showAlert("ohhhh No!", "There is no Photo for this word")
+//                print(error.localizedDescription)
+//            }
+//        }
     }
     
     @IBAction func addNewCategoryButton(_ sender: UIButton) {
@@ -96,6 +116,7 @@ class AddNewCategoryViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         // make the titleOfCollection unhidden
         self.titleOfCollection.isHidden = false
+        self.pexelView.isHidden = false
         // give the nameofWord property to it
         guard let newWordString = self.newWord.text else { return  }
         if newWordString == "" {
@@ -188,7 +209,7 @@ extension AddNewCategoryViewController : UICollectionViewDelegate,UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
         cell.activityIndicator.startAnimating()
         cell.activityIndicator.hidesWhenStopped = true
-        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["src"]["medium"].string {
 //        if let imageUrl = self.arrayOfPhotos![indexPath.row]["media"].string
 //        {
         

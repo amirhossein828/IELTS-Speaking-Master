@@ -34,6 +34,8 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet weak var titleOfCollection: UILabel!
     @IBOutlet weak var noInternetView: UIView!
     
+    @IBOutlet weak var pexelView: PexelView!
+    
     // properties
     var arrayOfPhotos : [JSON]? = nil
     var arrayOfDefString = [String]()
@@ -50,6 +52,7 @@ class AddNewWordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.pexelView.delegate = self
         self.noInternetView.isHidden = true
         configureCloseButton()
         checkConectivity()
@@ -127,6 +130,7 @@ class AddNewWordViewController: UIViewController {
         self.nextButton.isEnabled = false
         // make titleOfCollection label unhidden
         self.titleOfCollection.isHidden = false
+        self.pexelView.isHidden = false
         // create word object
         newVocab = Word()
         // give the nameofWord property to it

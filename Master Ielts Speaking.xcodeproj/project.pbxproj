@@ -17,6 +17,10 @@
 		96003F031FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F021FDAF39500DC9A94 /* Master_Ielts_SpeakingUITests.swift */; };
 		96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */; };
 		9604201D2035E97300DC1E66 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9604201C2035E97300DC1E66 /* SqueezeNet.mlmodel */; };
+		960AF8D12040BB8C001D7DD0 /* PexelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AF8D02040BB8C001D7DD0 /* PexelsService.swift */; };
+		960AF8D32040D144001D7DD0 /* PexelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AF8D22040D144001D7DD0 /* PexelsViewController.swift */; };
+		960AF8D52043214E001D7DD0 /* PexelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960AF8D42043214E001D7DD0 /* PexelView.xib */; };
+		960AF8D720432162001D7DD0 /* PexelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AF8D620432162001D7DD0 /* PexelView.swift */; };
 		961BE51F1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */; };
 		9622CB2C1FDDB8C0009001AA /* WordsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2B1FDDB8C0009001AA /* WordsApiService.swift */; };
 		9622CB2E1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */; };
@@ -90,6 +94,10 @@
 		96003F041FDAF39500DC9A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96003F121FDB39BD00DC9A94 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9604201C2035E97300DC1E66 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		960AF8D02040BB8C001D7DD0 /* PexelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsService.swift; sourceTree = "<group>"; };
+		960AF8D22040D144001D7DD0 /* PexelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsViewController.swift; sourceTree = "<group>"; };
+		960AF8D42043214E001D7DD0 /* PexelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PexelView.xib; sourceTree = "<group>"; };
+		960AF8D620432162001D7DD0 /* PexelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelView.swift; sourceTree = "<group>"; };
 		961BE51E1FE4A69500C2C1F7 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
 		9622CB2B1FDDB8C0009001AA /* WordsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsApiService.swift; sourceTree = "<group>"; };
 		9622CB2D1FDDE7A8009001AA /* DefinitionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 				96553A291FEAC11B00341CA8 /* HelpViewController.swift */,
 				96553A2B1FEB2DBE00341CA8 /* SearchResultController.swift */,
 				967E23FC20279A9B002A8668 /* TakePhotoViewController.swift */,
+				960AF8D22040D144001D7DD0 /* PexelsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -264,6 +273,8 @@
 				9622CB711FE049FC009001AA /* AdvertisementCell.swift */,
 				9634C5351FE62C3500161FF4 /* FirstPageCollectionViewCell.swift */,
 				96B5B3451FED75F5007DC024 /* ExampleCollectionViewCell.swift */,
+				960AF8D42043214E001D7DD0 /* PexelView.xib */,
+				960AF8D620432162001D7DD0 /* PexelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 				96FF73B01FDC9FF700AA17E2 /* FlikerService.swift */,
 				9622CB2B1FDDB8C0009001AA /* WordsApiService.swift */,
 				9699BE331FE6F0C900FE9525 /* QwantApiService.swift */,
+				960AF8D02040BB8C001D7DD0 /* PexelsService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -444,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960AF8D52043214E001D7DD0 /* PexelView.xib in Resources */,
 				9650ECF61FE8C407000A952F /* Book.json in Resources */,
 				9650ECF41FE898DE000A952F /* Environment.json in Resources */,
 				96003EED1FDAF39500DC9A94 /* LaunchScreen.storyboard in Resources */,
@@ -637,7 +650,9 @@
 				96E027E81FDCFB9800CB0222 /* Extentions.swift in Sources */,
 				9622CB301FDE0058009001AA /* MockData.swift in Sources */,
 				964120D41FDB417F00CAA91C /* Category.swift in Sources */,
+				960AF8D32040D144001D7DD0 /* PexelsViewController.swift in Sources */,
 				96B5B3461FED75F5007DC024 /* ExampleCollectionViewCell.swift in Sources */,
+				960AF8D12040BB8C001D7DD0 /* PexelsService.swift in Sources */,
 				964120D81FDB465B00CAA91C /* DatabaseManager.swift in Sources */,
 				9699BE341FE6F0C900FE9525 /* QwantApiService.swift in Sources */,
 				966301481FE1766C0057919B /* CustomLayout.swift in Sources */,
@@ -656,6 +671,7 @@
 				9622CB2C1FDDB8C0009001AA /* WordsApiService.swift in Sources */,
 				96003F131FDB39BD00DC9A94 /* CategoryTableViewCell.swift in Sources */,
 				96553A2C1FEB2DBE00341CA8 /* SearchResultController.swift in Sources */,
+				960AF8D720432162001D7DD0 /* PexelView.swift in Sources */,
 				96FF73B31FDCB1D900AA17E2 /* PhotoCollectionViewCell.swift in Sources */,
 				96FF73B11FDC9FF700AA17E2 /* FlikerService.swift in Sources */,
 				96FF73AA1FDBBA7200AA17E2 /* AddNewWordViewController.swift in Sources */,
