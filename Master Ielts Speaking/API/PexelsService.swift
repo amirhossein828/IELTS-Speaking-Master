@@ -34,7 +34,7 @@ class PexelsService {
         let trimmedSearchKey = searchKey.trimmingCharacters(in: .whitespacesAndNewlines)
         let searchEncode = trimmedSearchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let apiKey = "563492ad6f9170000100000139781f4f90a844d9a238dffa3ea1d20c"
-        let URLPexels = "https://api.pexels.com/v1/search?query=\(searchEncode!)&per_page=20&page=1"
+        let URLPexels = "https://api.pexels.com/v1/search?query=\(searchEncode!)&per_page=38&page=1"
         let token = apiKey
         let Auth_header = [ "Authorization" : token]
         Alamofire.request(URLPexels, method: .get, parameters: nil, encoding: URLEncoding.default, headers: Auth_header).validate().responseJSON { (response) in

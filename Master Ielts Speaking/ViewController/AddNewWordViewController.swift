@@ -46,7 +46,7 @@ class AddNewWordViewController: UIViewController {
     weak var delegate : ReloadViewDelegate?
     var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.color = UIColor.red
+        activityIndicator.color = UIColor.green
         return activityIndicator
     }()
     
@@ -99,19 +99,36 @@ class AddNewWordViewController: UIViewController {
                 self?.newVocab?.definitions.append(object["definition"].string!)
             }
             // search for photos related to the new word
-            FlickrService.getPhotos(searchKey: (self?.newVocab?.wordName)!) { (response) in
+            PexelsService.getPhotosPexels(searchKey: (self?.newVocab?.wordName)!) { [weak self] (response) in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
+                    print("=============")
+                    print(json)
+                    print("ffff")
                     DispatchQueue.main.async {
                         self?.activityIndicator.stopAnimating()
-                        self?.arrayOfPhotos = json["photos"]["photo"].array
+                        self?.arrayOfPhotos = json["photos"].array
                         self?.collectionView.reloadData()
                     }
                 case .failure(let error):
-                    print(error)
+                    self?.showAlert("ohhhh No!", "There is no Photo for this word")
+                    print(error.localizedDescription)
                 }
             }
+//            FlickrService.getPhotos(searchKey: (self?.newVocab?.wordName)!) { (response) in
+//                switch response.result {
+//                case .success(let value):
+//                    let json = JSON(value)
+//                    DispatchQueue.main.async {
+//                        self?.activityIndicator.stopAnimating()
+//                        self?.arrayOfPhotos = json["photos"]["photo"].array
+//                        self?.collectionView.reloadData()
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
             }, arrayOfExampleObject: {[weak self] (arrayOfExampObjects) in
                 for object in arrayOfExampObjects {
                     self?.newVocab?.examples.append(object.string!)
@@ -204,7 +221,7 @@ extension AddNewWordViewController : UICollectionViewDelegate,UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PhotoCollectionViewCell
         cell.activityIndicator.startAnimating()
         cell.activityIndicator.hidesWhenStopped = true
-        if let imageUrl = self.arrayOfPhotos![indexPath.row]["url_m"].string {
+        if let imageUrl = self.arrayOfPhotos![indexPath.row]["src"]["medium"].string {
             cell.imageView.downloadedFrom(link: imageUrl, completion: {
                 cell.activityIndicator.stopAnimating()
             })

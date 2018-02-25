@@ -135,27 +135,7 @@ class AddNewCategoryViewController: UIViewController {
             newCategory?.categoryName = newWordString
             getPhotoForCategoryByName()
         }
-        
- 
-        /*
-        QwantApiService.getPhotos(searchKey: (self.newCategory?.categoryName)!) { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                DispatchQueue.main.async {
-                    let arrayOfPhotosObjects = json["data"]["result"]["items"].array
-                    self.arrayOfPhotos = [JSON]()
-                    for object in arrayOfPhotosObjects! {
-                        self.arrayOfPhotos?.append(object)
-                    }
-                    print(self.arrayOfPhotos!)
-                    self.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-        */
+
       }
         
     
